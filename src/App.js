@@ -10,13 +10,13 @@ export class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename='/stvote'>
                 <main>
                     <NavBar />
                     <Switch>
-                        <Route path='/stvote/' exact component={Home} />
-                        <Route path='/stvote/home' exact component={Home} />
-                        <Route path='/stvote/election' component={ElectionPage} />
+                        <Route exact path='/' exact render={() => <Home />} />
+                        <Route path='/home' render={() => <Home />} />
+                        <Route path='/election' render={() => <ElectionPage />} />
                         <Route component={FourZeroFour} />
                     </Switch>
                 </main>
