@@ -1,0 +1,49 @@
+.title-row {
+    white-space: nowrap;
+    text-align:center;
+}
+
+.basic-row {
+    white-space: nowrap;
+    text-align:center;
+}
+
+.election-table {
+    padding: 0 2.5%, 2.5% 2.5%;
+    margin: 0% 2.5% 2.5% 2.5%;
+}
+
+.title-text > h1 {
+    padding: 2.5% 2.5% 2.5% 2.5%;
+    text-align:center;
+    font-weight: bold;
+}
+
+.election-button {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.election-button > button {
+    float: right;
+    margin: 2.5%;
+    width: 20%;
+}
+
+.progress-elected {
+    background-color: #01A039 !important;
+}
+
+.progress-running {
+    background-color: #0095E0 !important;
+}
+
+.progress-transferring {
+    background-color: #E07A00 !important;
+}
+
+.progress-transfered {
+    background-color: #FF0000 !important;
+}
