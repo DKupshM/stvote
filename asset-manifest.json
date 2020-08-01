@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/stvote/static/css/main.9b266699.chunk.css",
-    "main.js": "/stvote/static/js/main.763e018c.chunk.js",
-    "main.js.map": "/stvote/static/js/main.763e018c.chunk.js.map",
+    "main.js": "/stvote/static/js/main.bc9e79a3.chunk.js",
+    "main.js.map": "/stvote/static/js/main.bc9e79a3.chunk.js.map",
     "runtime-main.js": "/stvote/static/js/runtime-main.3fe2677a.js",
     "runtime-main.js.map": "/stvote/static/js/runtime-main.3fe2677a.js.map",
     "static/css/2.829c9cb5.chunk.css": "/stvote/static/css/2.829c9cb5.chunk.css",
     "static/js/2.84747b31.chunk.js": "/stvote/static/js/2.84747b31.chunk.js",
     "static/js/2.84747b31.chunk.js.map": "/stvote/static/js/2.84747b31.chunk.js.map",
     "index.html": "/stvote/index.html",
-    "precache-manifest.080731ea6e3f882e4a65a9e774c0b7c3.js": "/stvote/precache-manifest.080731ea6e3f882e4a65a9e774c0b7c3.js",
+    "precache-manifest.8de2cfc46ed04893377924930c48eb4b.js": "/stvote/precache-manifest.8de2cfc46ed04893377924930c48eb4b.js",
     "service-worker.js": "/stvote/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/stvote/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.9b266699.chunk.css.map": "/stvote/static/css/main.9b266699.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.84747b31.chunk.js",
     "static/css/main.9b266699.chunk.css",
-    "static/js/main.763e018c.chunk.js"
+    "static/js/main.bc9e79a3.chunk.js"
   ]
 }
