@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "59528fb4eab99b66b4edbcbd62a026bb",
+    "revision": "63e14568a36b3d2c310634bd841342c8",
     "url": "/stvote/index.html"
   },
   {
-    "revision": "5bebf4e3ee8764dea417",
+    "revision": "324f5689c4808ece022e",
     "url": "/stvote/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "ed89a9d881767790780a",
+    "revision": "d2d9f641f35627c71fe3",
     "url": "/stvote/static/css/main.9b266699.chunk.css"
   },
   {
-    "revision": "5bebf4e3ee8764dea417",
-    "url": "/stvote/static/js/2.d40d72e9.chunk.js"
+    "revision": "324f5689c4808ece022e",
+    "url": "/stvote/static/js/2.178d2d20.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/stvote/static/js/2.d40d72e9.chunk.js.LICENSE.txt"
+    "url": "/stvote/static/js/2.178d2d20.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ed89a9d881767790780a",
-    "url": "/stvote/static/js/main.5b50037d.chunk.js"
+    "revision": "d2d9f641f35627c71fe3",
+    "url": "/stvote/static/js/main.188ec4a8.chunk.js"
   },
   {
     "revision": "c79a6a54bdbed3633120",
