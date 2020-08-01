@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "061701ff194dcaad96f4cc04223e6752",
+    "revision": "ca9c8855f37ee054edd1a2500452b5ec",
     "url": "/stvote/index.html"
   },
   {
