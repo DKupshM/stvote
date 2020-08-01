@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "63e14568a36b3d2c310634bd841342c8",
+    "revision": "0672f6a3551722a5c67f05d16bee4b02",
     "url": "/stvote/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stvote/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "d2d9f641f35627c71fe3",
+    "revision": "0a8d9e5590c71d6fff9d",
     "url": "/stvote/static/css/main.9b266699.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/stvote/static/js/2.178d2d20.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d2d9f641f35627c71fe3",
-    "url": "/stvote/static/js/main.188ec4a8.chunk.js"
+    "revision": "0a8d9e5590c71d6fff9d",
+    "url": "/stvote/static/js/main.cd0864f4.chunk.js"
   },
   {
     "revision": "c79a6a54bdbed3633120",
