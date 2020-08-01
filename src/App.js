@@ -14,9 +14,9 @@ export class App extends Component {
                 <main>
                     <NavBar />
                     <Switch>
-                        <Route path='/' exact component={Home} />
-                        <Route path='/home' exact component={Home} />
-                        <Route path='/election' component={ElectionPage} />
+                        <Route path='/stvote/' exact component={Home} />
+                        <Route path='/stvote/home' exact component={Home} />
+                        <Route path='/stvote/election' component={ElectionPage} />
                         <Route component={FourZeroFour} />
                     </Switch>
                 </main>
