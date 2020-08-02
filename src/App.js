@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Redirect, withRouter } from "react-router";
 import './App.css'
+
 import NavBar from './Components/NavBar/NavBar';
 import Home from './Components/Home';
 import ElectionPage from './Components/ElectionPage/ElectionPage';
 import FourZeroFour from './Components/FourZeroFour';
 
-export class App extends Component {
+const NavBarWithRouter = withRouter(NavBar);
 
-    render() {
-        return (
-            <BrowserRouter basename='/stvote'>
+function App() {
+    return (
+        <BrowserRouter basename='/stvote'>
+            <Fragment>
+                <NavBarWithRouter />
                 <main>
-                    <NavBar />
                     <Switch>
-                        <Route exact path='/' exact render={() => <Home />} />
-                        <Route path='/home' render={() => <Home />} />
-                        <Route path='/election' render={() => <ElectionPage />} />
+                        <Route exact path='/'> <Redirect to="/home" /> </Route>
+                        <Route path='/home' component={Home} />
+                        <Route path='/election/:page' component={ElectionPage} />
                         <Route component={FourZeroFour} />
                     </Switch>
                 </main>
-            </BrowserRouter>
-        );
-    }
+            </Fragment>
+        </BrowserRouter>
+    );
 }
+
 export default App;
