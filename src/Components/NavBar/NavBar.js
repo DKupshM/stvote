@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 
 function NavBar(props) {
 
@@ -22,10 +21,7 @@ function NavBar(props) {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav activeKey={activeKey} className="mr-auto" onSelect={handleSelect}>
                     <Nav.Link eventKey={1} href="/stvote/home">Home</Nav.Link>
-                    <NavDropdown title="Election" id="collasible-nav-dropdown">
-                        <NavDropdown.Item eventKey={2} href="/stvote/election/race">Election Race</NavDropdown.Item>
-                        <NavDropdown.Item eventKey={3} href="/stvote/election/chart">Race Charts</NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link eventKey={1} href="/stvote/election">Election</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

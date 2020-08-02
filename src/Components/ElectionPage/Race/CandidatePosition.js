@@ -26,6 +26,12 @@ function CandidatePosition(props) {
             return "danger";
     }
 
+    const get_progress_max = () => {
+        if (props.quota === 0)
+            return 1;
+        return props.quota;
+    }
+
     return (
         <tr>
             <td className="basic-row" width="1"> {props.position + 1} </td>
@@ -34,7 +40,7 @@ function CandidatePosition(props) {
             <td className="basic-row" width="1" style={{ backgroundColor: get_status_color() }}> {props.status} </td >
             <td className="basic-row" width="1" style={{ backgroundColor: get_status_color() }}> {Math.floor(props.score)} </td >
             <td style={{ padding: "0", margin: "0" }}>
-                <ProgressBar variant={get_progress_variant()} max={props.quota} min={0} now={props.score} style={{ height: "48px", borderRadius: 0 }} />
+                <ProgressBar variant={get_progress_variant()} max={get_progress_max()} min={0} now={props.score} style={{ height: "48px", borderRadius: 0 }} />
             </td >
         </tr >
     );

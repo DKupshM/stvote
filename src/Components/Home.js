@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import CanvasJSReact from '../assets/canvasjs.react';
-var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export class Home extends Component {

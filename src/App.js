@@ -19,7 +19,7 @@ function App() {
                     <Switch>
                         <Route exact path='/'> <Redirect to="/home" /> </Route>
                         <Route path='/home' component={Home} />
-                        <Route path='/election/:page' component={ElectionPage} />
+                        <Route path='/election' component={ElectionPage} />
                         <Route component={FourZeroFour} />
                     </Switch>
                 </main>
