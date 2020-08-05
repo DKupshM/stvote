@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase';
 import uuid from 'react-uuid'
 
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -20,10 +21,6 @@ import { Voter } from '../../Data_Models/Voter';
 import { Ballot } from '../../Data_Models/Ballot';
 import { Party } from '../../Data_Models/Party';
 import { Candidate } from '../../Data_Models/Candidate';
-
-import election_configuration from '../../Data/UC_Berkeley/2015/Configuration.json';
-import candidate_data from '../../Data/UC_Berkeley/2015/Candidates.json';
-import ballot_data from '../../Data/UC_Berkeley/2015/Ballots.json';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
@@ -63,16 +60,14 @@ function ElectionPage(props) {
         return null
     };
 
-    // Load Parties
-    const [parties, setParties] = useState(() => {
+    const loadParties = () => {
         return [new Party("CalSERVE", "21c46b"),
         new Party("Cooperative Movement Party (CMP)", "009933"), new Party("Student Action", "1779e3"),
         new Party("Independent", "818285"), new Party("Pirate Party", "9d00e6"),
-        new Party("Defend Affirmative Action Party (DAAP)", "f00b07"), new Party("SQUELCH!", "ffd900")]
-    });
+        new Party("Defend Affirmative Action Party (DAAP)", "f00b07"), new Party("SQUELCH!", "ffd900")];
+    }
 
-    // Load Races
-    const [races] = useState(() => {
+    const loadRaces = (election_configuration) => {
         let racesToAdd = []
         for (const race of election_configuration.races) {
             for (let i = 0; i < racesToAdd.length; i++)
@@ -80,14 +75,10 @@ function ElectionPage(props) {
                     continue;
             racesToAdd.push(new Race(race.race_id, race.race_position, race.race_max_winners));
         }
-        console.log(racesToAdd);
         return racesToAdd;
-    });
+    }
 
-    // Load Voters
-    const [voters] = useState(() => {
-        console.log("Loading Candidates")
-        // Load Candidates
+    const loadCandidates = (candidate_data) => {
         for (let key in candidate_data) {
             const race = find_race_by_name(key);
             if (race === null)
@@ -101,8 +92,12 @@ function ElectionPage(props) {
                 race.add_candidate(new Candidate(candidate.number, candidate.name, party));
             }
         }
+        setCandidatesLoaded(true);
 
-        console.log("Loading Voters")
+        return;
+    }
+
+    const loadVoters = (ballot_data) => {
         let voters = []
         for (const item of ballot_data.ballots) {
             let voter = new Voter(uuid())
@@ -123,12 +118,101 @@ function ElectionPage(props) {
             voters.push(voter);
         }
         return voters;
-    });
-    const [activeRace, setActiveRace] = useState(races[0]);
+    }
+
+    const [election_configuration, setElectionConfiguration] = useState([]);
+    const [candidate_data, setCandidateData] = useState([]);
+    const [ballot_data, setBallotData] = useState([]);
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    const [partiesLoaded, setPartiesLoaded] = useState(false);
+    const [racesLoaded, setRacesLoaded] = useState(false);
+    const [candidatesLoaded, setCandidatesLoaded] = useState(false);
+    const [votersLoaded, setVotersLoaded] = useState(false);
+
+    const [parties, setParties] = useState([]);
+    const [races, setRaces] = useState([]);
+    const [voters, setVoters] = useState([]);
+
+    const [activeRace, setActiveRace] = useState(null);
     const [speed] = useState(1000);
     const [refresh, setRefresh] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
     const [page, setPage] = useState(0);
+
+    useEffect(() => {
+        if (!isLoading)
+            setPartiesLoaded(true);
+    }, [parties]);
+
+    useEffect(() => {
+        if (!isLoading) {
+            if (activeRace === null)
+                setActiveRace(races[0]);
+            setRacesLoaded(true);
+        }
+    }, [races]);
+
+    useEffect(() => {
+        if (!isLoading)
+            setVotersLoaded(true);
+    }, [voters]);
+
+
+    useEffect(() => {
+        const loadData = async () => {
+            let electionId = props.match.params.electionId;
+
+            if (typeof (electionId) === "undefined") {
+                electionId = "UC_Berkeley";
+            }
+
+            let yearId = props.match.params.yearId;
+            if (typeof (yearId) === "undefined") {
+                yearId = "2015";
+            }
+
+            console.log("Loading Data From DataBase");
+
+            firebase.database().ref('elections/' + electionId + "/" + yearId).on('value', snapshot => {
+                setElectionConfiguration(snapshot.child('election_configuration').val());
+                setCandidateData(snapshot.child('candidate_data').val());
+                setBallotData(snapshot.child('ballot_data').val());
+                setIsLoading(false);
+            });
+        }
+
+        if (isLoading) {
+            loadData();
+            return;
+        }
+        if (!partiesLoaded) {
+            console.log("Loading Parties")
+            setParties(loadParties());
+        }
+
+        if (partiesLoaded && !racesLoaded) {
+            console.log("Loading Races");
+            setRaces(loadRaces(election_configuration));
+            return;
+        }
+
+        if (racesLoaded && !candidatesLoaded) {
+            console.log("Loading Candidates");
+            loadCandidates(candidate_data);
+            return;
+        }
+
+        if (candidatesLoaded && !votersLoaded) {
+            console.log("Loading Voters");
+            setVoters(loadVoters(ballot_data));
+        }
+        if (votersLoaded) {
+            console.log("Finished Loading");
+        }
+        console.log("Finished");
+    }, [isLoading, partiesLoaded, racesLoaded, candidatesLoaded, votersLoaded]);
 
     useInterval(() => {
         if (activeRace.state !== RoundState.COMPLETE && isRunning) {
@@ -156,6 +240,8 @@ function ElectionPage(props) {
     }
 
     // Render Everything
+    if (isLoading || activeRace == null)
+        return <h1> Loading... </h1>
 
     if (page === 0) {
         let electionButton = null;
@@ -177,7 +263,7 @@ function ElectionPage(props) {
         ));
 
         return (
-            <div class="text-center">
+            <div className="text-center">
                 <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
                     <Button disabled={true} variant="primary" size="lg">
                         {'Election'}

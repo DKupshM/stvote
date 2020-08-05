@@ -9,6 +9,7 @@
         "@testing-library/user-event": "^7.1.2",
         "bootstrap": "^4.5.0",
         "canvasjs": "^1.8.3",
+        "firebase": "^7.17.1",
         "immutable": "^4.0.0-rc.12",
         "lodash": "4.17.19",
         "object-sizeof": "^1.6.1",

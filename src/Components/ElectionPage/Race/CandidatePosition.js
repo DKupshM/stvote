@@ -26,6 +26,12 @@ function CandidatePosition(props) {
             return "danger";
     }
 
+    const get_position = () => {
+        if (Number.isInteger(props.position) && !Number.isNaN(props.position))
+            return props.position + 1;
+        return 0;
+    }
+
     const get_progress_max = () => {
         if (props.quota === 0)
             return 1;
@@ -34,7 +40,7 @@ function CandidatePosition(props) {
 
     return (
         <tr>
-            <td className="basic-row" width="1"> {props.position + 1} </td>
+            <td className="basic-row" width="1"> {get_position()} </td>
             <td className="basic-row" width="1"> {props.candidate.candidate_name} </td>
             <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_party.party_color }}> {props.candidate.candidate_party.party_name} </td >
             <td className="basic-row" width="1" style={{ backgroundColor: get_status_color() }}> {props.status} </td >
