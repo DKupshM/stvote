@@ -60,7 +60,16 @@ function ElectionPage(props) {
         return null
     };
 
-    const loadParties = () => {
+    const loadParties = (party_data) => {
+        let partiesToAdd = []
+        for (const party of party_data.parties) {
+            for (let i = 0; i < partiesToAdd.length; i++)
+                if (partiesToAdd.party_name === party.party_name)
+                    continue;
+            partiesToAdd.push(new Party(party.party_name, party.party_color));
+        }
+        return partiesToAdd;
+
         return [new Party("CalSERVE", "21c46b"),
         new Party("Cooperative Movement Party (CMP)", "009933"), new Party("Student Action", "1779e3"),
         new Party("Independent", "818285"), new Party("Pirate Party", "9d00e6"),
@@ -122,6 +131,7 @@ function ElectionPage(props) {
 
     const [election_configuration, setElectionConfiguration] = useState([]);
     const [candidate_data, setCandidateData] = useState([]);
+    const [party_data, setPartyData] = useState([]);
     const [ballot_data, setBallotData] = useState([]);
 
     const [isLoading, setIsLoading] = useState(true);
@@ -165,7 +175,7 @@ function ElectionPage(props) {
             let electionId = props.match.params.electionId;
 
             if (typeof (electionId) === "undefined") {
-                electionId = "UC_Berkeley";
+                electionId = "uc_berkeley";
             }
 
             let yearId = props.match.params.yearId;
@@ -173,11 +183,20 @@ function ElectionPage(props) {
                 yearId = "2015";
             }
 
-            console.log("Loading Data From DataBase");
+            let databaseString = 'elections/' + electionId + "/" + yearId;
 
-            firebase.database().ref('elections/' + electionId + "/" + yearId).on('value', snapshot => {
+            console.log("Loading Data From DataBase");
+            await firebase.database().ref(databaseString).once('value', snapshot => {
+                if (!snapshot.exists()) {
+                    console.log("Path Doesn't Exist, Loading Default Reference");
+                    databaseString = 'elections/uc_berkeley/2015';
+                }
+            });
+
+            firebase.database().ref(databaseString).once('value', snapshot => {
                 setElectionConfiguration(snapshot.child('election_configuration').val());
                 setCandidateData(snapshot.child('candidate_data').val());
+                setPartyData(snapshot.child('parties_data').val());
                 setBallotData(snapshot.child('ballot_data').val());
                 setIsLoading(false);
             });
@@ -189,7 +208,7 @@ function ElectionPage(props) {
         }
         if (!partiesLoaded) {
             console.log("Loading Parties")
-            setParties(loadParties());
+            setParties(loadParties(party_data));
         }
 
         if (partiesLoaded && !racesLoaded) {
@@ -291,7 +310,7 @@ function ElectionPage(props) {
         );
     } else {
         return (
-            <div class="text-center">
+            <div className="text-center">
                 <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
                     <Button onClick={() => setPage(0)} disabled={false} variant="primary" size="lg">
                         {'Election'}
@@ -303,20 +322,12 @@ function ElectionPage(props) {
                 <div className="title-text">
                     <h1> {activeRace.race_name} </h1>
                 </div>
-                <div style={{ width: "50%" }}>
-                    <FirstChoicePie race={activeRace} parties={parties} />
-                </div>
-                <div style={{ width: "50%" }}>
-                    <ElectedCandidatesPie race={activeRace} parties={parties} />
-                </div>
-                <div style={{ width: "50%" }}>
-                    <CandidatesRanked race={activeRace} parties={parties} />
-                </div>
-                <div style={{ width: "50%" }}>
-                    <PartyPercentage race={activeRace} parties={parties} />
-                </div>
-                <div style={{ width: "50%" }}>
-                    <EventualWinner race={activeRace} />
+                <div>
+                    <FirstChoicePie race={activeRace} parties={parties} style={{ width: "200 px" }} />
+                    <ElectedCandidatesPie race={activeRace} parties={parties} style={{ width: "200 px" }} />
+                    <CandidatesRanked race={activeRace} parties={parties} style={{ width: "200 px" }} />
+                    <PartyPercentage race={activeRace} parties={parties} style={{ width: "200 px" }} />
+                    <EventualWinner race={activeRace} style={{ width: "200 px" }} />
                 </div>
             </div >
         );

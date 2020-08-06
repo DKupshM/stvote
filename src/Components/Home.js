@@ -9,7 +9,7 @@ function Home(props) {
     }
     const CreateSelectButton = (election_title, years) => {
         let yearButtons = years.map((item, index) => (
-            <Button key={index} href={"/stvote/election/" + "UC_Berkeley" + "/" + item} onClick={() => OnClick(election_title, item)}>{item}</Button>
+            <Button key={index} href={"/stvote/election/" + "uc_berkeley" + "/" + item} onClick={() => OnClick(election_title, item)}>{item}</Button>
         ));
 
         return (
@@ -20,7 +20,7 @@ function Home(props) {
         );
     }
 
-    let asuc = CreateSelectButton('ASUC Berkeley', [2015, 2019, 2020]);
+    let asuc = CreateSelectButton('ASUC Berkeley', [2015, 2016, 2017, 2018, 2019, 2020]);
     let asucsb = CreateSelectButton('ASUC Santa Barbara', [2018, 2019, 2020]);
     let asucsd = CreateSelectButton('AS UC San Diego', [2018, 2019, 2020]);
     let asucd = CreateSelectButton('AS UC Davis', [2018, 2019, 2020]);

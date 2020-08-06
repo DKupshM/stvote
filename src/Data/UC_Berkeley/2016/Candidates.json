@@ -1,0 +1,324 @@
+{
+    "Academic Affairs Vice President": [
+        {
+            "name": "Nancy Murillo",
+            "number": "12",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Frances McGinley",
+            "number": "13",
+            "party": "Student Action"
+        },
+        {
+            "name": "Kathy Tran",
+            "number": "14",
+            "party": "CalSERVE"
+        }
+    ],
+    "Executive Vice President": [
+        {
+            "name": "Alicia Lau",
+            "number": "6",
+            "party": "Student Action"
+        },
+        {
+            "name": "Thomas Moore",
+            "number": "7",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Wes Adrianson",
+            "number": "8",
+            "party": "CalSERVE"
+        }
+    ],
+    "External Affairs Vice President": [
+        {
+            "name": "Aarefah Mosavi",
+            "number": "9",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Boomer Vicente",
+            "number": "10",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Andre Luu",
+            "number": "11",
+            "party": "Student Action"
+        }
+    ],
+    "President": [
+        {
+            "name": "Sheena Paul",
+            "number": "1",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Michael Cortez-Mejia",
+            "number": "2",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Andrea \"Kira the Husky\" Rose",
+            "number": "3",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "James Bacon",
+            "number": "4",
+            "party": "Independent"
+        },
+        {
+            "name": "Will Morrow",
+            "number": "5",
+            "party": "Student Action"
+        }
+    ],
+    "Senator": [
+        {
+            "name": "Michael Cortez-Mejia",
+            "number": "17",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Hannah Dobrott",
+            "number": "18",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Tyler \"The Chef\" Nguyen",
+            "number": "19",
+            "party": "Independent"
+        },
+        {
+            "name": "Stephanie Nicole Garcia",
+            "number": "20",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Azucena Zepeda",
+            "number": "21",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Erfan Moradi",
+            "number": "22",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Susan Cifuentes",
+            "number": "23",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Thomas Moore",
+            "number": "24",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "David Colby",
+            "number": "25",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "John Bosshard",
+            "number": "26",
+            "party": "Independent"
+        },
+        {
+            "name": "Nancy Murillo",
+            "number": "27",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Alaa Aissi",
+            "number": "28",
+            "party": "Independent"
+        },
+        {
+            "name": "Julia Osborne",
+            "number": "29",
+            "party": "Defend Affirmative Action Party"
+        },
+        {
+            "name": "Alyssa Liu",
+            "number": "30",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Axenya Kachen",
+            "number": "31",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Benyamin Mohd Yusof",
+            "number": "32",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Bianca Rodriguez",
+            "number": "33",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Chris Yamas",
+            "number": "34",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Danielle Miguel",
+            "number": "35",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Jason Tu",
+            "number": "36",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Jenny Kim",
+            "number": "37",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Jerry Javier",
+            "number": "38",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Juli Adhikari",
+            "number": "39",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Maddy Abroms",
+            "number": "40",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Rigel Robinson",
+            "number": "41",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Rosa Kwak",
+            "number": "42",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Zaynab AbdulQadir",
+            "number": "43",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Anthony \"420 Blaze It\" Carrasco",
+            "number": "44",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Guillermo \"With the Flow\" Perez",
+            "number": "45",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Marandah \"Playing the\" Field-Elliot",
+            "number": "46",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Bianca Filart",
+            "number": "47",
+            "party": "Student Action"
+        },
+        {
+            "name": "Stephen Goode Jr",
+            "number": "48",
+            "party": "Student Action"
+        },
+        {
+            "name": "Annie Tran",
+            "number": "49",
+            "party": "Student Action"
+        },
+        {
+            "name": "Paul Iskajyan",
+            "number": "50",
+            "party": "Student Action"
+        },
+        {
+            "name": "Nathan Kelleher",
+            "number": "51",
+            "party": "Student Action"
+        },
+        {
+            "name": "Shauna Satnick",
+            "number": "52",
+            "party": "Student Action"
+        },
+        {
+            "name": "Ramzy Azar",
+            "number": "53",
+            "party": "Student Action"
+        },
+        {
+            "name": "Monsoon Pabrai",
+            "number": "54",
+            "party": "Student Action"
+        },
+        {
+            "name": "Helen Yuan",
+            "number": "55",
+            "party": "Student Action"
+        },
+        {
+            "name": "Miranda Hernandez",
+            "number": "56",
+            "party": "Student Action"
+        },
+        {
+            "name": "Fred Nichols",
+            "number": "57",
+            "party": "Student Action"
+        },
+        {
+            "name": "Wesley Wan",
+            "number": "58",
+            "party": "Student Action"
+        },
+        {
+            "name": "Xiao Li",
+            "number": "59",
+            "party": "Student Action"
+        },
+        {
+            "name": "Jay Choi",
+            "number": "60",
+            "party": "Student Action"
+        },
+        {
+            "name": "Ian Bullitt",
+            "number": "61",
+            "party": "Student Action"
+        },
+        {
+            "name": "Elise Hayashi",
+            "number": "62",
+            "party": "Student Action"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Selina Lao",
+            "number": "15",
+            "party": "Independent"
+        },
+        {
+            "name": "Stephanie Nicole Garcia",
+            "number": "16",
+            "party": "Defend Affirmative Action Party"
+        }
+    ]
+}

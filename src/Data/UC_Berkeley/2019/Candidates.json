@@ -1,0 +1,229 @@
+{
+    "Academic Affairs Vice President": [
+        {
+            "name": "Regan Putnam",
+            "number": "8",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Aastha Jha",
+            "number": "9",
+            "party": "Student Action"
+        }
+    ],
+    "Executive Vice President": [
+        {
+            "name": "Andy Theocharous",
+            "number": "5",
+            "party": "Student Action"
+        },
+        {
+            "name": "Maureen Simmons",
+            "number": "6",
+            "party": "CalSERVE"
+        }
+    ],
+    "External Affairs Vice President": [
+        {
+            "name": "Varsha Sarveshwar",
+            "number": "7",
+            "party": "CalSERVE"
+        }
+    ],
+    "President": [
+        {
+            "name": "Wyatt Allan Colby",
+            "number": "1",
+            "party": "Independent"
+        },
+        {
+            "name": "Teddy Lake",
+            "number": "2",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Amma Sarkodee-Adoo",
+            "number": "3",
+            "party": "Student Action"
+        },
+        {
+            "name": "Stephanie Gutierrez",
+            "number": "4",
+            "party": "Independent"
+        }
+    ],
+    "Senator": [
+        {
+            "name": "Haile Amonson",
+            "number": "11",
+            "party": "Independent"
+        },
+        {
+            "name": "Liam Will",
+            "number": "12",
+            "party": "Independent"
+        },
+        {
+            "name": "Rebecca Soo",
+            "number": "13",
+            "party": "Independent"
+        },
+        {
+            "name": "Cameron Deptula",
+            "number": "14",
+            "party": "Independent"
+        },
+        {
+            "name": "Stephanie Gutierrez",
+            "number": "15",
+            "party": "Independent"
+        },
+        {
+            "name": "Sylvia Targ",
+            "number": "16",
+            "party": "Independent"
+        },
+        {
+            "name": "Esteban Tabares",
+            "number": "17",
+            "party": "Independent"
+        },
+        {
+            "name": "Sumrit Grewal",
+            "number": "18",
+            "party": "Independent"
+        },
+        {
+            "name": "Eatone Cheng",
+            "number": "19",
+            "party": "Independent"
+        },
+        {
+            "name": "Emma Shearin",
+            "number": "20",
+            "party": "Independent"
+        },
+        {
+            "name": "Shelby Weiss",
+            "number": "21",
+            "party": "Student Action"
+        },
+        {
+            "name": "Jeremiah Kim",
+            "number": "22",
+            "party": "Student Action"
+        },
+        {
+            "name": "Jenny Jungmin Kim",
+            "number": "23",
+            "party": "Student Action"
+        },
+        {
+            "name": "Evina Wang",
+            "number": "24",
+            "party": "Student Action"
+        },
+        {
+            "name": "Carolyn Le",
+            "number": "25",
+            "party": "Student Action"
+        },
+        {
+            "name": "Melvin Tangonan",
+            "number": "26",
+            "party": "Student Action"
+        },
+        {
+            "name": "Ali Jafri",
+            "number": "27",
+            "party": "Student Action"
+        },
+        {
+            "name": "Derek Imai",
+            "number": "28",
+            "party": "Student Action"
+        },
+        {
+            "name": "Joseph Besgen",
+            "number": "29",
+            "party": "Student Action"
+        },
+        {
+            "name": "Rocky Gerosa",
+            "number": "30",
+            "party": "Student Action"
+        },
+        {
+            "name": "Sitara Bellam",
+            "number": "31",
+            "party": "Student Action"
+        },
+        {
+            "name": "Leslie Vasquez Guzman",
+            "number": "32",
+            "party": "Student Action"
+        },
+        {
+            "name": "Haazim Amirali",
+            "number": "33",
+            "party": "Student Action"
+        },
+        {
+            "name": "Emily Fregoso",
+            "number": "34",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Yesenia Solis",
+            "number": "35",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Romario",
+            "number": "36",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Media Sina",
+            "number": "37",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Nicole Anyanwu",
+            "number": "38",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Pedro De Anda Plascencia",
+            "number": "39",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Omotara Oloye",
+            "number": "40",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Amy \"Amy M Chon\" Mori",
+            "number": "41",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Yousef Moneer",
+            "number": "42",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Milton Zerman",
+            "number": "43",
+            "party": "Students First"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Nava Bearson",
+            "number": "10",
+            "party": "Independent"
+        }
+    ]
+}

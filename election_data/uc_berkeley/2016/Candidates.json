@@ -1,0 +1,324 @@
+{
+    "Academic Affairs Vice President": [
+        {
+            "name": "Nancy \"DAAP\" Murillo",
+            "number": "12",
+            "party": "Independent"
+        },
+        {
+            "name": "Frances McGinley",
+            "number": "13",
+            "party": "Student Action"
+        },
+        {
+            "name": "Kathy Tran",
+            "number": "14",
+            "party": "CalSERVE"
+        }
+    ],
+    "Executive Vice President": [
+        {
+            "name": "Alicia Lau",
+            "number": "6",
+            "party": "Student Action"
+        },
+        {
+            "name": "Thomas \"DAAP\" Moore",
+            "number": "7",
+            "party": "Independent"
+        },
+        {
+            "name": "Wes Adrianson",
+            "number": "8",
+            "party": "CalSERVE"
+        }
+    ],
+    "External Affairs Vice President": [
+        {
+            "name": "Aarefah \"DAAP\" Mosavi",
+            "number": "9",
+            "party": "Independent"
+        },
+        {
+            "name": "Boomer Vicente",
+            "number": "10",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "ANDRE LUU",
+            "number": "11",
+            "party": "Student Action"
+        }
+    ],
+    "President": [
+        {
+            "name": "Sheena Paul",
+            "number": "1",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Michael \"DAAP\" Cortez-Mejia",
+            "number": "2",
+            "party": "Independent"
+        },
+        {
+            "name": "Andrea \"Kira the Husky\" Rose",
+            "number": "3",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "James Bacon",
+            "number": "4",
+            "party": "Independent"
+        },
+        {
+            "name": "Will Morrow",
+            "number": "5",
+            "party": "Student Action"
+        }
+    ],
+    "Senator": [
+        {
+            "name": "Michael \"DAAP\" Cortez-Mejia",
+            "number": "17",
+            "party": "Independent"
+        },
+        {
+            "name": "Hannah \"DAAP\" Dobrott",
+            "number": "18",
+            "party": "Independent"
+        },
+        {
+            "name": "Tyler \"The Chef\" Nguyen",
+            "number": "19",
+            "party": "Independent"
+        },
+        {
+            "name": "Stephanie Nicole \"DAAP\" Garcia",
+            "number": "20",
+            "party": "Independent"
+        },
+        {
+            "name": "Azucena \"DAAP\" Zepeda",
+            "number": "21",
+            "party": "Independent"
+        },
+        {
+            "name": "Erfan \"DAAP\" Moradi",
+            "number": "22",
+            "party": "Independent"
+        },
+        {
+            "name": "Susan \"DAAP\" Cifuentes",
+            "number": "23",
+            "party": "Independent"
+        },
+        {
+            "name": "Thomas \"DAAP\" Moore",
+            "number": "24",
+            "party": "Independent"
+        },
+        {
+            "name": "David \"DAAP\" Colby",
+            "number": "25",
+            "party": "Independent"
+        },
+        {
+            "name": "John Bosshard",
+            "number": "26",
+            "party": "Independent"
+        },
+        {
+            "name": "Nancy \"DAAP\" Murillo",
+            "number": "27",
+            "party": "Independent"
+        },
+        {
+            "name": "Alaa Aissi",
+            "number": "28",
+            "party": "Independent"
+        },
+        {
+            "name": "Julia \"DAAP\" Osborne",
+            "number": "29",
+            "party": "Independent"
+        },
+        {
+            "name": "Alyssa Liu",
+            "number": "30",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Axenya Kachen",
+            "number": "31",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Benyamin Mohd Yusof",
+            "number": "32",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Bianca Rodriguez",
+            "number": "33",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Chris Yamas",
+            "number": "34",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Danielle Miguel",
+            "number": "35",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Jason Tu",
+            "number": "36",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "JENNY KIM",
+            "number": "37",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Jerry Javier",
+            "number": "38",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Juli Adhikari",
+            "number": "39",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Maddy Abroms",
+            "number": "40",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Rigel Robinson",
+            "number": "41",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Rosa Kwak",
+            "number": "42",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Zaynab AbdulQadir",
+            "number": "43",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Anthony \"420 Blaze It\" Carrasco",
+            "number": "44",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Guillermo \"With the Flow\" Perez",
+            "number": "45",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Marandah \"Playing the\" Field-Elliot",
+            "number": "46",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "BIANCA FILART",
+            "number": "47",
+            "party": "Student Action"
+        },
+        {
+            "name": "Stephen Goode Jr",
+            "number": "48",
+            "party": "Student Action"
+        },
+        {
+            "name": "ANNIE TRAN",
+            "number": "49",
+            "party": "Student Action"
+        },
+        {
+            "name": "PAUL ISKAJYAN",
+            "number": "50",
+            "party": "Student Action"
+        },
+        {
+            "name": "Nathan Kelleher",
+            "number": "51",
+            "party": "Student Action"
+        },
+        {
+            "name": "Shauna Satnick",
+            "number": "52",
+            "party": "Student Action"
+        },
+        {
+            "name": "Ramzy Azar",
+            "number": "53",
+            "party": "Student Action"
+        },
+        {
+            "name": "MONSOON PABRAI",
+            "number": "54",
+            "party": "Student Action"
+        },
+        {
+            "name": "Helen Yuan",
+            "number": "55",
+            "party": "Student Action"
+        },
+        {
+            "name": "MIRANDA HERNANDEZ",
+            "number": "56",
+            "party": "Student Action"
+        },
+        {
+            "name": "Fred Nichols",
+            "number": "57",
+            "party": "Student Action"
+        },
+        {
+            "name": "Wesley Wan",
+            "number": "58",
+            "party": "Student Action"
+        },
+        {
+            "name": "XIAO LI",
+            "number": "59",
+            "party": "Student Action"
+        },
+        {
+            "name": "JAY CHOI",
+            "number": "60",
+            "party": "Student Action"
+        },
+        {
+            "name": "Ian Bullitt",
+            "number": "61",
+            "party": "Student Action"
+        },
+        {
+            "name": "Elise Hayashi",
+            "number": "62",
+            "party": "Student Actio"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Selina Lao",
+            "number": "15",
+            "party": "Independent"
+        },
+        {
+            "name": "Stephanie Nicole \"DAAP\" Garcia",
+            "number": "16",
+            "party": "Independent"
+        }
+    ]
+}
