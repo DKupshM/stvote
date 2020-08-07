@@ -1,32 +1,38 @@
-import React from 'react';
-import firebase from 'firebase';
+import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button'
 
-import election_configuration from '../Data/UC_Berkeley/2018/Configuration.json';
-import candidate_data from '../Data/UC_Berkeley/2018/Candidates.json';
-import ballot_data from '../Data/UC_Berkeley/2018/Ballots.json';
-import parties from '../Data/UC_Berkeley/2018/Parties.json';
+import { Form } from 'react-bootstrap';
 
 function AddToDatabase() {
     const AddToDB = () => {
-        let uc_berkeley =
-            ({ election_configuration: election_configuration, candidate_data: candidate_data, ballot_data: ballot_data, parties_data: parties });
-        firebase.database().ref('elections/uc_berkeley/2018').set(uc_berkeley);
-        alert("Added To Database");
+        console.log(election_configuration);
+        alert("hello!");
     }
 
-    const DeleteFromDB = () => {
-        firebase.database().ref('elections/uc_berkeley/2017').remove();
-        alert("Deleted From Database");
-    }
+    const election_configuration = useRef(null);
+    const party_data = useRef(null);
+    const candidate_data = useRef(null);
+    const ballot_data = useRef(null);
 
     return (
         <div className="text-center">
             <h1> Add to Database </h1>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
-                <Button onClick={AddToDB}>Add To Database</Button>
-                <Button onClick={DeleteFromDB}>Delete From Database</Button>
-            </div>
+            <Form onSubmit={AddToDB}>
+                <Form.Group>
+
+                </Form.Group>
+                <Form.Group style={{ display: 'grid', justifyItems: 'center' }}>
+                    <Form.File ref={election_configuration} label="Election Configuration" />
+                    <Form.File ref={party_data} label="Party Data" />
+                    <Form.File ref={candidate_data} label="Candidate Data" />
+                    <Form.File ref={ballot_data} label="Ballot Data" />
+                </Form.Group>
+                <Form.Group>
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Form.Group>
+            </Form>
         </div >
     );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CandidateState } from '../../../Data_Models/Candidate';
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressBar from './ProgressBar';
 import '../ElectionPage.css'
 
 function CandidatePosition(props) {
@@ -15,15 +15,15 @@ function CandidatePosition(props) {
             return "#FF0000";
     }
 
-    const get_progress_variant = () => {
+    const get_status_text = () => {
         if (props.status === CandidateState.ELECTED)
-            return "success";
+            return "ELECTED";
         else if (props.status === CandidateState.RUNNING)
-            return "info";
+            return "RUNNING";
         else if (props.status === CandidateState.TRANSFERRING)
-            return "warning";
+            return "TRANSFERRING";
         else if (props.status === CandidateState.TRANSFERED)
-            return "danger";
+            return "TRANSFERED";
     }
 
     const get_position = () => {
@@ -32,10 +32,10 @@ function CandidatePosition(props) {
         return 0;
     }
 
-    const get_progress_max = () => {
+    const get_percentage = () => {
         if (props.quota === 0)
-            return 1;
-        return props.quota;
+            return 0;
+        return Math.min(100, (props.score / props.quota) * 100);
     }
 
     return (
@@ -43,10 +43,12 @@ function CandidatePosition(props) {
             <td className="basic-row" width="1"> {get_position()} </td>
             <td className="basic-row" width="1"> {props.candidate.candidate_name} </td>
             <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_party.party_color }}> {props.candidate.candidate_party.party_name} </td >
-            <td className="basic-row" width="1" style={{ backgroundColor: get_status_color() }}> {props.status} </td >
-            <td className="basic-row" width="1" style={{ backgroundColor: get_status_color() }}> {Math.floor(props.score)} </td >
-            <td style={{ padding: "0", margin: "0" }}>
-                <ProgressBar variant={get_progress_variant()} max={get_progress_max()} min={0} now={props.score} style={{ height: "48px", borderRadius: 0 }} />
+            <td className="basic-row" width="150" style={{ backgroundColor: get_status_color() }}> {get_status_text()} </td >
+            <td className="basic-row" width="100" style={{ backgroundColor: get_status_color() }}> {Math.floor(props.score)} </td >
+            <td style={{ padding: "0 0 0 0", margin: "0 0 0 0" }}>
+                <div style={{ display: 'inline-block', width: '100%', height: '100%' }}>
+                    <ProgressBar bgcolor={get_status_color()} completed={get_percentage()} />
+                </div>
             </td >
         </tr >
     );

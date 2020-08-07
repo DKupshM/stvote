@@ -69,11 +69,6 @@ function ElectionPage(props) {
             partiesToAdd.push(new Party(party.party_name, party.party_color));
         }
         return partiesToAdd;
-
-        return [new Party("CalSERVE", "21c46b"),
-        new Party("Cooperative Movement Party (CMP)", "009933"), new Party("Student Action", "1779e3"),
-        new Party("Independent", "818285"), new Party("Pirate Party", "9d00e6"),
-        new Party("Defend Affirmative Action Party (DAAP)", "f00b07"), new Party("SQUELCH!", "ffd900")];
     }
 
     const loadRaces = (election_configuration) => {
@@ -154,7 +149,7 @@ function ElectionPage(props) {
     useEffect(() => {
         if (!isLoading)
             setPartiesLoaded(true);
-    }, [parties]);
+    }, [parties]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (!isLoading) {
@@ -162,12 +157,12 @@ function ElectionPage(props) {
                 setActiveRace(races[0]);
             setRacesLoaded(true);
         }
-    }, [races]);
+    }, [races]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         if (!isLoading)
             setVotersLoaded(true);
-    }, [voters]);
+    }, [voters]);  // eslint-disable-line react-hooks/exhaustive-deps
 
 
     useEffect(() => {
@@ -231,7 +226,7 @@ function ElectionPage(props) {
             console.log("Finished Loading");
         }
         console.log("Finished");
-    }, [isLoading, partiesLoaded, racesLoaded, candidatesLoaded, votersLoaded]);
+    }, [isLoading, partiesLoaded, racesLoaded, candidatesLoaded, votersLoaded]);  // eslint-disable-line react-hooks/exhaustive-deps
 
     useInterval(() => {
         if (activeRace.state !== RoundState.COMPLETE && isRunning) {
