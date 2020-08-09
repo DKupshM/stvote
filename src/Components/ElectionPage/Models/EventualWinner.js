@@ -46,10 +46,11 @@ function CandidatesRanked(props) {
     }
 
     let options = {
+        responsive: true,
+        maintainAspectRatio: true,
         animationEnabled: true,
         axisX: {
             title: "Round",
-            interval: 1,
             maximum: maxChoices,
             minimum: 1,
             offset: true,
@@ -62,7 +63,7 @@ function CandidatesRanked(props) {
             shared: true
         },
         title: {
-            text: props.race.race_name + ": Percentage that Ranked Elected Candidate",
+            text: "Voters that Ranked an Elected Candidate",
         },
         legend: {
             verticalAlign: "top"
@@ -71,7 +72,7 @@ function CandidatesRanked(props) {
             [{
                 type: "stackedArea100",
                 markerType: "none",
-                name: "Choosen Elected",
+                name: "A Choice Elected",
                 toolTipContent: "{name}: {y} (#percent %)",
                 showInLegend: "true",
                 dataPoints: electeddatapoints,
@@ -87,7 +88,7 @@ function CandidatesRanked(props) {
     }
 
     return (
-        <div>
+        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
             <CanvasJSChart options={options} />
         </div>
     );

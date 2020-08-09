@@ -46,10 +46,10 @@ function AddToDatabase() {
                     <Form.Control type="text" value={year} onChange={(event) => setYear(event.target.value)} placeholder="Year" />
                 </Form.Group>
                 <Form.Group style={{ display: 'grid', justifyItems: 'center' }}>
-                    <Form.File onChange={(event) => onChange(event, setElectionConfiguration)} accept='.json' label="Election Configuration" />
-                    <Form.File onChange={(event) => onChange(event, setPartyData)} label="Party Data" />
-                    <Form.File onChange={(event) => onChange(event, setCandidateData)} label="Candidate Data" />
-                    <Form.File onChange={(event) => onChange(event, setBallotData)} label="Ballot Data" />
+                    <Form.File onChange={(event) => onChange(event, setElectionConfiguration)} accept='.json' label="Election Configuration" style={{ backgroundColor: 'grey', margin: '5px' }} />
+                    <Form.File onChange={(event) => onChange(event, setPartyData)} label="Party Data" style={{ backgroundColor: 'grey', margin: '5px' }} />
+                    <Form.File onChange={(event) => onChange(event, setCandidateData)} label="Candidate Data" style={{ backgroundColor: 'grey', margin: '5px' }} />
+                    <Form.File onChange={(event) => onChange(event, setBallotData)} label="Ballot Data" style={{ backgroundColor: 'grey', margin: '5px' }} />
                 </Form.Group>
                 <Form.Group>
                     <Button variant="primary" type="submit">

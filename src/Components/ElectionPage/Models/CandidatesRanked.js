@@ -49,20 +49,21 @@ function CandidatesRanked(props) {
     }
     let options = {
         animationEnabled: true,
+        responsive: true,
+        maintainAspectRatio: true,
         axisX: {
             title: "Candidates Ranked",
-            interval: 1,
             maximum: maxChoices + .5,
             offset: true,
         },
         axisY: {
-            title: "Amount",
+            title: "Amount Of Voters",
         },
         toolTip: {
             shared: true
         },
         title: {
-            text: props.race.race_name + ": Candidates Rank",
+            text: "Candidates Ranked",
         },
         legend: {
             verticalAlign: "top"
@@ -71,7 +72,7 @@ function CandidatesRanked(props) {
     }
 
     return (
-        <div>
+        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
             <CanvasJSChart options={options} />
         </div>
     );

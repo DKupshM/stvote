@@ -232,13 +232,13 @@ function ElectionPage(props) {
 
     useInterval(() => {
         if (activeRace.state !== RoundState.COMPLETE && isRunning) {
-            for (let i = 0; i < Math.floor(speed / 60); i++)
+            for (let i = 0; i < Math.floor(speed / 10); i++)
                 activeRace.run_race_step();
             setRefresh(!refresh);
         } else {
             setIsRunning(false)
         }
-    }, isRunning ? 16 : null)
+    }, isRunning ? 100 : null)
 
     const switchActiveRace = (race) => {
         setIsRunning(false);
@@ -254,82 +254,94 @@ function ElectionPage(props) {
         setRefresh(!refresh);
     }
 
+
     // Render Everything
     if (isLoading || activeRace == null)
         return <h1> Loading... </h1>
 
+    const pageButtonStyle = { borderRadius: 0, height: "100%", width: '50%' };
+    let pageButtons = (
+        <ButtonGroup size="lg" style={{ width: "100%", height: "50", padding: 0, margin: 0 }}>
+            <Button onClick={() => setPage(0)} disabled={page === 0} variant="secondary" size="lg" style={pageButtonStyle}>
+                {'Election'}
+            </Button>
+            <Button onClick={() => setPage(1)} disabled={page === 1} variant="secondary" size="lg" style={pageButtonStyle}>
+                {'Charts'}
+            </Button>
+        </ButtonGroup>
+    );
+
+    let raceTitle = (
+        <div className="title-text" style={{ width: '100%', backgroundColor: 'grey', margin: '1% 2.5% 1% 2.5%', borderRadius: '5px' }}>
+            <h1 style={{ font: '3.5rem/1 arial, sans-serif', color: 'white', textAlign: 'center', padding: '1%' }}> {activeRace.race_name} </h1>
+        </div>
+    );
+
     if (page === 0) {
-        let electionButton = null;
-        if (!isRunning) {
-            electionButton =
-                <Button onClick={() => setIsRunning(true)} disabled={false} variant="primary" size="lg">
-                    {'Run Election'}
-                </Button>
-        }
-        else {
-            electionButton =
-                <Button onClick={null} disabled={true} variant="primary" size="lg">
-                    {'Election is Running...'}
-                </Button>
-        }
 
         let dropdownItems = races.map((item, index) => (
             <Dropdown.Item key={index} as="button" onClick={() => switchActiveRace(item)} > {item.race_name}</Dropdown.Item >
         ));
 
         return (
-            <div className="text-center">
-                <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
-                    <Button disabled={true} variant="primary" size="lg">
-                        {'Election'}
-                    </Button>
-                    <Button onClick={() => setPage(1)} disabled={false} variant="primary" size="lg">
-                        {'Charts'}
-                    </Button>
-                </ButtonGroup>
-                <div className="title-text">
-                    <h1> {activeRace.race_name} </h1>
-                </div>
-                <div className="election-table">
+            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap' }}>
+                {pageButtons}
+                {raceTitle}
+                <div className="election-table" style={{ width: '100%' }}>
                     <CandidateList candidates={activeRace.candidateTable} refresh={refresh} />
                 </div>
-                <RangeSlider
-                    min={1}
-                    max={5000}
-                    value={speed}
-                    onChange={changeEvent => setSpeed(changeEvent.target.value)}
-                />
-                <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
-                    <DropdownButton id="dropdown-item-button" as={ButtonGroup} title="Change Race" variant="primary" size="lg">
+                <ButtonGroup size="lg" style={{ borderRadius: '5px', width: '100%', margin: '0% 2.5% 0% 2.5%' }}>
+                    <DropdownButton id="dropdown-item-button" as={ButtonGroup} title="Change Race" variant="primary" size="lg" style={{ boxShadow: '0 0 0 1px black', borderRadius: '5px 0px 0px 5px' }}>
                         {dropdownItems}
                     </DropdownButton>
-                    {electionButton}
-                    <Button onClick={finishRaces} disabled={false} variant="primary" size="lg">
+                    <Button onClick={() => setIsRunning(true)} disabled={isRunning} variant="primary" style={{ boxShadow: '0 0 0 1px black', width: '5%' }}>
+                        {'Run Election'}
+                    </Button>
+                    <Button onClick={finishRaces} disabled={false} variant="primary" style={{ boxShadow: '0 0 0 1px black', width: '5%' }}>
                         {'Finish Races'}
                     </Button>
+                    <div style={{ boxShadow: '0 0 0 1px black', backgroundColor: '#007bff', width: '30%', borderRadius: '0px 5px 5px 0px' }}>
+                        <label style={{ font: '1.3rem/1 arial, sans-serif', color: 'white', textAlign: 'center', padding: '5% 0 0 0' }}>
+                            Speed
+                        </label>
+                        <div style={{ margin: '0% 5% 0% 5%' }}>
+                            <RangeSlider
+                                min={0}
+                                max={10000}
+                                step={10}
+                                value={speed}
+                                variant="secondary"
+                                onChange={changeEvent => setSpeed(changeEvent.target.value)}
+                            />
+                        </div>
+                    </div>
                 </ButtonGroup>
             </div >
         );
     } else {
+        let chartStyle = {
+            alignSelf: 'center', width: '40vw'
+        }
         return (
-            <div className="text-center">
-                <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
-                    <Button onClick={() => setPage(0)} disabled={false} variant="primary" size="lg">
-                        {'Election'}
-                    </Button>
-                    <Button disabled={true} variant="primary" size="lg">
-                        {'Charts'}
-                    </Button>
-                </ButtonGroup>
-                <div className="title-text">
-                    <h1> {activeRace.race_name} </h1>
-                </div>
-                <div>
-                    <FirstChoicePie race={activeRace} parties={parties} style={{ width: "200 px" }} />
-                    <ElectedCandidatesPie race={activeRace} parties={parties} style={{ width: "200 px" }} />
-                    <CandidatesRanked race={activeRace} parties={parties} style={{ width: "200 px" }} />
-                    <PartyPercentage race={activeRace} parties={parties} style={{ width: "200 px" }} />
-                    <EventualWinner race={activeRace} style={{ width: "200 px" }} />
+            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap' }}>
+                {pageButtons}
+                {raceTitle}
+                <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={chartStyle}>
+                        <FirstChoicePie race={activeRace} parties={parties} />
+                    </div>
+                    <div style={chartStyle}>
+                        <ElectedCandidatesPie race={activeRace} parties={parties} />
+                    </div>
+                    <div style={chartStyle}>
+                        <CandidatesRanked race={activeRace} parties={parties} />
+                    </div>
+                    <div style={chartStyle}>
+                        <PartyPercentage race={activeRace} parties={parties} />
+                    </div>
+                    <div style={chartStyle}>
+                        <EventualWinner race={activeRace} />
+                    </div>
                 </div>
             </div >
         );

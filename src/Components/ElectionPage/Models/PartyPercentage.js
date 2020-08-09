@@ -51,10 +51,11 @@ function PartyPercentage(props) {
     }
 
     let options = {
+        responsive: true,
+        maintainAspectRatio: false,
         animationEnabled: true,
         axisX: {
             title: "Round",
-            interval: 1,
             minimum: 1,
             maximum: maxchoices + 1,
             offset: true,
@@ -67,7 +68,7 @@ function PartyPercentage(props) {
             shared: true
         },
         title: {
-            text: props.race.race_name + " Vote Distribution by Round",
+            text: "Vote Distribution by Round",
         },
         legend: {
             verticalAlign: "top"
@@ -76,7 +77,7 @@ function PartyPercentage(props) {
     }
 
     return (
-        <div>
+        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
             <CanvasJSChart options={options} />
         </div>
     );
