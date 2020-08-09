@@ -1,0 +1,29 @@
+{
+    "parties": [
+        {
+            "party_id": 1,
+            "party_name": "Student Action",
+            "party_color": "1779e3"
+        },
+        {
+            "party_id": 2,
+            "party_name": "Rebuild",
+            "party_color": "C504EF"
+        },
+        {
+            "party_id": 3,
+            "party_name": "People's Party",
+            "party_color": "EFEC04"
+        },
+        {
+            "party_id": 4,
+            "party_name": "DAAP FIRE",
+            "party_color": "ED0000"
+        },
+        {
+            "party_id": 5,
+            "party_name": "Independent",
+            "party_color": "818285"
+        }
+    ]
+}

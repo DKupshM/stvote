@@ -6,6 +6,8 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { Dropdown } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import RangeSlider from 'react-bootstrap-range-slider';
 
 import useInterval from '../Hooks/useInterval';
 import CandidateList from './Race/CandidateList';
@@ -141,7 +143,7 @@ function ElectionPage(props) {
     const [voters, setVoters] = useState([]);
 
     const [activeRace, setActiveRace] = useState(null);
-    const [speed] = useState(1000);
+    const [speed, setSpeed] = useState(1000);
     const [refresh, setRefresh] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
     const [page, setPage] = useState(0);
@@ -230,14 +232,13 @@ function ElectionPage(props) {
 
     useInterval(() => {
         if (activeRace.state !== RoundState.COMPLETE && isRunning) {
-
-            for (let i = 0; i < Math.floor(speed / 50); i++)
+            for (let i = 0; i < Math.floor(speed / 60); i++)
                 activeRace.run_race_step();
             setRefresh(!refresh);
         } else {
             setIsRunning(false)
         }
-    }, isRunning ? Math.min(1000 / speed, 20) : null)
+    }, isRunning ? 16 : null)
 
     const switchActiveRace = (race) => {
         setIsRunning(false);
@@ -292,6 +293,12 @@ function ElectionPage(props) {
                 <div className="election-table">
                     <CandidateList candidates={activeRace.candidateTable} refresh={refresh} />
                 </div>
+                <RangeSlider
+                    min={1}
+                    max={5000}
+                    value={speed}
+                    onChange={changeEvent => setSpeed(changeEvent.target.value)}
+                />
                 <ButtonGroup size="lg" style={{ padding: "0% 0% 5% 0%" }}>
                     <DropdownButton id="dropdown-item-button" as={ButtonGroup} title="Change Race" variant="primary" size="lg">
                         {dropdownItems}
