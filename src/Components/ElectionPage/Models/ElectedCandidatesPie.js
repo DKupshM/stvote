@@ -46,14 +46,13 @@ function PartyPercentage(props) {
         responsive: true,
         maintainAspectRatio: true,
         title: {
-            text: " Elected Seat Distribution",
+            text: "Elected Seat Distribution",
         },
         legend: {
             verticalAlign: "top"
         },
         data: [{
             type: "pie",
-            startAngle: 75,
             showInLegend: true,
             toolTipContent: "{label}: {y} - #percent %",
             legendText: "{label}",

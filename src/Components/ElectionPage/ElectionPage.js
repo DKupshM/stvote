@@ -17,6 +17,7 @@ import ElectedCandidatesPie from './Models/ElectedCandidatesPie';
 import CandidatesRanked from './Models/CandidatesRanked';
 import PartyPercentage from './Models/PartyPercentage';
 import EventualWinner from './Models/EventualWinner';
+import VoteOverTime from './Models/VoteOverTime';
 
 import { Race } from '../../Data_Models/Race';
 import { Voter } from '../../Data_Models/Voter';
@@ -232,10 +233,12 @@ function ElectionPage(props) {
 
     useInterval(() => {
         if (activeRace.state !== RoundState.COMPLETE && isRunning) {
-            for (let i = 0; i < Math.floor(speed / 10); i++)
+            for (let i = 0; i < Math.floor(speed / 10); i++) {
                 activeRace.run_race_step();
+            }
             setRefresh(!refresh);
         } else {
+            console.log(activeRace.first_scores);
             setIsRunning(false)
         }
     }, isRunning ? 100 : null)
@@ -341,6 +344,9 @@ function ElectionPage(props) {
                     </div>
                     <div style={chartStyle}>
                         <EventualWinner race={activeRace} />
+                    </div>
+                    <div style={chartStyle}>
+                        <VoteOverTime race={activeRace} parties={parties} />
                     </div>
                 </div>
             </div >

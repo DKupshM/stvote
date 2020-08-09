@@ -20,6 +20,8 @@ export class Race {
         this.ballots_to_apply = []
         this.candidate_ballot_rankings = {}
 
+        this.first_scores = []
+
         // Set Candidate States
         this.elected = {}
         this.running = {}
@@ -52,6 +54,41 @@ export class Race {
         if (this.state === RaceState.ADDING)
             throw new Error("Can't Get Quota While Adding Ballots");
         return Math.floor(this.ballots.length / (this.seats + 1)) + 1;
+    }
+
+    currentScores = () => {
+        const find_candidate_by_id = (id) => {
+            for (const candidate of this.candidates)
+                if (candidate.candidate_id === id)
+                    return candidate;
+            return null;
+        }
+        let scores = [];
+        for (const candidate in this.elected) {
+            scores.push({
+                candidate: find_candidate_by_id(candidate),
+                score: this.elected[candidate][0],
+            });
+        }
+        for (const candidate in this.running) {
+            scores.push({
+                candidate: find_candidate_by_id(candidate),
+                score: this.running[candidate][0],
+            });
+        }
+        for (const candidate in this.transferring) {
+            scores.push({
+                candidate: find_candidate_by_id(candidate),
+                score: this.transferring[candidate][0],
+            });
+        }
+        for (const candidate in this.transfered) {
+            scores.push({
+                candidate: find_candidate_by_id(candidate),
+                score: this.transfered[candidate][0],
+            });
+        }
+        return scores;
     }
 
     candidateTable = () => {
@@ -241,6 +278,16 @@ export class Race {
                         this.candidate_ballot_rankings[candidate].push(0);
                     this.candidate_ballot_rankings[candidate][i] += 1
                 }
+
+                let first_round_score = {};
+                if (this.first_scores.length !== 0) {
+                    first_round_score = { ...this.first_scores[this.first_scores.length - 1] };
+                }
+                if (ballot[0].candidates[0].candidate_id in first_round_score)
+                    first_round_score[ballot[0].candidates[0].candidate_id] += 1;
+                else
+                    first_round_score[ballot[0].candidates[0].candidate_id] = 1;
+                this.first_scores.push(first_round_score);
             }
 
             let activeCandidates = currentRound.active_candidates.sort((x, y) => {

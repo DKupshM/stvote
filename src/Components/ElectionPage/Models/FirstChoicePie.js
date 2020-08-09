@@ -47,7 +47,6 @@ function PartyPercentage(props) {
         },
         data: [{
             type: "pie",
-            startAngle: 75,
             showInLegend: true,
             toolTipContent: "{label}: {y} - #percent %",
             legendText: "{label}",
