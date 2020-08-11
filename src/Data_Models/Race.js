@@ -158,7 +158,7 @@ export class Race {
                 console.log("No Ballots Cast in Race");
             }
             else {
-                let round = new Round(0);
+                let round = new Round(0, this.quota());
 
                 for (let i = 0; i < this.candidates.length; i++) {
                     round.add_candidate(this.candidates[i], CandidateState.RUNNING);
@@ -180,7 +180,7 @@ export class Race {
                 return null;
             }
             console.log("Starting Round", this.rounds.length);
-            let round = new Round(this.rounds.length);
+            let round = new Round(this.rounds.length, this.quota());
             let previousRound = this.rounds[this.rounds.length - 1];
 
             for (const candidate in this.elected) {
@@ -246,6 +246,7 @@ export class Race {
                     this.transfered[candidate] = this.transferring[candidate];
                     delete this.transferring[candidate]
                 }
+                console.log(this.rounds);
                 this.state = RaceState.COMPLETE;
             }
         }
@@ -325,12 +326,14 @@ export class Race {
 
         if (activeCandidates.length <= maxElected) {
             for (const candidate of activeCandidates) {
-                roundElected.push(candidate);
+                if (currentRound.elected_candidates) {
+                    roundElected.push(candidate);
+                }
             }
         } else {
             for (const candidate of activeCandidates) {
                 if (currentRound.candidate_score(candidate) >= this.quota()) {
-                    roundElected.push(candidate)
+                    roundElected.push(candidate);
                 }
             }
         }
@@ -339,22 +342,19 @@ export class Race {
             elect_candidate(candidate, currentRound.candidate_score(candidate), currentRound);
         }
 
-        if (roundElected.length > 0) {
-            complete_round(currentRound);
-            return;
-        }
-
         let roundTransfer = [];
         if (Object.keys(this.elected).length === this.seats) {
             for (const candidate of activeCandidates.reverse()) {
                 roundTransfer.push(candidate);
             }
-        } else {
+        } else if (roundElected.length === 0) {
             roundTransfer.push(activeCandidates[activeCandidates.length - 1]);
         }
 
         for (const candidate of roundTransfer) {
-            transfer_candidate(candidate, currentRound.candidate_score(candidate), currentRound);
+            if (!currentRound.elected_candidates.includes(candidate)) {
+                transfer_candidate(candidate, currentRound.candidate_score(candidate), currentRound);
+            }
         }
 
         complete_round(currentRound);

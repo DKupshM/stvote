@@ -1,18 +1,22 @@
 import { CandidateState } from "./Candidate";
 
 export class Round {
-    constructor(round_number) {
+    constructor(round_number, quota) {
         this.round_number = round_number;
+        this.quota = quota;
         this.state = RoundState.RUNNING;
 
         this.candidates = []
 
         this.elected_candidates = []
         this.active_candidates = []
+        this.start_active_candidates = []
         this.eliminated_candidates = []
 
         this.ballots = { exhausted: 0 }
+        this.ballotsToTransfer = {}
         this.candidate_ballots = { exhausted: [] }
+        this.candidate_real_scores = {}
         this.candidate_scores = { exhausted: 0 }
         this.rankings = {};
     }
@@ -51,6 +55,7 @@ export class Round {
             this.elected_candidates.push(candidate);
         } else if (state === CandidateState.RUNNING) {
             this.active_candidates.push(candidate);
+            this.start_active_candidates.push(candidate);
         } else {
             this.eliminated_candidates.push(candidate);
         }
@@ -67,6 +72,7 @@ export class Round {
             return value !== candidate
         });
 
+        this.ballotsToTransfer[candidate.candidate_id] = { ...this.candidate_ballots[candidate.candidate_id] }
         this.elected_candidates.push(candidate);
     }
 
@@ -78,6 +84,7 @@ export class Round {
             return value !== candidate
         });
 
+        this.ballotsToTransfer[candidate.candidate_id] = { ...this.candidate_ballots[candidate.candidate_id] }
         this.eliminated_candidates.push(candidate);
     }
 
@@ -99,6 +106,21 @@ export class Round {
     }
 
     complete = () => {
+        const isCandidateElected = (candidate_id) => {
+            for (const candidate in this.elected_candidates) {
+                if (candidate_id === this.elected_candidates[candidate].candidate_id) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        this.candidate_real_scores = { ...this.candidate_scores }
+        for (const candidate_id in this.candidate_real_scores) {
+            if (this.candidate_real_scores[candidate_id] === 0 && isCandidateElected(candidate_id)) {
+                this.candidate_real_scores[candidate_id] = this.quota;
+            }
+        }
+
         this.state = RoundState.COMPLETE;
     }
 }

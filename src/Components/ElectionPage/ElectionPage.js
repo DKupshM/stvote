@@ -9,6 +9,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 
+import useDimensions from "react-use-dimensions";
 import useInterval from '../Hooks/useInterval';
 import CandidateList from './Race/CandidateList';
 
@@ -27,6 +28,7 @@ import { Candidate } from '../../Data_Models/Candidate';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
+import SankeyGraph from './Models/Sankey/SankeyGraph';
 
 function ElectionPage(props) {
 
@@ -126,6 +128,8 @@ function ElectionPage(props) {
         }
         return voters;
     }
+    const [sankeyRef, sankeySize] = useDimensions();
+
 
     const [election_configuration, setElectionConfiguration] = useState([]);
     const [candidate_data, setCandidateData] = useState([]);
@@ -238,7 +242,6 @@ function ElectionPage(props) {
             }
             setRefresh(!refresh);
         } else {
-            console.log(activeRace.first_scores);
             setIsRunning(false)
         }
     }, isRunning ? 100 : null)
@@ -270,6 +273,9 @@ function ElectionPage(props) {
             </Button>
             <Button onClick={() => setPage(1)} disabled={page === 1} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Charts'}
+            </Button>
+            <Button onClick={() => setPage(2)} disabled={page === 2} variant="secondary" size="lg" style={pageButtonStyle}>
+                {'Sankey'}
             </Button>
         </ButtonGroup>
     );
@@ -321,7 +327,7 @@ function ElectionPage(props) {
                 </ButtonGroup>
             </div >
         );
-    } else {
+    } else if (page === 1) {
         let chartStyle = {
             alignSelf: 'center', width: '40vw'
         }
@@ -350,6 +356,27 @@ function ElectionPage(props) {
                     </div>
                 </div>
             </div >
+        );
+    } else {
+        const getSankeyWidth = () => {
+            if (Number(sankeySize.width) === sankeySize.width)
+                return sankeySize.width;
+            return 0;
+        }
+        const getSankeyHeight = () => {
+            if (Number(sankeySize.height) === sankeySize.height)
+                return sankeySize.height;
+            return 0;
+        }
+
+        return (
+            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap' }}>
+                {pageButtons}
+                {raceTitle}
+                <svg style={{ width: "90%", height: "600" }} ref={sankeyRef}>
+                    <SankeyGraph race={activeRace} width={getSankeyWidth()} height={getSankeyHeight()} />
+                </svg>
+            </div>
         );
     }
 }
