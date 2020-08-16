@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { ResponsiveLineCanvas } from '@nivo/line'
 
 function VoteOverTime(props) {
     const find_party_by_name = (name) => {
@@ -42,53 +41,52 @@ function VoteOverTime(props) {
     let data = [];
     for (const item in choices_over_time) {
         let datapoints = [];
-        for (let i = 0; i < choices_over_time[item].length; i++) {
+        for (let i = 1; i < choices_over_time[item].length + 1; i++) {
             if (choices_over_time[item][i] !== 0) {
-                datapoints.push({ x: i + 1, y: (choices_over_time[item][i] / (i + 1) * 100), toolTipContent: "{name}: " + choices_over_time[item][i] + " ({y}%)", })
+                datapoints.push({ x: i, y: (choices_over_time[item][i - 1] / i * 100) })
             }
         }
         data.push({
-            type: "line",
-            markerType: "none",
-            fill: false,
-            name: item,
-            yValueFormatString: '##.00',
+            id: item,
             color: find_party_by_name(item).party_color,
-            showInLegend: "true",
-            dataPoints: datapoints,
+            data: datapoints,
         });
     }
 
-    let options = {
-        responsive: true,
-        zoomEnabled: true,
-        maintainAspectRatio: false,
-        animationEnabled: true,
-        axisX: {
-            title: "Amount",
-            offset: true,
-            minimum: 1
-        },
-        axisY: {
-            title: "Percentage Captured",
-            minimum: 0,
-            maximum: 100,
-        },
-        toolTip: {
-            shared: true
-        },
-        title: {
-            text: "Vote Percentage Over Time",
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data: data
-    }
+    const getColor = bar => find_party_by_name(bar.id).party_color;
+
 
     return (
-        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
-            <CanvasJSChart options={options} />
+        <div style={props.style}>
+            <ResponsiveLineCanvas
+                data={data}
+                margin={{ top: 50, right: 160, bottom: 50, left: 60 }}
+                xScale={{ type: 'linear' }}
+                xFormat={',.2r'}
+                yScale={{ type: 'linear', stacked: false, min: 0, max: 100 }}
+                yFormat={',.2r'}
+                axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    tickValues: 5,
+                    legend: 'Votes',
+                    legendOffset: 36,
+                    legendPosition: 'middle'
+                }}
+                axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Percentage',
+                    legendOffset: -40,
+                    legendPosition: 'middle'
+                }}
+                enableGridX={false}
+                colors={getColor}
+                lineWidth={1}
+                enablePoints={false}
+            />
         </div>
     );
 }

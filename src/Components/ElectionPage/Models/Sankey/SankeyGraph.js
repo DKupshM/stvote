@@ -3,6 +3,8 @@ import { sankey } from "d3-sankey";
 
 import SankeyNode from "./SankeyNode";
 import SankeyLink from "./SankeyLink";
+import { Stage } from "./Stage";
+import { ZoomContainer } from "./ZoomContainer";
 
 const SankeyGraph = ({ race, width, height }) => {
     const GenerateData = (race) => {
@@ -136,23 +138,25 @@ const SankeyGraph = ({ race, width, height }) => {
 
 
     return (
-        <g>
-            {nodes.map((node, i) => (
-                <SankeyNode
-                    {...node}
-                    color={node.color}
-                    size={{ width: width, height: height }}
-                    key={i}
-                />
-            ))}
-            {links.map((link, i) => (
-                <SankeyLink
-                    link={link}
-                    color={link.color}
-                    key={i}
-                />
-            ))}
-        </g>
+        <Stage width={"100%"} height={"100%"}>
+            <ZoomContainer>
+                {nodes.map((node, i) => (
+                    <SankeyNode
+                        {...node}
+                        color={node.color}
+                        size={{ width: width, height: height }}
+                        key={i}
+                    />
+                ))}
+                {links.map((link, i) => (
+                    <SankeyLink
+                        link={link}
+                        color={link.color}
+                        key={i}
+                    />
+                ))}
+            </ZoomContainer>
+        </Stage>
     );
 }
 

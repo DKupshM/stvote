@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const SankeyMouse = ({ width, height, onClick, children, toDataPoint }) => {
+export const SankeyMouse = ({ x0, width, height, onClick, children, toDataPoint }) => {
     const [hoverPt, setHoverPt] = useState(undefined);
     const handleMouseMove = (e) => {
         const mouse = getMouse(e, width, height);

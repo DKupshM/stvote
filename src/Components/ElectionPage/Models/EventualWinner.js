@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { ResponsiveLine } from '@nivo/line'
 
 function CandidatesRanked(props) {
     const get_ranked_choices = (race) => {
@@ -34,62 +33,67 @@ function CandidatesRanked(props) {
     let choices = get_ranked_choices(props.race);
 
     let electeddatapoints = [];
-    for (const key in choices) {
-        let x = parseInt(key) + 1
-        electeddatapoints.push({ x: x, y: choices[key] })
+    for (let i = 1; i < maxChoices + 1; i++) {
+        if (i in choices)
+            electeddatapoints.push({ x: i, y: choices[i] })
     }
 
     let notelecteddatapoints = [];
-    for (const key in choices) {
-        let x = parseInt(key) + 1
-        notelecteddatapoints.push({ x: x, y: (props.race.ballots.length - choices[key]) })
+    for (let i = 1; i < maxChoices + 1; i++) {
+        if (i in choices)
+            notelecteddatapoints.push({ x: i, y: (props.race.ballots.length - choices[i]) })
     }
 
-    let options = {
-        responsive: true,
-        maintainAspectRatio: true,
-        animationEnabled: true,
-        axisX: {
-            title: "Round",
-            maximum: maxChoices,
-            minimum: 1,
-            offset: true,
+    let data =
+        [{
+            id: "elected",
+            color: "red",
+            data: electeddatapoints
         },
-        axisY: {
-            title: "Percentage",
-            interval: 10,
-        },
-        toolTip: {
-            shared: true
-        },
-        title: {
-            text: "Voters that Ranked an Elected Candidate",
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data:
-            [{
-                type: "stackedArea100",
-                markerType: "none",
-                name: "A Choice Elected",
-                toolTipContent: "{name}: {y} (#percent %)",
-                showInLegend: "true",
-                dataPoints: electeddatapoints,
-            },
-            {
-                type: "stackedArea100",
-                markerType: "none",
-                name: "No Choice Elected",
-                toolTipContent: "{name}: {y} (#percent %)",
-                showInLegend: "true",
-                dataPoints: notelecteddatapoints,
-            }]
+        {
+            id: "notelected",
+            color: "blue",
+            data: notelecteddatapoints,
+        }]
+
+    const getColor = bar => {
+        console.log(bar.id);
+        if (bar.id === "elected")
+            return "#0d00ff";
+        return '#ff0000';
     }
 
     return (
-        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
-            <CanvasJSChart options={options} />
+        <div style={props.style}>
+            <ResponsiveLine
+                data={data}
+                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                xScale={{ type: 'linear', min: 1 }}
+                yScale={{ type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false }}
+                axisBottom={{
+                    orient: 'bottom',
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Round',
+                    legendOffset: 36,
+                    legendPosition: 'middle'
+                }}
+                axisLeft={{
+                    orient: 'left',
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Votes',
+                    legendOffset: -40,
+                    legendPosition: 'middle'
+                }}
+                colors={getColor}
+                enablePoints={false}
+                enableArea={true}
+                areaOpacity={1}
+                useMesh={true}
+            />
         </div>
     );
 }

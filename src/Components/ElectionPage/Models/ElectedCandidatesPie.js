@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { ResponsivePieCanvas } from '@nivo/pie';
 
 function PartyPercentage(props) {
     const find_candidate_by_id = (race, id) => {
@@ -35,34 +34,49 @@ function PartyPercentage(props) {
     }
 
     let data = [];
+    let totalAmount = 0;
+
     for (const item in choices) {
         data.push({
-            y: choices[item], label: item,
-            color: find_party_by_name(item).party_color,
-        })
-    }
-    let options = {
-        animationEnabled: true,
-        responsive: true,
-        maintainAspectRatio: true,
-        title: {
-            text: "Elected Seat Distribution",
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data: [{
-            type: "pie",
-            showInLegend: true,
-            toolTipContent: "{label}: {y} - #percent %",
-            legendText: "{label}",
-            dataPoints: data
-        }]
+            "id": item,
+            "label": item,
+            "value": choices[item],
+            "color": find_party_by_name(item).party_color,
+        });
+        totalAmount += choices[item];
     }
 
+    const getPercentage = bar => {
+        return Math.round((bar.value / totalAmount) * 100) + "%";
+    }
+
+    const getColor = bar => find_party_by_name(bar.id).party_color;
+
     return (
-        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
-            <CanvasJSChart options={options} />
+        <div style={props.style}>
+            <ResponsivePieCanvas
+                data={data}
+                margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                pixelRatio={2}
+                padAngle={0.7}
+                cornerRadius={1}
+                colors={getColor}
+                borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
+                radialLabelsSkipAngle={10}
+                radialLabelsTextXOffset={6}
+                radialLabelsTextColor={{ from: 'color', modifiers: [] }}
+                radialLabelsLinkOffset={0}
+                radialLabelsLinkDiagonalLength={16}
+                radialLabelsLinkHorizontalLength={24}
+                radialLabelsLinkStrokeWidth={1}
+                radialLabelsLinkColor={{ from: 'color' }}
+                sliceLabel={getPercentage}
+                slicesLabelsSkipAngle={20}
+                slicesLabelsTextColor="#333333"
+                animate={true}
+                motionStiffness={90}
+                motionDamping={15}
+            />
         </div>
     );
 }

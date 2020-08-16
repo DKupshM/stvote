@@ -1,7 +1,6 @@
 import React from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { ResponsiveBarCanvas } from '@nivo/bar'
 
 function CandidatesRanked(props) {
     const find_party_by_name = (name) => {
@@ -29,51 +28,71 @@ function CandidatesRanked(props) {
 
     let maxChoices = 0;
     let choices = {};
+    let keys = []
     for (const party of props.parties) {
         choices[party.party_name] = get_ranked_choices(props.race, party);
+        keys.push(party.party_name);
     }
 
     let data = [];
-    for (const item in choices) {
-        let datapoints = [];
-        for (const key in choices[item]) {
-            datapoints.push({ x: key, y: choices[item][key] })
+
+    for (let i = 1; i < maxChoices + 1; i++) {
+        let data_to_add = { index: i };
+        for (const item in choices) {
+            if (i in choices[item]) {
+                data_to_add[item] = choices[item][i];
+                data_to_add[item + "Color"] = choices[item][i];
+            }
         }
-        data.push({
-            type: "stackedColumn",
-            name: item,
-            color: find_party_by_name(item).party_color,
-            showInLegend: "true",
-            dataPoints: datapoints,
-        });
+        data.push(data_to_add);
     }
-    let options = {
-        animationEnabled: true,
-        responsive: true,
-        maintainAspectRatio: true,
-        axisX: {
-            title: "Candidates Ranked",
-            maximum: maxChoices + .5,
-            offset: true,
-        },
-        axisY: {
-            title: "Amount Of Voters",
-        },
-        toolTip: {
-            shared: true
-        },
-        title: {
-            text: "Candidates Ranked",
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data: data
-    }
+    const getColor = bar => find_party_by_name(bar.id).party_color;
 
     return (
-        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
-            <CanvasJSChart options={options} />
+        <div style={props.style}>
+            <ResponsiveBarCanvas
+                data={data}
+                keys={keys}
+                indexBy="index"
+                margin={{ top: 40, right: 40, bottom: 40, left: 60 }}
+                pixelRatio={2}
+                padding={0.05}
+                innerPadding={0}
+                minValue="auto"
+                maxValue="auto"
+                groupMode="stacked"
+                layout="vertical"
+                reverse={false}
+                colors={getColor}
+                colorBy="id"
+                borderWidth={0}
+                borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                axisTop={null}
+                axisRight={null}
+                axisBottom={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Candidates Ranked',
+                    legendPosition: 'middle',
+                    legendOffset: 30
+                }}
+                axisLeft={{
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Number of Voters',
+                    legendPosition: 'middle',
+                    legendOffset: -40
+                }}
+                enableGridX={false}
+                enableGridY={true}
+                enableLabel={false}
+                labelSkipWidth={12}
+                labelSkipHeight={12}
+                labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                isInteractive={true}
+            />
         </div>
     );
 }

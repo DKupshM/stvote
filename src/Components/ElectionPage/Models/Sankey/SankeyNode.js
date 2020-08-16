@@ -18,7 +18,7 @@ const SankeyNode = ({ name, value, x0, x1, y0, y1, color, size }) => {
 
                 style={{
                     fill: 'white',
-                    fontSize: 9,
+                    fontSize: '9',
                     pointerEvents: "none",
                     userSelect: "none",
                 }}>
@@ -29,8 +29,8 @@ const SankeyNode = ({ name, value, x0, x1, y0, y1, color, size }) => {
                 y={y0 + (y1 - y0) / 2}
                 style={{
                     fill: 'black',
+                    fontSize: '9',
                     alignmentBaseline: "middle",
-                    fontSize: 9,
                     textAnchor: x0 < size.width / 2 ? "start" : "end",
                     pointerEvents: "none",
                     userSelect: "none"

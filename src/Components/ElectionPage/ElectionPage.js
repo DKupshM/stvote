@@ -29,6 +29,7 @@ import { Candidate } from '../../Data_Models/Candidate';
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
 import SankeyGraph from './Models/Sankey/SankeyGraph';
+import ElectionBar from './Models/ElectionBar';
 
 function ElectionPage(props) {
 
@@ -96,7 +97,8 @@ function ElectionPage(props) {
                 let party = find_party_by_name(candidate.party);
                 if (party === null) {
                     party = new Party(candidate.party, "FFFFFF");
-                    setParties(parties.push(party));
+                    console.log("Adding Party: ", party.party_name);
+                    setParties([...parties, party]);
                 }
                 race.add_candidate(new Candidate(candidate.number, candidate.name, party));
             }
@@ -128,7 +130,6 @@ function ElectionPage(props) {
         }
         return voters;
     }
-    const [sankeyRef, sankeySize] = useDimensions();
 
 
     const [election_configuration, setElectionConfiguration] = useState([]);
@@ -153,6 +154,8 @@ function ElectionPage(props) {
     const [isRunning, setIsRunning] = useState(false);
     const [page, setPage] = useState(0);
 
+    const [model, setModel] = useState(0);
+
     useEffect(() => {
         if (!isLoading)
             setPartiesLoaded(true);
@@ -174,6 +177,14 @@ function ElectionPage(props) {
 
     useEffect(() => {
         const loadData = async () => {
+            if (props.data !== undefined && props.data !== null) {
+                setElectionConfiguration(props.data.election_configuration);
+                setCandidateData(props.data.candidate_data);
+                setPartyData(props.data.parties_data);
+                setBallotData(props.data.ballot_data);
+                setIsLoading(false);
+                return;
+            }
             let electionId = props.match.params.electionId;
 
             if (typeof (electionId) === "undefined") {
@@ -210,7 +221,8 @@ function ElectionPage(props) {
         }
         if (!partiesLoaded) {
             console.log("Loading Parties")
-            setParties(loadParties(party_data));
+            let parties = loadParties(party_data);
+            setParties(parties);
         }
 
         if (partiesLoaded && !racesLoaded) {
@@ -232,7 +244,7 @@ function ElectionPage(props) {
         if (votersLoaded) {
             console.log("Finished Loading");
         }
-        console.log("Finished");
+
     }, [isLoading, partiesLoaded, racesLoaded, candidatesLoaded, votersLoaded]);  // eslint-disable-line react-hooks/exhaustive-deps
 
     useInterval(() => {
@@ -275,7 +287,7 @@ function ElectionPage(props) {
                 {'Charts'}
             </Button>
             <Button onClick={() => setPage(2)} disabled={page === 2} variant="secondary" size="lg" style={pageButtonStyle}>
-                {'Sankey'}
+                {'Models'}
             </Button>
         </ButtonGroup>
     );
@@ -329,55 +341,69 @@ function ElectionPage(props) {
         );
     } else if (page === 1) {
         let chartStyle = {
-            alignSelf: 'center', width: '40vw'
+            alignSelf: 'center', width: '50%', height: '30vw',
         }
         return (
-            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
                 {pageButtons}
                 {raceTitle}
-                <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                    <div style={chartStyle}>
-                        <FirstChoicePie race={activeRace} parties={parties} />
-                    </div>
-                    <div style={chartStyle}>
-                        <ElectedCandidatesPie race={activeRace} parties={parties} />
-                    </div>
-                    <div style={chartStyle}>
-                        <CandidatesRanked race={activeRace} parties={parties} />
-                    </div>
-                    <div style={chartStyle}>
-                        <PartyPercentage race={activeRace} parties={parties} />
-                    </div>
-                    <div style={chartStyle}>
-                        <EventualWinner race={activeRace} />
-                    </div>
-                    <div style={chartStyle}>
-                        <VoteOverTime race={activeRace} parties={parties} />
-                    </div>
-                </div>
+                <FirstChoicePie race={activeRace} parties={parties} style={chartStyle} />
+                <ElectedCandidatesPie race={activeRace} parties={parties} style={chartStyle} />
+                <CandidatesRanked race={activeRace} parties={parties} style={chartStyle} />
+                <PartyPercentage race={activeRace} parties={parties} style={chartStyle} />
+                <VoteOverTime race={activeRace} parties={parties} style={chartStyle} />
+                <EventualWinner race={activeRace} style={chartStyle} />
             </div >
         );
     } else {
-        const getSankeyWidth = () => {
-            if (Number(sankeySize.width) === sankeySize.width)
-                return sankeySize.width;
-            return 0;
-        }
-        const getSankeyHeight = () => {
-            if (Number(sankeySize.height) === sankeySize.height)
-                return sankeySize.height;
-            return 0;
-        }
-
-        return (
-            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap' }}>
-                {pageButtons}
-                {raceTitle}
-                <svg style={{ width: "90%", height: "600" }} ref={sankeyRef}>
-                    <SankeyGraph race={activeRace} width={getSankeyWidth()} height={getSankeyHeight()} />
-                </svg>
-            </div>
+        let modelButtons = (
+            <ButtonGroup size="lg" style={{ width: "100%", height: "50", padding: 0, margin: 0 }}>
+                <Button onClick={() => setModel(0)} disabled={model === 0} variant="secondary" size="lg" style={pageButtonStyle}>
+                    {'Bar'}
+                </Button>
+                <Button onClick={() => setModel(1)} disabled={model === 1} variant="secondary" size="lg" style={pageButtonStyle}>
+                    {'Sankey'}
+                </Button>
+            </ButtonGroup>
         );
+        if (model === 0) {
+            return (
+                <div className="text-center" style={{
+                    display: "flex",
+                    justifyContent: 'center',
+                    flexWrap: 'wrap'
+                }}>
+                    {pageButtons}
+                    {modelButtons}
+                    {raceTitle}
+                    <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                        <ElectionBar race={activeRace} style={{ alignSelf: 'center', width: '40vw' }} />
+                    </div>
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="text-center" style={{
+                    height: '100%',
+                    minHeight: '100%',
+                    display: "flex",
+                    justifyContent: 'center',
+                    flexWrap: 'wrap'
+                }}>
+                    {pageButtons}
+                    {modelButtons}
+                    {raceTitle}
+                    <div style={{
+                        width: '90%',
+                        height: '35vw',
+                        boxShadow: '0 0 0 1px black'
+                    }} >
+                        <SankeyGraph race={activeRace} width={"1000"} height={activeRace.candidates.length * 100} />
+                    </div>
+                </div >
+            );
+        }
     }
 }
 

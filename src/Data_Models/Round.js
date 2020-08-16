@@ -10,6 +10,7 @@ export class Round {
 
         this.elected_candidates = []
         this.active_candidates = []
+        this.start_inactive_candidates = []
         this.start_active_candidates = []
         this.eliminated_candidates = []
 
@@ -53,11 +54,13 @@ export class Round {
         this.candidates.push(candidate);
         if (state === CandidateState.ELECTED) {
             this.elected_candidates.push(candidate);
+            this.start_inactive_candidates.push(candidate);
         } else if (state === CandidateState.RUNNING) {
             this.active_candidates.push(candidate);
             this.start_active_candidates.push(candidate);
         } else {
             this.eliminated_candidates.push(candidate);
+            this.start_inactive_candidates.push(candidate);
         }
 
         this.candidate_ballots[candidate.candidate_id] = [];

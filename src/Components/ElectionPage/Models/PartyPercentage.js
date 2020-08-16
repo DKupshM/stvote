@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+import { ResponsiveLine } from '@nivo/line'
+
 
 function PartyPercentage(props) {
     const find_party_by_name = (name) => {
@@ -35,50 +35,50 @@ function PartyPercentage(props) {
     let data = [];
     for (const item in choices) {
         let datapoints = [];
-        for (const key in choices[item]) {
-            let x = parseInt(key) + 1
-            datapoints.push({ x: x, y: choices[item][key] })
+        for (let i = 1; i < maxchoices + 1; i++) {
+            if (i in choices[item])
+                datapoints.push({ x: i, y: choices[item][i] })
         }
         data.push({
-            type: "stackedArea100",
-            markerType: "none",
-            name: item,
-            toolTipContent: "{name}: {y} (#percent %)",
+            id: item,
             color: find_party_by_name(item).party_color,
-            showInLegend: "true",
-            dataPoints: datapoints,
+            data: datapoints,
         });
     }
 
-    let options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        animationEnabled: true,
-        axisX: {
-            title: "Round",
-            minimum: 1,
-            maximum: maxchoices + 1,
-            offset: true,
-        },
-        axisY: {
-            title: "Percentage Captured",
-            interval: 10,
-        },
-        toolTip: {
-            shared: true
-        },
-        title: {
-            text: "Vote Distribution by Round",
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data: data
-    }
+    const getColor = bar => find_party_by_name(bar.id).party_color;
 
     return (
-        <div style={{ position: "relative", margin: "auto", width: "100%" }}>
-            <CanvasJSChart options={options} />
+        <div style={props.style}>
+            <ResponsiveLine
+                data={data}
+                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                xScale={{ type: 'linear', min: 1 }}
+                yScale={{ type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false }}
+                axisBottom={{
+                    orient: 'bottom',
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Round',
+                    legendOffset: 36,
+                    legendPosition: 'middle'
+                }}
+                axisLeft={{
+                    orient: 'left',
+                    tickSize: 5,
+                    tickPadding: 5,
+                    tickRotation: 0,
+                    legend: 'Percentage',
+                    legendOffset: -40,
+                    legendPosition: 'middle'
+                }}
+                colors={getColor}
+                enablePoints={false}
+                enableArea={true}
+                areaOpacity={1}
+                useMesh={true}
+            />
         </div>
     );
 }
