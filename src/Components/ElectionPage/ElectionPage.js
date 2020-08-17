@@ -9,7 +9,6 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-import useDimensions from "react-use-dimensions";
 import useInterval from '../Hooks/useInterval';
 import CandidateList from './Race/CandidateList';
 
@@ -28,6 +27,7 @@ import { Candidate } from '../../Data_Models/Candidate';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
+import NivoSankey from './Models/Sankey/NivoSankey';
 import SankeyGraph from './Models/Sankey/SankeyGraph';
 import ElectionBar from './Models/ElectionBar';
 
@@ -394,17 +394,16 @@ function ElectionPage(props) {
                     {pageButtons}
                     {modelButtons}
                     {raceTitle}
-                    <div style={{
+                    <NivoSankey race={activeRace} style={{
                         width: '90%',
-                        height: '35vw',
-                        boxShadow: '0 0 0 1px black'
-                    }} >
-                        <SankeyGraph race={activeRace} width={"1000"} height={activeRace.candidates.length * 100} />
-                    </div>
+                        height: '60vw'
+                    }}
+                    />
                 </div >
             );
         }
     }
+    // <SankeyGraph race={activeRace} width={"1000"} height={activeRace.candidates.length * 100} />
 }
 
 export default ElectionPage;

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import CanvasJSReact from '../../../assets/canvasjs.react';
+import { ResponsiveBarCanvas } from '@nivo/bar';
 
+import { RaceState } from '../../../Data_Models/Race';
 import RangeSlider from 'react-bootstrap-range-slider';
 
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function ElectionBar(props) {
     const get_round_data = (round, active_candidates) => {
@@ -35,100 +35,60 @@ function ElectionBar(props) {
 
     const [round, setRound] = useState(1);
     const candidateTable = props.race.candidateTable();
+
+    if (props.race.rounds === 0 || props.race.state === RaceState.ADDING)
+        return <h1> Loading... </h1>
+
     let quota = props.race.quota();
 
-    let data_active_candidates = []
+    let data_active_candidates = [];
     // Get Candidates to Display
     let round_active_candidates = props.race.rounds[round - 1].active_candidates;
     for (let i = 0; i < round; i++) {
         data_active_candidates.push(get_round_data(props.race.rounds[i],
             round_active_candidates));
     }
-
+    let max_score = 0;
+    let keys = ["elected", "transferred"]
     let chart_data = [];
-    for (let i = 0; i < round; i++) {
-        let dataPoints = [];
-        for (const candidate of round_active_candidates) {
+
+    for (const candidate of round_active_candidates) {
+        let data = { candidate: candidate.candidate_name };
+        for (let i = 0; i < round; i++) {
             let score = data_active_candidates[i][candidate.candidate_id].score;
+            max_score = Math.max(score, max_score);
             if (i !== 0) {
                 score -= data_active_candidates[i - 1][candidate.candidate_id].score;
             }
-            dataPoints.push({ x: get_candidate_position(candidate), y: score, label: candidate.candidate_name });
+            data["Round " + (i + 1)] = score;
+            if (!keys.includes("Round " + (i + 1))) {
+                keys.push("Round " + (i + 1));
+            }
         }
-
-        chart_data.push({
-            type: "stackedColumn",
-            name: "Round " + (i + 1),
-            yValueFormatString: "#",
-            showInLegend: "true",
-            dataPoints: dataPoints,
-        });
+        chart_data.push(data);
     }
+
     // Add Elected Candidates
     if (props.race.rounds[round - 1].elected_candidates.length !== 0) {
-        let dataPoints = [];
-        // Add Elected Candidates
         for (const candidate of props.race.rounds[round - 1].elected_candidates) {
-            dataPoints.push({ x: get_candidate_position(candidate), y: props.race.rounds[round - 1].candidate_real_scores[candidate.candidate_id], label: candidate.candidate_name, toolTipContent: "{label} <br/> Elected <br/> Final Score: " + Math.round(final_candidate_score(candidate)) });
+            keys.push(candidate.candidate_name);
+            chart_data.push({ candidate: candidate.candidate_name, elected: props.race.rounds[round - 1].candidate_real_scores[candidate.candidate_id] });
         }
-        chart_data.push({
-            type: "stackedColumn",
-            name: "Elected",
-            showInLegend: "true",
-            yValueFormatString: "#",
-            color: '#01A039',
-            dataPoints: dataPoints,
-        });
     }
+
     // Add Eliminated Candidates
     if (props.race.rounds[round - 1].eliminated_candidates.length !== 0) {
-        let dataPoints = [];
         for (const candidate of props.race.rounds[round - 1].eliminated_candidates) {
-            dataPoints.push({
-                x: get_candidate_position(candidate), y: final_candidate_score(candidate), label: candidate.candidate_name,
-                toolTipContent: "{label} <br/> Transfered <br/> Final Score: " + Math.round(final_candidate_score(candidate)) + " <br/> " + Math.round((final_candidate_score(candidate) / quota) * 100) + "% of Quota"
-            });
+            keys.push(candidate.candidate_name);
+            chart_data.push({ candidate: candidate.candidate_name, transferred: final_candidate_score(candidate) });
         }
-        chart_data.push({
-            type: "stackedColumn",
-            name: "Eliminated",
-            color: '#FF0000',
-            yValueFormatString: "#",
-            showInLegend: "true",
-            dataPoints: dataPoints,
-        });
     }
 
-    let options = {
-        animationEnabled: true,
-        responsive: true,
-        maintainAspectRatio: true,
-        axisX: {
-            title: "Candidate",
-            interval: 1,
-            maximum: props.race.candidates.length - .5,
-            offset: true,
-        },
-        axisY: {
-            gridThickness: 0,
-            minimum: 0,
-            maximum: 1.5 * quota,
-            stripLines: [{
-                value: quota,
-                label: "Quota",
-            }]
-        },
-        toolTip: {
-            shared: true,
-        },
-        legend: {
-            verticalAlign: "top"
-        },
-        data: chart_data
-    }
+    console.log(chart_data);
+    console.log(keys);
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
+        <div style={{ width: '100%', height: '50vw' }}>
             <RangeSlider
                 min={1}
                 max={props.race.rounds.length}
@@ -137,8 +97,43 @@ function ElectionBar(props) {
                 variant="secondary"
                 onChange={changeEvent => setRound(changeEvent.target.value)}
             />
-            <div>
-                <CanvasJSChart options={options} />
+            <div style={{ width: '100%', height: '50vw' }}>
+                <ResponsiveBarCanvas
+                    data={chart_data}
+                    keys={keys}
+                    indexBy="candidate"
+                    margin={{ top: 40, right: 40, bottom: 100, left: 60 }}
+                    pixelRatio={2}
+                    padding={0.05}
+                    innerPadding={0}
+                    groupMode="stacked"
+                    layout="vertical"
+                    reverse={false}
+                    colors={{ scheme: 'nivo' }}
+                    colorBy="id"
+                    borderWidth={0}
+                    borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                    axisBottom={{
+                        tickSize: 5,
+                        tickPadding: 5,
+                        tickRotation: -60,
+                    }}
+                    axisLeft={{
+                        tickSize: 5,
+                        tickPadding: 5,
+                        tickRotation: 0,
+                        legend: 'Score',
+                        legendPosition: 'middle',
+                        legendOffset: -40
+                    }}
+                    enableGridX={false}
+                    enableGridY={true}
+                    enableLabel={false}
+                    labelSkipWidth={12}
+                    labelSkipHeight={12}
+                    labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                    isInteractive={true}
+                />
             </div>
         </div>
     );
