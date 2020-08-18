@@ -24,6 +24,23 @@ function ElectionBar(props) {
         return 0;
     }
 
+    const get_max_score = () => {
+        let max_score = quota;
+        for (const candidate_table of candidateTable) {
+            max_score = Math.max(candidate_table.score, max_score);
+        }
+        return max_score
+    }
+
+    const get_candidate_by_position = (position) => {
+        for (const candidate of props.race.candidates) {
+            if (get_candidate_position(candidate) === position) {
+                return candidate;
+            }
+        }
+        return 0;
+    }
+
     const final_candidate_score = (candidate) => {
         for (const candidate_table of candidateTable) {
             if (candidate_table.candidate.candidate_id === candidate.candidate_id) {
@@ -48,45 +65,31 @@ function ElectionBar(props) {
         data_active_candidates.push(get_round_data(props.race.rounds[i],
             round_active_candidates));
     }
-    let max_score = 0;
+
     let keys = ["elected", "transferred"]
     let chart_data = [];
 
-    for (const candidate of round_active_candidates) {
-        let data = { candidate: candidate.candidate_name };
-        for (let i = 0; i < round; i++) {
-            let score = data_active_candidates[i][candidate.candidate_id].score;
-            max_score = Math.max(score, max_score);
-            if (i !== 0) {
-                score -= data_active_candidates[i - 1][candidate.candidate_id].score;
+    for (let i = 0; i < props.race.rounds[round - 1].candidates.length; i++) {
+        const candidate = get_candidate_by_position(i);
+        if (round_active_candidates.includes(candidate)) {
+            let data = { candidate: candidate.candidate_name };
+            for (let i = 0; i < round; i++) {
+                let score = data_active_candidates[i][candidate.candidate_id].score;
+                if (i !== 0) {
+                    score -= data_active_candidates[i - 1][candidate.candidate_id].score;
+                }
+                data["Round " + (i + 1)] = score;
+                if (!keys.includes("Round " + (i + 1))) {
+                    keys.push("Round " + (i + 1));
+                }
             }
-            data["Round " + (i + 1)] = score;
-            if (!keys.includes("Round " + (i + 1))) {
-                keys.push("Round " + (i + 1));
-            }
-        }
-        chart_data.push(data);
-    }
-
-    // Add Elected Candidates
-    if (props.race.rounds[round - 1].elected_candidates.length !== 0) {
-        for (const candidate of props.race.rounds[round - 1].elected_candidates) {
-            keys.push(candidate.candidate_name);
+            chart_data.push(data);
+        } else if (props.race.rounds[round - 1].elected_candidates.includes(candidate)) {
             chart_data.push({ candidate: candidate.candidate_name, elected: props.race.rounds[round - 1].candidate_real_scores[candidate.candidate_id] });
-        }
-    }
-
-    // Add Eliminated Candidates
-    if (props.race.rounds[round - 1].eliminated_candidates.length !== 0) {
-        for (const candidate of props.race.rounds[round - 1].eliminated_candidates) {
-            keys.push(candidate.candidate_name);
+        } else {
             chart_data.push({ candidate: candidate.candidate_name, transferred: final_candidate_score(candidate) });
         }
     }
-
-    console.log(chart_data);
-    console.log(keys);
-
     return (
         <div style={{ width: '100%', height: '50vw' }}>
             <RangeSlider
@@ -102,7 +105,8 @@ function ElectionBar(props) {
                     data={chart_data}
                     keys={keys}
                     indexBy="candidate"
-                    margin={{ top: 40, right: 40, bottom: 100, left: 60 }}
+                    margin={{ top: 40, right: 40, bottom: 200, left: 60 }}
+                    maxValue={get_max_score()}
                     pixelRatio={2}
                     padding={0.05}
                     innerPadding={0}

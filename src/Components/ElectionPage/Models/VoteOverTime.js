@@ -22,7 +22,13 @@ function VoteOverTime(props) {
         choices_over_time[party.party_name] = [];
     }
 
-    for (const score_chart of props.race.first_scores) {
+    let increment = 1;
+    if (props.race.first_scores.length > 50)
+        increment = Math.floor(props.race.first_scores.length / 100);
+
+    for (let i = 0; i < props.race.first_scores.length; i += 1) {
+        const score_chart = props.race.first_scores[i];
+
         let choices = {}
         for (const party of props.parties) {
             choices[party.party_name] = 0;
@@ -41,9 +47,9 @@ function VoteOverTime(props) {
     let data = [];
     for (const item in choices_over_time) {
         let datapoints = [];
-        for (let i = 1; i < choices_over_time[item].length + 1; i++) {
+        for (let i = 0; i < choices_over_time[item].length; i++) {
             if (choices_over_time[item][i] !== 0) {
-                datapoints.push({ x: i, y: (choices_over_time[item][i - 1] / i * 100) })
+                datapoints.push({ x: (i * 1), y: ((choices_over_time[item][i]) / ((i + 1) * 1) * 100) })
             }
         }
         data.push({

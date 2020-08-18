@@ -5,6 +5,7 @@
     "homepage": "http://dkupsh.github.io/stvote",
     "dependencies": {
         "@nivo/bar": "^0.62.0",
+        "@nivo/bump": "^0.62.0",
         "@nivo/line": "^0.62.0",
         "@nivo/pie": "^0.62.0",
         "@nivo/sankey": "^0.62.0",

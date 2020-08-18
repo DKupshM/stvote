@@ -18,6 +18,8 @@ import CandidatesRanked from './Models/CandidatesRanked';
 import PartyPercentage from './Models/PartyPercentage';
 import EventualWinner from './Models/EventualWinner';
 import VoteOverTime from './Models/VoteOverTime';
+import VoteOverTimeBump from './Models/VoteOverTimeBump';
+import RoundCandidateBump from './Models/RoundCandidateBump';
 
 import { Race } from '../../Data_Models/Race';
 import { Voter } from '../../Data_Models/Voter';
@@ -27,8 +29,7 @@ import { Candidate } from '../../Data_Models/Candidate';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
-import NivoSankey from './Models/Sankey/NivoSankey';
-import SankeyGraph from './Models/Sankey/SankeyGraph';
+import NivoSankey from './Models/Sankey';
 import ElectionBar from './Models/ElectionBar';
 
 function ElectionPage(props) {
@@ -352,7 +353,9 @@ function ElectionPage(props) {
                 <CandidatesRanked race={activeRace} parties={parties} style={chartStyle} />
                 <PartyPercentage race={activeRace} parties={parties} style={chartStyle} />
                 <VoteOverTime race={activeRace} parties={parties} style={chartStyle} />
+                <VoteOverTimeBump race={activeRace} style={chartStyle} />
                 <EventualWinner race={activeRace} style={chartStyle} />
+                <RoundCandidateBump race={activeRace} style={chartStyle} />
             </div >
         );
     } else {
