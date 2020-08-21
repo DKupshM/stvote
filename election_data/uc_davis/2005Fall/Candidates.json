@@ -1,0 +1,69 @@
+{
+    "Senate": [
+        {
+            "name": "Michael Kongo Aguilera",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Natalia Farhadmotamed",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Behrad Brad Golshani",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Joe Harney",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Spencer Higgins",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Brian McFadden",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jimmy Moresco",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Avni Patel",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Christine Jacorie Rogers",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kareem Salem",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jonathan Tiny Sanders",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Katie Webber",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jenny Yu",
+            "number": 13,
+            "party": "Unknown"
+        }
+    ]
+}

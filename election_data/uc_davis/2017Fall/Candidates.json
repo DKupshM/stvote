@@ -1,0 +1,39 @@
+{
+    "Senate": [
+        {
+            "name": "Gavenjit Kaur",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Danny Halawi",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andreas Godderis",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jake Sedgley",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Bryan Perez",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jesse Kullar",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2017: Senate",
+            "number": 7,
+            "party": "Unknown"
+        }
+    ]
+}

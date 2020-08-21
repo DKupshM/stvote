@@ -1,0 +1,79 @@
+{
+    "Senate": [
+        {
+            "name": "Felicia Ong",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Tal Topf",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jonathan Yip",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kevin Pelstring",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Armando Figueroa",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Maxwell Kappes",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "David Belcher",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Robert Helfend",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Olivia Brown",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alyson Sagala",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kirby Araullo",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Lee Lo",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Gloria Chen",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Liam Burke",
+            "number": 14,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall Election 2012",
+            "number": 15,
+            "party": "Unknown"
+        }
+    ]
+}

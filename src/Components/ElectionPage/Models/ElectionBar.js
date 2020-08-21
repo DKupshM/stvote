@@ -92,14 +92,21 @@ function ElectionBar(props) {
     }
     return (
         <div style={{ width: '100%', height: '50vw' }}>
-            <RangeSlider
-                min={1}
-                max={props.race.rounds.length}
-                step={1}
-                value={round}
-                variant="secondary"
-                onChange={changeEvent => setRound(changeEvent.target.value)}
-            />
+            <div style={{ width: '80%' }}>
+                <label style={{ font: '1.3rem/1 arial, sans-serif', color: 'black', textAlign: 'center', padding: '5% 0 0 0' }}>
+                    Round
+                </label>
+                <div style={{ margin: '0% 5% 0% 5%' }}>
+                    <RangeSlider
+                        min={1}
+                        max={props.race.rounds.length}
+                        step={1}
+                        value={round}
+                        variant="secondary"
+                        onChange={changeEvent => setRound(changeEvent.target.value)}
+                    />
+                </div>
+            </div>
             <div style={{ width: '100%', height: '50vw' }}>
                 <ResponsiveBarCanvas
                     data={chart_data}

@@ -1,0 +1,79 @@
+{
+    "Senate": [
+        {
+            "name": "Camille Randolph",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "McLovin",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Amanjot Singh Gandhoke",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Purva Bhattacharjee",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Mahan Carduny",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jenna DiCarlo",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Samantha Boudaie",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "JB Martinez",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Michelle Hua",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Khalil Malik",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "VIOLETA RUIZ",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Ratnapala Gamage",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Juan David Velasco",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Karolina Rodriguez",
+            "number": 14,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2019: Senate",
+            "number": 15,
+            "party": "Unknown"
+        }
+    ]
+}

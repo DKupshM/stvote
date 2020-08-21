@@ -1,0 +1,74 @@
+{
+    "Senate": [
+        {
+            "name": "Amy Martin",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anna Ruth Crittenden",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Arasele Torrez Jiminez",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Brendan Repicky",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Caitlin Alday",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Edd Montelongo",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Eli Yani",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jared Crisologo Smith",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Mayra Martin",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Miguel Espinoza",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Richard Yu",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Ryan Meyerhoff",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Yena Bae",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2011 Election",
+            "number": 14,
+            "party": "Unknown"
+        }
+    ]
+}

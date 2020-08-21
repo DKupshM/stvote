@@ -1,0 +1,94 @@
+{
+    "Senate": [
+        {
+            "name": "Charles Bisesto",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Joseph 'Wildcat' Bleckman",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Molly Fluet",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alexandra Frick",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Eric Friedman",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Mara Harris",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Dustin Murray",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Albert Parnell",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andrew Peake",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jesse Rosales",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sandy Rose",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jack Shannon",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Daryl Suyat",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Arie van Gemeren",
+            "number": 14,
+            "party": "Unknown"
+        },
+        {
+            "name": "Dan Xie",
+            "number": 15,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rob Roy",
+            "number": 16,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kirk Cowgill",
+            "number": 17,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2006 Election",
+            "number": 18,
+            "party": "Unknown"
+        }
+    ]
+}

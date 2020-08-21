@@ -1,0 +1,89 @@
+{
+    "Senate": [
+        {
+            "name": "Burke Rosen",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Chintan Desai",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Elle Segal",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Joemar Clemente",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Justin Gold",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kevin Massoudi",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Luka Vidovic",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Momo Newbon",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Previn Witana",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sanwarl Li",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Shawdee Rouhafza",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Trevor Taylor",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Will Klein",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Zaana Hall",
+            "number": 14,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jeremia Kimelman",
+            "number": 15,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2009 Election",
+            "number": 16,
+            "party": "Unknown"
+        },
+        {
+            "name": "",
+            "number": 17,
+            "party": "Unknown"
+        }
+    ]
+}

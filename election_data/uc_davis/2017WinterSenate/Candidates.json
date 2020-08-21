@@ -1,0 +1,59 @@
+{
+    "senate": [
+        {
+            "name": "Marcos Rodriguez",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sam Chiang",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Samir Himes",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rahi Suryawanshi",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Frank McGreal",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Michael Gofman",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Khadeja Ibrahim",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Yajaira Ramirez Sigala",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rosa Maria Martinez",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Zaki Shaheen",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2017: Senate",
+            "number": 11,
+            "party": "Unknown"
+        }
+    ]
+}

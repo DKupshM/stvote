@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/stvote/static/css/main.c29a71c2.chunk.css",
-    "main.js": "/stvote/static/js/main.06307276.chunk.js",
-    "main.js.map": "/stvote/static/js/main.06307276.chunk.js.map",
+    "main.js": "/stvote/static/js/main.e58234a7.chunk.js",
+    "main.js.map": "/stvote/static/js/main.e58234a7.chunk.js.map",
     "runtime-main.js": "/stvote/static/js/runtime-main.3fe2677a.js",
     "runtime-main.js.map": "/stvote/static/js/runtime-main.3fe2677a.js.map",
     "static/css/2.cbbbb7c5.chunk.css": "/stvote/static/css/2.cbbbb7c5.chunk.css",
-    "static/js/2.42cc67c4.chunk.js": "/stvote/static/js/2.42cc67c4.chunk.js",
-    "static/js/2.42cc67c4.chunk.js.map": "/stvote/static/js/2.42cc67c4.chunk.js.map",
+    "static/js/2.24b38b91.chunk.js": "/stvote/static/js/2.24b38b91.chunk.js",
+    "static/js/2.24b38b91.chunk.js.map": "/stvote/static/js/2.24b38b91.chunk.js.map",
     "index.html": "/stvote/index.html",
-    "precache-manifest.d99dec3212f184c97eb17f29dd1c8ed6.js": "/stvote/precache-manifest.d99dec3212f184c97eb17f29dd1c8ed6.js",
+    "precache-manifest.0cf74e6ba2cb2b64976bb5f3fc60ca18.js": "/stvote/precache-manifest.0cf74e6ba2cb2b64976bb5f3fc60ca18.js",
     "service-worker.js": "/stvote/service-worker.js",
     "static/css/2.cbbbb7c5.chunk.css.map": "/stvote/static/css/2.cbbbb7c5.chunk.css.map",
     "static/css/main.c29a71c2.chunk.css.map": "/stvote/static/css/main.c29a71c2.chunk.css.map",
-    "static/js/2.42cc67c4.chunk.js.LICENSE.txt": "/stvote/static/js/2.42cc67c4.chunk.js.LICENSE.txt"
+    "static/js/2.24b38b91.chunk.js.LICENSE.txt": "/stvote/static/js/2.24b38b91.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3fe2677a.js",
     "static/css/2.cbbbb7c5.chunk.css",
-    "static/js/2.42cc67c4.chunk.js",
+    "static/js/2.24b38b91.chunk.js",
     "static/css/main.c29a71c2.chunk.css",
-    "static/js/main.06307276.chunk.js"
+    "static/js/main.e58234a7.chunk.js"
   ]
 }

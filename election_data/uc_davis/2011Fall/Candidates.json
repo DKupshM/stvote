@@ -1,0 +1,44 @@
+{
+    "Senate": [
+        {
+            "name": "Justin Goss",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Patrick Sheehan",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Erica Padgett",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Annamaria Kimball",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Charlie Colato",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Yara Zokaie",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jared Crisologo-Smith",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall Election 2011",
+            "number": 8,
+            "party": "Unknown"
+        }
+    ]
+}

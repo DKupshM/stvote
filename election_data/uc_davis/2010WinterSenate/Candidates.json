@@ -1,0 +1,74 @@
+{
+    "Senate": [
+        {
+            "name": "Rudy Ornelas",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "David Turkell",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Osahon Ekhator",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Liz Walz",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Basile Senesi",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kirstin Stone",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Selisa Romero",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alison Tanner",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Ozzy Arce",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Subhan Cheema",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Christopher Adams",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Adam Thongsavat",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Raj Kumar",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2010 Election",
+            "number": 14,
+            "party": "Unknown"
+        }
+    ]
+}

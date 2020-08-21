@@ -37,7 +37,7 @@ function PartyPercentage(props) {
         let datapoints = [];
         for (let i = 1; i < maxchoices + 1; i++) {
             if (i in choices[item])
-                datapoints.push({ x: i, y: choices[item][i] })
+                datapoints.push({ x: i, y: choices[item][i - 1] })
         }
         data.push({
             id: item,

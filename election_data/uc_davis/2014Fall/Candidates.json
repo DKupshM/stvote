@@ -1,0 +1,44 @@
+{
+    "Senate": [
+        {
+            "name": "Andrea Velazquez",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Casey Nguyen",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alex Lee",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Brendan Chang",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anabiah Syed",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Roman Rivilis",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Reem Fatayerji",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2014: Senate",
+            "number": 8,
+            "party": "Unknown"
+        }
+    ]
+}

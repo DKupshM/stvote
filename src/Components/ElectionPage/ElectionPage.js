@@ -14,6 +14,7 @@ import CandidateList from './Race/CandidateList';
 
 import FirstChoicePie from './Models/FirstChoicePie';
 import ElectedCandidatesPie from './Models/ElectedCandidatesPie';
+import CandidatesRankedPie from './Models/CandidatesRankedPie';
 import CandidatesRanked from './Models/CandidatesRanked';
 import PartyPercentage from './Models/PartyPercentage';
 import EventualWinner from './Models/EventualWinner';
@@ -30,7 +31,9 @@ import { Candidate } from '../../Data_Models/Candidate';
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
 import NivoSankey from './Models/Sankey';
+import HeatMap from './Models/HeatMap';
 import ElectionBar from './Models/ElectionBar';
+import Chord from './Models/Chord';
 
 function ElectionPage(props) {
 
@@ -351,6 +354,7 @@ function ElectionPage(props) {
                 <FirstChoicePie race={activeRace} parties={parties} style={chartStyle} />
                 <ElectedCandidatesPie race={activeRace} parties={parties} style={chartStyle} />
                 <CandidatesRanked race={activeRace} parties={parties} style={chartStyle} />
+                <CandidatesRankedPie race={activeRace} style={chartStyle} />
                 <PartyPercentage race={activeRace} parties={parties} style={chartStyle} />
                 <VoteOverTime race={activeRace} parties={parties} style={chartStyle} />
                 <VoteOverTimeBump race={activeRace} style={chartStyle} />
@@ -365,6 +369,9 @@ function ElectionPage(props) {
                     {'Bar'}
                 </Button>
                 <Button onClick={() => setModel(1)} disabled={model === 1} variant="secondary" size="lg" style={pageButtonStyle}>
+                    {'Heat Map'}
+                </Button>
+                <Button onClick={() => setModel(2)} disabled={model === 2} variant="secondary" size="lg" style={pageButtonStyle}>
                     {'Sankey'}
                 </Button>
             </ButtonGroup>
@@ -383,6 +390,23 @@ function ElectionPage(props) {
                         <ElectionBar race={activeRace} style={{ alignSelf: 'center', width: '40vw' }} />
                     </div>
                 </div>
+            );
+        }
+        else if (model === 1) {
+            return (
+                <div className="text-center" style={{
+                    height: '100%',
+                    minHeight: '100%',
+                    display: "flex",
+                    justifyContent: 'center',
+                    flexWrap: 'wrap'
+                }}>
+                    {pageButtons}
+                    {modelButtons}
+                    {raceTitle}
+                    <HeatMap race={activeRace} />
+                    <Chord race={activeRace} />
+                </div >
             );
         }
         else {

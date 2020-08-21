@@ -1,0 +1,59 @@
+{
+    "Senate": [
+        {
+            "name": "Simran Grewal",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alexander Keyser",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Matthew Yamaguchi",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alex Rodriguez",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Madison Wheeler",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Zach Moore",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anastasia Ruttkay",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jose Antonio V. Meneses",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Julie Jung",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Daniel Nagey",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2016: Senate",
+            "number": 11,
+            "party": "Unknown"
+        }
+    ]
+}

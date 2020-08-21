@@ -1,0 +1,64 @@
+{
+    "senate": [
+        {
+            "name": "Shreya Deshpande",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Derek Foster",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Roberto Rodriguez Ibarra",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alexis Lopez-Perez",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Laura Elizalde",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jonathan Iniguez",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Amanjot Gandhoke",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Alex Cohen",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Tenzin Youedon",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Lucas Fong",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Madeline Thompson",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2020: Senate",
+            "number": 12,
+            "party": "Unknown"
+        }
+    ]
+}

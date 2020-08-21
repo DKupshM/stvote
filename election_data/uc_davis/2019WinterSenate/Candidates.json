@@ -1,0 +1,69 @@
+{
+    "senate": [
+        {
+            "name": "Karolina Rodriguez",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "George Liao",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Perla Ornelas",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anna Estrada",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rebecca Gonzalez",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andre Spinoglio",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Arjan Singh Heer",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Victoria Choi",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sahiba Kaur",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jamila Alani",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Justin Weiner",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Shondreya Landrum",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2019: Senate",
+            "number": 13,
+            "party": "Unknown"
+        }
+    ]
+}

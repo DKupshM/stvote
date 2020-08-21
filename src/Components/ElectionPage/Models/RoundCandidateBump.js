@@ -4,6 +4,10 @@ import { ResponsiveBump } from '@nivo/bump'
 
 
 function RoundCandidateBump(props) {
+
+    if (props.race.rounds.length === 0)
+        return (<div></div>);
+
     let data = []
 
     for (const candidate of props.race.candidates) {

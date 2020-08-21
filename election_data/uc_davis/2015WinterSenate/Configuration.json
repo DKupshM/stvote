@@ -1,0 +1,9 @@
+{
+    "races": [
+        {
+            "race_id": 201,
+            "race_max_winners": "6",
+            "race_position": "senate"
+        }
+    ]
+}

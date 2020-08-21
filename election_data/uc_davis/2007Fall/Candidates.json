@@ -1,0 +1,74 @@
+{
+    "Senate": [
+        {
+            "name": "Andrew Kim",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rebecca Lovell",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Chad Roberts",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Erika Perez",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Erin Harrington",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jesse Rosales",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Joe Chatham",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "John Dreyer",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Johnathen Duran",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Lauren Thomas",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Lula Ahmed-Falol",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Tracey Zeng",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Edward Baraona",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2007 Election",
+            "number": 14,
+            "party": "Unknown"
+        }
+    ]
+}

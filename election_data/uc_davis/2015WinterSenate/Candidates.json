@@ -1,0 +1,39 @@
+{
+    "senate": [
+        {
+            "name": "Sevan Nahabedian",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Miguel Guerrero",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anas Tresh",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Gabriel Johnson",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Danielle Mae Q. Santiago",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sarah Priano",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2015: Senate",
+            "number": 7,
+            "party": "Unknown"
+        }
+    ]
+}

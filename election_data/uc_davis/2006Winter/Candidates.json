@@ -1,0 +1,74 @@
+{
+    "Senate": [
+        {
+            "name": "Alex Vahdat",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Ravi Deepak",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Naomi Amaha",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Mo Li",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rawi 'Bigger' Nanakul",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andrew Bianchi",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Dwaimy Rosas-Romero",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "George Ajlouny",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jarvis 'MacGyver' Burston",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Jeremy Ross",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Joshua Lenhof",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Kevin 'K. Rob' Roberts",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Marvin Zamora",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Michael A. Molnar",
+            "number": 14,
+            "party": "Unknown"
+        }
+    ]
+}

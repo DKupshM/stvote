@@ -1,0 +1,69 @@
+{
+    "Senate": [
+        {
+            "name": "Kase Wheatley",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andre Lee",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Puneet Dhillion",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Cameron Brown",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Emmanuel Diaz-Ordaz",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Tatiana Moana Bush",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Darwin Moosavi",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Matt Provencher",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Rebecca Sterling",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Brendan Edwards",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Zachary Hansen",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Prince Girm",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2010 Election",
+            "number": 13,
+            "party": "Unknown"
+        }
+    ]
+}
