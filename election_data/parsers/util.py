@@ -222,7 +222,7 @@ def combine_race(year_one, year_two, new_year):
 
 def rename_race(year):
     rename_race_name("election_data/uc_davis/" + year + "/Configuration.json",
-                     "election_data/uc_davis/" + year + "/Candidates.json", " Winter")
+                     "election_data/uc_davis/" + year + "/Candidates.json", " Fall")
 
 
 def rename_uuid_year(year):
@@ -235,5 +235,8 @@ def rename_uuid_year(year):
 
 
 if __name__ == "__main__":
-    combine_race("2019Fall", "2019WinterSenate", "201")
-    combine_race("2018", "2018WinterPres", "2018")
+    rename_uuid_year("2007")
+    '''
+    combine_race("2007Fall", "2007WinterSenate", "2007")
+    combine_race("2007", "2007WinterPres", "2007")
+    '''

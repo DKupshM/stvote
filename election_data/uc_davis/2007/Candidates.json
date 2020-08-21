@@ -1,188 +1,188 @@
 {
-    "President Winter": [
+    "President": [
         {
             "name": "Kareem Salem & Julie Hooper",
-            "number": "40de5db9-8798-497c-b71c-281734e0bd0f",
-            "party": "Unknown"
+            "number": "66508aa3-3565-4c73-afec-8c748a5825e9",
+            "party": "LEAD"
         },
         {
             "name": "Spencer Higgins & Jonathan 'Tiny' Sanders",
-            "number": "e98a316a-8760-4c71-b322-31ee90860efb",
-            "party": "Unknown"
+            "number": "a583a66e-e7af-4fbd-b765-826d31900812",
+            "party": "Student Focus"
         },
         {
             "name": "Robert Roy & Arlen Abraham",
-            "number": "890fab05-6a1d-4d40-a851-6f0fe09894f0",
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2007 Election",
-            "number": "aaba7610-18f8-43b5-8e0b-51b626bf696f",
-            "party": "Unknown"
+            "number": "e4b397e0-7d73-4067-ac43-3d5658cf81cc",
+            "party": "Independent"
         }
     ],
     "Senate Fall": [
         {
             "name": "Andrew Kim",
-            "number": "7c1461dd-5fdc-45a2-9852-2bcc910a1bdd",
-            "party": "Unknown"
+            "number": "eb304b60-9d27-4741-af53-f27d3c9696d6",
+            "party": "GO"
         },
         {
             "name": "Rebecca Lovell",
-            "number": "740876ea-c47b-4bda-a1e2-17bcb4aa4dde",
-            "party": "Unknown"
+            "number": "fa85fa30-9f3e-41f0-90d7-f736a5a3a92e",
+            "party": "GO"
         },
         {
             "name": "Chad Roberts",
-            "number": "04cf0b06-d3b1-4937-88e8-dc949ccfa0cf",
-            "party": "Unknown"
+            "number": "3a80ba38-a953-4755-a452-8e46e007addf",
+            "party": "LEAD"
         },
         {
             "name": "Erika Perez",
-            "number": "e594bca8-bba3-4fb1-ad46-8f398da486fb",
-            "party": "Unknown"
+            "number": "b7b0cfdf-9496-40ae-bace-ec93edeb415c",
+            "party": "GO"
         },
         {
             "name": "Erin Harrington",
-            "number": "3e4e2ed9-7854-4b4a-9439-89e86ab496bc",
-            "party": "Unknown"
+            "number": "edf809dc-069d-456f-bebb-8305f3871bf4",
+            "party": "LEAD"
         },
         {
             "name": "Jesse Rosales",
-            "number": "84478ae4-3357-40e4-a845-f0eab8d0d1e9",
-            "party": "Unknown"
+            "number": "219c6403-4262-4321-841b-94fdd2861b64",
+            "party": "GO"
         },
         {
             "name": "Joe Chatham",
-            "number": "09523d1a-324a-48b5-8a79-918b85b73884",
-            "party": "Unknown"
+            "number": "caed45a7-04eb-4e66-8364-9eb652f6e2c0",
+            "party": "Independent"
         },
         {
             "name": "John Dreyer",
-            "number": "42c8abbe-9aa3-4fd1-91ca-293aa8e018f6",
-            "party": "Unknown"
+            "number": "54699c99-b07f-4fad-96eb-d5212cf8837a",
+            "party": "GO"
         },
         {
             "name": "Johnathen Duran",
-            "number": "566fed86-8dfc-4294-bd7f-ce1016ff5d35",
-            "party": "Unknown"
+            "number": "83da684b-5e36-4ec0-bb92-e8f8cadcb808",
+            "party": "LEAD"
         },
         {
             "name": "Lauren Thomas",
-            "number": "c046bcf4-ce80-42fa-86a4-78720f7f50b2",
-            "party": "Unknown"
+            "number": "e6912f8d-d226-43ae-8de6-e4a567570e3f",
+            "party": "LEAD"
         },
         {
             "name": "Lula Ahmed-Falol",
-            "number": "a4912521-3294-4b0f-8a88-0bb5b5798c65",
-            "party": "Unknown"
+            "number": "470df78a-2cd6-4533-b4af-25be3b4eae7b",
+            "party": "LEAD"
         },
         {
             "name": "Tracey Zeng",
-            "number": "9ce3772f-ccdc-494e-8287-b3db6b731b69",
-            "party": "Unknown"
+            "number": "12efb871-b0dd-4f64-83d2-31902089bc54",
+            "party": "LEAD"
         },
         {
             "name": "Edward Baraona",
-            "number": "5b707418-cbe9-4cb4-b826-dcca204cdc70",
-            "party": "Unknown"
-        },
-        {
-            "name": "Fall 2007 Election",
-            "number": "51ec0a21-8f0d-4357-879f-327a7a1c09e2",
-            "party": "Unknown"
+            "number": "79f6ebae-cb4b-4118-a3d7-64c62d63d676",
+            "party": "Independent"
         }
     ],
     "Senate Winter": [
         {
-            "name": "Charles Bisesto",
-            "number": "0d3c2ab0-3b6a-4897-86c7-9227cfae4f84",
-            "party": "Unknown"
+            "name": "James Adams",
+            "number": "98a2a221-0987-4509-a26f-9bb3270f7b85",
+            "party": "Student Focus"
         },
         {
-            "name": "Joseph 'Wildcat' Bleckman",
-            "number": "8f499f39-ca50-4ad9-94ab-b2b55f48b447",
-            "party": "Unknown"
+            "name": "George Ajlouny",
+            "number": "62020179-dc56-4a46-b9d3-3b5518546f4f",
+            "party": "Independent"
         },
         {
-            "name": "Molly Fluet",
-            "number": "1481fe56-be35-4300-8785-f84e4084a2d6",
-            "party": "Unknown"
+            "name": "Joseph 'DJ Blonde' Bleckman",
+            "number": "2a08185a-802e-4452-9bf6-b4f6eb6be5e7",
+            "party": "Student Focus"
         },
         {
-            "name": "Alexandra Frick",
-            "number": "6fb08518-e939-4a3a-8598-54805d740cec",
-            "party": "Unknown"
+            "name": "Ivan Carrillo",
+            "number": "14aaa4ae-51e0-4a97-8fbc-170097fb018d",
+            "party": "LEAD"
         },
         {
-            "name": "Eric Friedman",
-            "number": "e3a4169c-770c-43f6-90c8-0b497a54dfb8",
-            "party": "Unknown"
+            "name": "Madisyn Coniglio",
+            "number": "f8740620-4ae8-4296-aaba-d7d57fd6399a",
+            "party": "LEAD"
         },
         {
-            "name": "Mara Harris",
-            "number": "24697953-2069-492b-bc6d-bd0b1343f0be",
-            "party": "Unknown"
+            "name": "Billy Durham",
+            "number": "b2a854e1-cc15-4f45-bd01-8ab36a0603bf",
+            "party": "Student Focus"
         },
         {
-            "name": "Dustin Murray",
-            "number": "c937bf08-dcd5-468e-ad08-b2bc0330b2a4",
-            "party": "Unknown"
+            "name": "Usenima Inyang",
+            "number": "55891e3e-7ff6-4d6a-ac27-cb5f18f73bd1",
+            "party": "LEAD"
         },
         {
-            "name": "Albert Parnell",
-            "number": "c931cc24-a5c7-4771-ac71-87dfa9c17398",
-            "party": "Unknown"
+            "name": "Lorig Kalfayan",
+            "number": "235aba37-c185-45ba-995f-27fa2bc3a018",
+            "party": "Student Focus"
         },
         {
-            "name": "Andrew Peake",
-            "number": "8abd2034-9cf6-4f43-a780-45785ef4bc86",
-            "party": "Unknown"
+            "name": "Michael Lay",
+            "number": "5bd7b028-cb8f-477c-b076-f42593b5802b",
+            "party": "LEAD"
         },
         {
-            "name": "Jesse Rosales",
-            "number": "be1eba8c-088b-493d-86d0-de648cd2652d",
-            "party": "Unknown"
+            "name": "Fazila Malik",
+            "number": "ac42a4e5-df2d-41f7-84a5-8d27583d47d9",
+            "party": "LEAD"
         },
         {
-            "name": "Sandy Rose",
-            "number": "4ecf63cd-7711-4a84-a4e2-7aa1b909c0cd",
-            "party": "Unknown"
+            "name": "Pete 'Pistol' Markevich",
+            "number": "30feb464-ea9a-4fcc-93d2-d3f2ce02a03a",
+            "party": "Student Focus"
         },
         {
-            "name": "Jack Shannon",
-            "number": "e686d213-2a09-45ca-a52c-9818d12ad62f",
-            "party": "Unknown"
+            "name": "Laura Nevins",
+            "number": "d9c5d0f1-34ff-4d90-baa4-5318b5f44c76",
+            "party": "Independent"
         },
         {
-            "name": "Daryl Suyat",
-            "number": "205a22d3-a08a-4633-95f6-3bbe0cfd339f",
-            "party": "Unknown"
+            "name": "Albert 'Bigg Al Jonson' Parnell",
+            "number": "0e23c108-fcc1-4990-b5cc-7e1fdfa1eb31",
+            "party": "Independent"
         },
         {
-            "name": "Arie van Gemeren",
-            "number": "5a187e81-f19d-4200-8e37-e827f4bb7b4e",
-            "party": "Unknown"
+            "name": "Ronald Payne",
+            "number": "22f039a7-3302-496d-8f95-5fa169d49dd0",
+            "party": "Independent"
         },
         {
-            "name": "Dan Xie",
-            "number": "d440d76b-83d5-4886-a037-761a23f7931e",
-            "party": "Unknown"
+            "name": "Christine Pham",
+            "number": "5ba2d369-144f-4eda-aebe-dd3e99379434",
+            "party": "LEAD"
         },
         {
-            "name": "Rob Roy",
-            "number": "c903758d-0784-4b6b-8bc1-50eb8dff92ac",
-            "party": "Unknown"
+            "name": "Erica Rozetti",
+            "number": "9a5f82bf-ac02-498e-9dd8-ca6cabcdddde",
+            "party": "Independent"
         },
         {
-            "name": "Kirk Cowgill",
-            "number": "fe850981-aa65-4a33-968c-15fbad092d67",
-            "party": "Unknown"
+            "name": "Timothy Silva",
+            "number": "037cdfa4-a66c-49a6-934f-ed958f34e531",
+            "party": "Independent"
         },
         {
-            "name": "Fall 2006 Election",
-            "number": "302d8f54-3aba-46f0-b69d-f0d80de4eaa4",
-            "party": "Unknown"
+            "name": "Molly Sundstrom",
+            "number": "48891e25-0690-41bd-af73-9df4d6449932",
+            "party": "Student Focus"
+        },
+        {
+            "name": "Ersen Cem Turhal",
+            "number": "e7e3e945-123d-4545-bc77-2d354c5e0316",
+            "party": "Student Focus"
+        },
+        {
+            "name": "Greg Webb",
+            "number": "a6b49ab6-3e1a-4c61-8865-5be8b17974f0",
+            "party": "Student Focus"
         }
     ]
 }
