@@ -2,18 +2,18 @@
     "parties": [
         {
             "party_id": 1,
-            "party_name": "FUCK",
-            "party_color": "1779e3"
-        },
-        {
-            "party_id": 2,
             "party_name": "LEAD",
             "party_color": "21c46b"
         },
         {
+            "party_id": 2,
+            "party_name": "BASED",
+            "party_color": "9C00C8"
+        },
+        {
             "party_id": 3,
-            "party_name": "Student Focus",
-            "party_color": "f00b07"
+            "party_name": "SUMMIT",
+            "party_color": "007DFF"
         },
         {
             "party_id": 4,

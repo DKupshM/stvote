@@ -20,7 +20,7 @@ def rename_candidate_id(candidate_file_path, ballot_file_path):
             candidates = candidate_file_data[race]
             for candidate in candidates:
                 new_id = str(uuid.uuid4())
-                old_ids[str(candidate["number"])] = new_id
+                old_ids[str(candidate["number"]).strip("'")] = new_id
                 race_candidates.append(
                     {"name": candidate["name"], "number": new_id, "party": candidate["party"]})
             new_candidate_file[race] = race_candidates
@@ -36,8 +36,9 @@ def rename_candidate_id(candidate_file_path, ballot_file_path):
                 new_candidates = []
                 candidates = ballot[race]
                 for candidate in candidates:
-                    new_candidates.append(old_ids[candidate])
-                new_ballot[race] = new_candidates
+                    new_candidates.append(
+                        str(old_ids[str(candidate).strip("'")]))
+                new_ballot[str(race)] = new_candidates
             new_ballots.append(new_ballot)
         new_ballot_file = {"ballots": new_ballots}
 
@@ -222,7 +223,7 @@ def combine_race(year_one, year_two, new_year):
 
 def rename_race(year):
     rename_race_name("election_data/uc_davis/" + year + "/Configuration.json",
-                     "election_data/uc_davis/" + year + "/Candidates.json", " Fall")
+                     "election_data/uc_davis/" + year + "/Candidates.json", " Winter")
 
 
 def rename_uuid_year(year):
@@ -235,8 +236,7 @@ def rename_uuid_year(year):
 
 
 if __name__ == "__main__":
-    rename_uuid_year("2007")
-    '''
-    combine_race("2007Fall", "2007WinterSenate", "2007")
-    combine_race("2007", "2007WinterPres", "2007")
-    '''
+    # rename_race("2018Winter")
+    rename_uuid_year("2018")
+    # combine_race("2008Fall", "2008WinterSenate", "2008")
+    # combine_race("2018", "2018winter", "2018")

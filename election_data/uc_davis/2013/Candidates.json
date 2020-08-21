@@ -3,181 +3,166 @@
         {
             "name": "Paul Min & Sergio Cano",
             "number": "14c1c47b-e647-4f31-8cc2-83641d266d2b",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
             "name": "Migz Espinoza & Lane Lewis",
             "number": "45c54da5-15b0-4cec-81cd-a7279d18e73c",
-            "party": "Unknown"
+            "party": "FUQ"
         },
         {
             "name": "Carly Sandstrom & Bradley Bottoms",
             "number": "95e2792f-29ff-47aa-bf7e-12c5ede47768",
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2013: Presidential Tickets",
-            "number": "88e8336b-1098-44bf-8aec-ed35b6d10ac8",
-            "party": "Unknown"
+            "party": "NOW"
         }
     ],
     "Senate Fall": [
         {
             "name": "Hiba Saeed",
             "number": "5be6e338-b9ce-484e-a269-8fe66704bbfd",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Mariah Kala Watson",
             "number": "90d72d0e-d357-46ec-8a79-76da3a22e323",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Katherine Sherman",
             "number": "0baecea8-918e-467f-a15e-f554c19497c9",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Shehzad Lokhandwalla",
             "number": "2232b81e-e7cf-4e4a-892f-218b0bfdd415",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
             "name": "Jonathan Mitchell",
             "number": "f9001d57-c410-4d0d-b2ef-87e47a5298ff",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Alisa Palma",
             "number": "8687efea-0c6c-4591-afe8-14fcd2d18393",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Gareth Smythe",
             "number": "bf673c14-20ac-424f-b4ee-0e4a2bbc40a0",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
             "name": "Nicholas Park",
             "number": "7fec7d6b-3039-4ab9-bf81-c792f4f130b7",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Janesh Gupta",
             "number": "2895af74-e836-4667-8ee2-79b5567aed25",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Seanne Louvet",
             "number": "5f1b9365-e460-4b06-b85c-7d428a85e955",
-            "party": "Unknown"
-        },
-        {
-            "name": "Fall 2013: Senate",
-            "number": "4ebf1671-7496-4c79-8919-123d39faa7f9",
-            "party": "Unknown"
+            "party": "NOW"
         }
     ],
     "Senate Winter": [
         {
             "name": "Brittany Garzaniti",
             "number": "5a42393b-5a77-465c-9da2-6ec8cdb830c1",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Justin Dowdle",
             "number": "83815f3c-e6c6-4a78-987e-d99ae508a347",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Araxya Movsisyan",
             "number": "de567045-9e74-4ee0-bf5d-216cbd148a99",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
             "name": "Chandler Hill",
             "number": "43d3ef20-72e4-40b0-92ba-5a51e7460f8c",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Marissa Ayala",
             "number": "75fb3ace-86c1-4c30-a247-2a81850b4dce",
-            "party": "Unknown"
+            "party": "BEST"
         },
         {
             "name": "Ryan Wonders",
             "number": "995c7e21-21ba-4302-8f68-18841dc8c24a",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Bryce Fick",
             "number": "0d9cbe1a-4159-4c76-accf-37ca0939deee",
-            "party": "Unknown"
+            "party": "BEST"
         },
         {
             "name": "Jonathan Yip",
             "number": "772c7e10-e20f-47f8-a0c1-fee7fea7a179",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Reuben Torres",
             "number": "a1b0399d-1a91-4062-ae34-8ef536a799a3",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Evan Rothstein",
             "number": "284b467f-d3d2-4c8d-9a58-a37d8919a257",
-            "party": "Unknown"
+            "party": "BEST"
         },
         {
             "name": "Roman Rivilis",
             "number": "6a9679eb-8ed9-42ea-9379-cd0873d042d4",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
-            "name": "Amrit \\\"Kaur\\\" Sahota",
+            "name": "Amrit (Kaur) Sahota",
             "number": "60cfa495-a54a-45ad-8e40-73b3ee1a153f",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
-            "name": "Nicole \\\"Nikki\\\" Kim",
+            "name": "Nicole (Nikki) Kim",
             "number": "014a70cc-b6c8-4d6b-bb0d-1b9475b37188",
-            "party": "Unknown"
+            "party": "Independent"
         },
         {
             "name": "Miles Thomas",
             "number": "ccf6a09a-2af1-4897-b882-0b92ffe27c7a",
-            "party": "Unknown"
+            "party": "BEST"
         },
         {
             "name": "Joanna Villegas",
             "number": "c4d49b43-51c4-40bd-867a-dc156b96b7a1",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Iris Xie",
             "number": "d18fdf96-df8b-445b-81cd-da8558dc5f3c",
-            "party": "Unknown"
+            "party": "SMART"
         },
         {
             "name": "Brendan Crotty",
             "number": "6be600a9-b9d4-43a7-8a4a-5f45e8c02418",
-            "party": "Unknown"
+            "party": "BEST"
         },
         {
-            "name": "Ingrid \\\"Pamela\\\" Nonga Ngue",
+            "name": "Ingrid (Pamela) Nonga Ngue",
             "number": "bfee6e52-95b6-4a0a-8275-4a1559990c67",
-            "party": "Unknown"
+            "party": "NOW"
         },
         {
             "name": "Yee Xiong",
             "number": "59cedadf-9203-4214-b7af-f75b292df273",
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2013: Senate",
-            "number": "deb29f12-a629-41f5-a591-9801995bc874",
-            "party": "Unknown"
+            "party": "SMART"
         }
     ]
 }

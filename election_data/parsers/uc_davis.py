@@ -95,4 +95,5 @@ class UCDParser():
 
 
 if __name__ == "__main__":
-    parse_file("2007Fall", "Senate")
+    parse_file("2018", "Senate")
+    parse_file("2018Winter", "Senate")

@@ -2,252 +2,150 @@
     "Senate Fall": [
         {
             "name": "Maya Barak",
-            "number": "2952b989-30db-42a5-8a62-45310f826ba4",
-            "party": "Unknown"
+            "number": "68de9034-55b4-4096-88fa-ff21cc4e7af4",
+            "party": "UNITE!"
         },
         {
             "name": "Alexis Ramirez",
-            "number": "071664c9-350d-4d19-87d4-338b16308bce",
-            "party": "Unknown"
+            "number": "b08165b6-ac5f-407f-8e1e-3f9ec14d3e24",
+            "party": "BASED"
         },
         {
             "name": "Noah Pearl",
-            "number": "235e589f-68b4-4c07-a3e5-a3c98fcb915e",
-            "party": "Unknown"
+            "number": "a10e62e2-3de2-46b0-9c74-31abaf96a3f0",
+            "party": "UNITE!"
         },
         {
             "name": "Peiyuan (Tony) Chen",
-            "number": "0806c941-47fb-4fcf-b6e9-a503854d97cd",
-            "party": "Unknown"
+            "number": "3e03c79c-b813-4dae-87fb-0a9c96ab410c",
+            "party": "BASED"
         },
         {
             "name": "Francisco Lopez Montano",
-            "number": "c413142e-cf2d-4020-9c46-c844bad9a4c5",
-            "party": "Unknown"
+            "number": "af4ab227-773d-4bad-a7f4-2f6609d1864b",
+            "party": "UNITE!"
         },
         {
             "name": "Sean Kumar",
-            "number": "b793b75d-fe57-4f44-a5ea-a5c9df4952bb",
-            "party": "Unknown"
+            "number": "a852d7ad-b1eb-4cd4-a201-d5179c9eb586",
+            "party": "UNITE!"
         },
         {
             "name": "Kevin Butt",
-            "number": "158d9e34-6751-4e60-8661-0a0d78ad646c",
-            "party": "Unknown"
+            "number": "1552c88c-70dd-4dd8-aa60-d4b02fbd7acf",
+            "party": "Independent"
         },
         {
             "name": "Ricky Zapardiel",
-            "number": "6d2beaa4-9f6e-4f65-9e54-49ac74b00fb7",
-            "party": "Unknown"
-        },
-        {
-            "name": "Fall 2018: Senate",
-            "number": "8e6ac82f-bd0d-44e3-8e74-36333532af5b",
-            "party": "Unknown"
+            "number": "fdb90aa0-56a5-4b3c-ad63-d69a04f03289",
+            "party": "UNITE!"
         }
     ],
     "Senate Winter": [
         {
-            "name": "Charles Bisesto",
-            "number": "55ba9516-f6eb-47a0-bdaf-c3e72996a166",
-            "party": "Unknown"
-        },
-        {
-            "name": "Joseph 'Wildcat' Bleckman",
-            "number": "6466d751-4993-47e4-81d7-6cce6b9204a4",
-            "party": "Unknown"
-        },
-        {
-            "name": "Molly Fluet",
-            "number": "00254777-95f0-42fa-93e6-52592752afc2",
-            "party": "Unknown"
-        },
-        {
-            "name": "Alexandra Frick",
-            "number": "b2b0f875-bb59-4ec4-9df6-295311740de6",
-            "party": "Unknown"
-        },
-        {
-            "name": "Eric Friedman",
-            "number": "313e48f1-04e8-4868-9635-f24046c9774c",
-            "party": "Unknown"
-        },
-        {
-            "name": "Mara Harris",
-            "number": "bda9ee90-6478-4a8e-9971-193bc99feec7",
-            "party": "Unknown"
-        },
-        {
-            "name": "Dustin Murray",
-            "number": "ac77a6eb-c0c7-40f7-8525-3ff698c271e0",
-            "party": "Unknown"
-        },
-        {
-            "name": "Albert Parnell",
-            "number": "5bd8f6fe-b465-40fe-bc14-b2da89d34df4",
-            "party": "Unknown"
-        },
-        {
-            "name": "Andrew Peake",
-            "number": "05fb88bb-411c-436d-93bf-1a6072dc3034",
-            "party": "Unknown"
-        },
-        {
-            "name": "Jesse Rosales",
-            "number": "40ff8d63-209f-4cfa-9d1e-5203f93d8d4f",
-            "party": "Unknown"
-        },
-        {
-            "name": "Sandy Rose",
-            "number": "8e469334-d4a3-41ca-ac71-2cade2ef8d3f",
-            "party": "Unknown"
-        },
-        {
-            "name": "Jack Shannon",
-            "number": "9f2fdaf4-574d-4129-85eb-6b06bb444d1a",
-            "party": "Unknown"
-        },
-        {
-            "name": "Daryl Suyat",
-            "number": "e824f909-6f2c-454d-9256-69021c169fcd",
-            "party": "Unknown"
-        },
-        {
-            "name": "Arie van Gemeren",
-            "number": "6153e57e-f087-4bb3-9cc3-2bc7b4cb4410",
-            "party": "Unknown"
-        },
-        {
-            "name": "Dan Xie",
-            "number": "4ad14389-200f-4967-83d7-1eb6a8594d4c",
-            "party": "Unknown"
-        },
-        {
-            "name": "Rob Roy",
-            "number": "a5061e07-9e76-4ba5-b93a-9458cb093584",
-            "party": "Unknown"
-        },
-        {
-            "name": "Kirk Cowgill",
-            "number": "1e255ed4-2599-496d-9cee-dcf1a91e750f",
-            "party": "Unknown"
-        },
-        {
-            "name": "Fall 2006 Election",
-            "number": "9eb6dff9-4625-4f4f-9794-11d8ef9d2441",
-            "party": "Unknown"
-        }
-    ],
-    "senate Winter": [
-        {
             "name": "Daniel Hernandez",
-            "number": "f1093a5c-8137-4015-bdf1-ae7751ec2b08",
-            "party": "Unknown"
+            "number": "6aa7a03d-c68b-4943-955a-8aa90560e10e",
+            "party": "BASED"
         },
         {
             "name": "Teresa Yang Lam",
-            "number": "4c23ca97-65ab-42eb-8471-6cfce7e0b71d",
-            "party": "Unknown"
+            "number": "ff00aa28-c2a9-4396-8c8e-bf520340d26b",
+            "party": "ACT"
         },
         {
             "name": "Kim Helen Quach",
-            "number": "ac5ac4bb-f259-4eb1-865c-bf5dccc91bd9",
-            "party": "Unknown"
+            "number": "79bcd857-7964-42d5-8d1f-1f4932fe8282",
+            "party": "ACT"
         },
         {
             "name": "Samuel Doolittle",
-            "number": "65696483-7059-4019-b27c-9ac2cbec4ce8",
-            "party": "Unknown"
+            "number": "73cbd042-5122-4f8b-900d-22bfd87b9a2a",
+            "party": "The Golden Slate"
         },
         {
             "name": "Valeria Duenas",
-            "number": "73eaf470-ea06-4bdd-b015-00515e4b7c2f",
-            "party": "Unknown"
+            "number": "ae66b4bb-3ddd-4bbc-97c3-50db24c73c1b",
+            "party": "BASED"
         },
         {
             "name": "Ko Ser Lu Htoo",
-            "number": "7e56db9e-657d-40ce-8e4e-5daee039d90d",
-            "party": "Unknown"
+            "number": "9b993625-4468-4bae-b496-45ab46949550",
+            "party": "BASED"
         },
         {
             "name": "Luke Aubrey Stocker",
-            "number": "d9c039b9-a767-4787-a4c1-9581e22eae0a",
-            "party": "Unknown"
+            "number": "194260b6-8c92-4f6d-9dc6-b76c7b318772",
+            "party": "The Golden Slate"
         },
         {
             "name": "Atanas Spasov",
-            "number": "67c218ae-2fae-4d2b-aad9-50a2dfd24654",
-            "party": "Unknown"
+            "number": "aaca81b8-c43e-4432-927f-c3dce158bc12",
+            "party": "UNITE!"
         },
         {
             "name": "Mohammad Walid Qayum",
-            "number": "ed7b4dd3-7b5c-4983-ab2c-1871dd987a58",
-            "party": "Unknown"
+            "number": "da530ce1-197a-46a4-ab95-48c71f9ee234",
+            "party": "UNITE!"
         },
         {
             "name": "Shaden Cortez",
-            "number": "29b82a32-72aa-4bd0-82d9-890d2d24a2bc",
-            "party": "Unknown"
+            "number": "5628a237-d120-49f4-bcb3-503cc7083f1b",
+            "party": "ACT"
         },
         {
             "name": "Lucero Vasquez",
-            "number": "eb55d3cb-75d5-436b-a73b-15fb130cbb23",
-            "party": "Unknown"
+            "number": "e8ac1866-27d8-4bd2-8c58-6eac692e7e19",
+            "party": "BASED"
         },
         {
             "name": "Benjamin D. McDougall",
-            "number": "48d19058-2177-4556-8ea2-bba99e465cec",
-            "party": "Unknown"
+            "number": "d4d64e73-5082-4c20-a2a2-a352a6e2fe07",
+            "party": "The Golden Slate"
         },
         {
             "name": "Brandon Clemons",
-            "number": "40961d1b-44d1-4a91-99a5-464a94bab9c7",
-            "party": "Unknown"
+            "number": "534eec05-3818-4129-a535-e0a50c564fd2",
+            "party": "UNITE!"
         },
         {
             "name": "Rachel Young",
-            "number": "da7d7e7c-d9cb-49bb-a92f-0e11f1cc48a1",
-            "party": "Unknown"
+            "number": "ac1153da-5009-4b7c-933d-56166cb11f22",
+            "party": "ACT"
         },
         {
             "name": "Jumoke Maraiyesa",
-            "number": "1e17780b-9ed8-49a8-9784-6a9158ed6286",
-            "party": "Unknown"
+            "number": "41f40e0d-f5d8-4ced-bd02-6f1e3609747a",
+            "party": "BASED"
         },
         {
             "name": "Katherine Elaine Elizabeth Weaver",
-            "number": "08b07ad1-f847-44aa-a79c-7cc636d0c487",
-            "party": "Unknown"
+            "number": "f44a88be-5287-451f-b29a-b17967d55a28",
+            "party": "The Golden Slate"
         },
         {
             "name": "Daniella Tikva Aloni",
-            "number": "e4a35395-6718-4540-8620-06d726bfcd28",
-            "party": "Unknown"
+            "number": "f40ed751-6e7d-40af-b172-41ac4c4a1a85",
+            "party": "UNITE!"
         },
         {
             "name": "Daniel Tillman",
-            "number": "c652939a-bcc5-4a72-86b1-ef7539e5d18f",
-            "party": "Unknown"
+            "number": "5aeb8eae-9c14-4eb3-9787-f1353658c658",
+            "party": "BASED"
         },
         {
             "name": "Simranjit Kaur",
-            "number": "7c7b3c09-8e11-44b5-94e4-7765230b045d",
-            "party": "Unknown"
+            "number": "78ddd387-aa05-437b-b4c5-b2154f5c445a",
+            "party": "BASED"
         },
         {
             "name": "Henna Battan",
-            "number": "7229e9a1-9ae1-4e07-9dee-01fa7b26a0e7",
-            "party": "Unknown"
+            "number": "eadf8334-7061-4df5-ad27-ec99997bee5a",
+            "party": "ACT"
         },
         {
             "name": "Alisha Hacker",
-            "number": "9ccaa5e8-7c41-4043-8a42-142b4c31b3a5",
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2018: Senate",
-            "number": "498c5ee5-2e78-45df-9780-bce1551af359",
-            "party": "Unknown"
+            "number": "09dfd859-5a4c-472f-beae-b27ad87c65d5",
+            "party": "UNITE!"
         }
     ]
 }

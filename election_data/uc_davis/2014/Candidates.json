@@ -2,147 +2,132 @@
     "President Winter": [
         {
             "name": "Ryan Wonders & Sumeeta Ghai",
-            "number": "0632c0eb-0e4f-4ebe-b7d1-8017a844c75a",
-            "party": "Unknown"
+            "number": "f6873a36-5fe1-426a-a33f-8efd179ca447",
+            "party": "NOW"
         },
         {
             "name": "Armando Figueroa & Maxwell Kappes",
-            "number": "36da5a07-3db6-41cb-857f-4ff440287ab8",
-            "party": "Unknown"
+            "number": "cf7f3425-571e-41b5-8eae-4a3b1f961990",
+            "party": "SMART"
         },
         {
             "name": "Christopher Myers & Hadeyeh Hidarinejad",
-            "number": "a845ff5c-4126-4442-a5ea-c9370737c68d",
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2014: Presidential Tickets",
-            "number": "e87a11bb-4121-4c6b-8859-44b4e6114ecd",
-            "party": "Unknown"
+            "number": "cbe46818-c47d-4148-bc08-369f5fd0cb1f",
+            "party": "Independent"
         }
     ],
     "Senate Fall": [
         {
             "name": "Andrea Velazquez",
-            "number": "17a03ab0-33d9-4887-9ce3-21e3b1cf4503",
-            "party": "Unknown"
+            "number": "28308247-0294-4071-9ce5-dcd2de20c5c3",
+            "party": "SMART"
         },
         {
             "name": "Casey Nguyen",
-            "number": "f9eee91f-9b20-4d95-9b27-72a0e4a11a4f",
-            "party": "Unknown"
+            "number": "549454aa-88b0-4c95-b073-71f0e49e7510",
+            "party": "SMART"
         },
         {
             "name": "Alex Lee",
-            "number": "0d5f2fda-ce6c-4ed1-8573-f500c6cc7981",
-            "party": "Unknown"
+            "number": "4de5fd22-1045-4b54-a61f-8111101b4b9c",
+            "party": "Independent"
         },
         {
             "name": "Brendan Chang",
-            "number": "cabda46d-95b0-40db-9b21-f6923e1b813b",
-            "party": "Unknown"
+            "number": "20e2901e-3061-4985-b267-7414c72d8926",
+            "party": "SMART"
         },
         {
             "name": "Anabiah Syed",
-            "number": "ae43257d-0d2e-47f3-b982-473f469f417a",
-            "party": "Unknown"
+            "number": "85b6dfc3-021f-42c1-87ec-0f099404bc87",
+            "party": "SMART"
         },
         {
             "name": "Roman Rivilis",
-            "number": "ecebb60c-9267-4b17-9ace-0fabb0ac5ece",
-            "party": "Unknown"
+            "number": "835f9dd9-60e3-47b5-a5c9-333d0d6c87ef",
+            "party": "Independent"
         },
         {
             "name": "Reem Fatayerji",
-            "number": "2447b13f-0522-48d2-9caa-8e57b7d7d720",
-            "party": "Unknown"
-        },
-        {
-            "name": "Fall 2014: Senate",
-            "number": "e868203b-09ac-4dcc-b051-7be635c30457",
-            "party": "Unknown"
+            "number": "4a1306c8-dd8f-4c99-b60b-922ab091c3c3",
+            "party": "Independent"
         }
     ],
-    "senate": [
+    "Senate Winter": [
         {
             "name": "Arya Shirani",
-            "number": 1,
-            "party": "Unknown"
+            "number": "4f71c5ad-53ee-42c9-bd3d-a97e1c3198d8",
+            "party": "NOW"
         },
         {
             "name": "Gloria Chen",
-            "number": 2,
-            "party": "Unknown"
+            "number": "1ceaba9f-6a21-4918-ad05-3c25b730581a",
+            "party": "Independent"
         },
         {
             "name": "Zeenat Yahya",
-            "number": 3,
-            "party": "Unknown"
+            "number": "46222c23-7146-41e8-bfb5-bae389e1adbe",
+            "party": "NOW"
         },
         {
             "name": "Anthony Gil",
-            "number": 4,
-            "party": "Unknown"
+            "number": "65683100-a848-417a-8c5c-0582a102fcb9",
+            "party": "NOW"
         },
         {
             "name": "Diana Lopez Solorzano",
-            "number": 5,
-            "party": "Unknown"
+            "number": "02f64efd-f6f6-4f78-b31d-33f875543094",
+            "party": "Independent"
         },
         {
             "name": "Andrea Jao",
-            "number": 6,
-            "party": "Unknown"
+            "number": "d2be86af-54b1-4289-b180-cc189242adc6",
+            "party": "SMART"
         },
         {
             "name": "Eugenia Chung",
-            "number": 7,
-            "party": "Unknown"
+            "number": "b2830303-71f2-4d57-810b-d021e30d8aa7",
+            "party": "NOW"
         },
         {
             "name": "Sergio Gonzalez",
-            "number": 8,
-            "party": "Unknown"
+            "number": "68a5a836-3658-43f8-9c56-27de7e2a48ad",
+            "party": "NOW"
         },
         {
             "name": "Amelia Helland",
-            "number": 9,
-            "party": "Unknown"
+            "number": "3436fe53-6340-419e-a9b5-980a2bbd14ed",
+            "party": "NOW"
         },
         {
             "name": "Gulraj \\\"Gul\\\" Gill",
-            "number": 10,
-            "party": "Unknown"
+            "number": "b5f38a11-799b-413a-8803-aa0ccbf95b3b",
+            "party": "Independent"
         },
         {
             "name": "Artem Senchev",
-            "number": 11,
-            "party": "Unknown"
+            "number": "71a4f04a-18bb-4d94-8dfa-45372aab3fd1",
+            "party": "Independent"
         },
         {
             "name": "Nicholas Sanchez",
-            "number": 12,
-            "party": "Unknown"
+            "number": "b82ffeef-824a-4019-a812-05439dfe0410",
+            "party": "SMART"
         },
         {
             "name": "Robyn Huey",
-            "number": 13,
-            "party": "Unknown"
+            "number": "9549fc58-bfc3-4b15-830d-655e987fbd64",
+            "party": "SMART"
         },
         {
             "name": "Sierra Henderson",
-            "number": 14,
-            "party": "Unknown"
+            "number": "5b1e9f73-b41f-4462-8c69-b020dca1588c",
+            "party": "SMART"
         },
         {
             "name": "Azka Fayyaz",
-            "number": 15,
-            "party": "Unknown"
-        },
-        {
-            "name": "Winter 2014: Senate",
-            "number": 16,
-            "party": "Unknown"
+            "number": "1672c5ea-0d01-4c37-b1f8-406678008459",
+            "party": "SMART"
         }
     ]
 }
