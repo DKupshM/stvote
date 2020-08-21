@@ -1,7 +1,7 @@
 {
     "races": [
         {
-            "race_id": 101,
+            "race_id": "356f0627-a44d-4949-b374-e0832c2eec2a",
             "race_max_winners": "6",
             "race_position": "Senate"
         }

@@ -1,34 +1,34 @@
 {
     "races": [
         {
-            "race_id": 101,
-            "race_position": "Senator",
-            "race_max_winners": 20
+            "race_id": "646a2bf1-34fe-4dfd-b3db-43543c2e4d29",
+            "race_max_winners": 20,
+            "race_position": "Senator"
         },
         {
-            "race_id": 102,
-            "race_position": "Academic Affairs Vice President",
-            "race_max_winners": 1
+            "race_id": "818b1da9-9679-4640-8d6f-28e9a386c10c",
+            "race_max_winners": 1,
+            "race_position": "Academic Affairs Vice President"
         },
         {
-            "race_id": 103,
-            "race_position": "External Affairs Vice President",
-            "race_max_winners": 1
+            "race_id": "ca039f67-500e-4fab-806e-9908f30e6efa",
+            "race_max_winners": 1,
+            "race_position": "External Affairs Vice President"
         },
         {
-            "race_id": 104,
-            "race_position": "Executive Vice President",
-            "race_max_winners": 1
+            "race_id": "afefd6bf-cf09-4ff9-a4f3-4a4903e425c5",
+            "race_max_winners": 1,
+            "race_position": "Executive Vice President"
         },
         {
-            "race_id": 105,
-            "race_position": "Student Advocate",
-            "race_max_winners": 1
+            "race_id": "e5d688d5-5b86-44ab-b925-1e67f9ef4071",
+            "race_max_winners": 1,
+            "race_position": "Student Advocate"
         },
         {
-            "race_id": 106,
-            "race_position": "President",
-            "race_max_winners": 1
+            "race_id": "f46b62da-ee28-4902-9fbe-f15fbd891868",
+            "race_max_winners": 1,
+            "race_position": "President"
         }
     ]
 }

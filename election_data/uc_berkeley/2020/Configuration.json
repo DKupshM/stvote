@@ -1,39 +1,39 @@
 {
     "races": [
         {
-            "race_id": 201,
-            "race_position": "Senator",
-            "race_max_winners": 20
+            "race_id": "71a61f93-b131-4ddc-8077-7d154bc0c6bc",
+            "race_max_winners": 20,
+            "race_position": "Senator"
         },
         {
-            "race_id": 202,
-            "race_position": "Academic Affairs Vice President",
-            "race_max_winners": 1
+            "race_id": "be6bd059-00ef-4659-bd0a-c5a56dc04358",
+            "race_max_winners": 1,
+            "race_position": "Academic Affairs Vice President"
         },
         {
-            "race_id": 203,
-            "race_position": "External Affairs Vice President",
-            "race_max_winners": 1
+            "race_id": "b4eab39e-18d4-4f25-9689-e93ed924f838",
+            "race_max_winners": 1,
+            "race_position": "External Affairs Vice President"
         },
         {
-            "race_id": 204,
-            "race_position": "Executive Vice President",
-            "race_max_winners": 1
+            "race_id": "a0a22ed0-e6b4-40ac-8c5a-d227be95a1a3",
+            "race_max_winners": 1,
+            "race_position": "Executive Vice President"
         },
         {
-            "race_id": 205,
-            "race_position": "Student Advocate",
-            "race_max_winners": 1
+            "race_id": "426879be-dcc0-4e8e-93e6-f2f252bb7ee8",
+            "race_max_winners": 1,
+            "race_position": "Student Advocate"
         },
         {
-            "race_id": 206,
-            "race_position": "President",
-            "race_max_winners": 1
+            "race_id": "b60a17e8-a77e-49cb-b8fe-238536542b1f",
+            "race_max_winners": 1,
+            "race_position": "President"
         },
         {
-            "race_id": 207,
-            "race_position": "Transfer Student Representative",
-            "race_max_winners": 1
+            "race_id": "4955799d-4804-4872-80a9-2d384a817181",
+            "race_max_winners": 1,
+            "race_position": "Transfer Student Representative"
         }
     ]
 }

@@ -1,0 +1,309 @@
+{
+    "Academic Affairs Vice President": [
+        {
+            "name": "Yevgeniya \"BobbyRPartyR\" Sosnovskaya",
+            "number": "a66d1ea8-a6de-499c-b2f2-cfb17bce1faa",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Jay Walker",
+            "number": "cc137750-c557-47c7-a5a0-ab617a816aba",
+            "party": "Independent"
+        },
+        {
+            "name": "Melissa Hsu",
+            "number": "f04cd805-1bdf-46a2-9a74-140ff141dd4e",
+            "party": "CalSERVE"
+        }
+    ],
+    "Executive Vice President": [
+        {
+            "name": "Lavanya Jawaharlal",
+            "number": "9857c958-7958-424d-bbcf-06535b72cfaa",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Paul Lee",
+            "number": "6d2f018c-7d75-4463-a421-f133ce31ef5e",
+            "party": "Student Action"
+        },
+        {
+            "name": "Tom \"Silent Majority\" Yang",
+            "number": "97bda78f-8804-45d5-b4d5-9aecf72aa988",
+            "party": "SQUELCH!"
+        }
+    ],
+    "External Affairs Vice President": [
+        {
+            "name": "Sam \"Actual Hermit Crab\" Heinz",
+            "number": "5e31c9b0-f077-4cac-a350-4e38d621eefa",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Vinay A. Ramesh",
+            "number": "85684fd3-3903-4346-b90c-23f928b759fa",
+            "party": "Student Action"
+        },
+        {
+            "name": "Marium Navid",
+            "number": "30137d7c-1a12-43f3-a0dc-be35b696b63d",
+            "party": "CalSERVE"
+        }
+    ],
+    "President": [
+        {
+            "name": "Jake \"the First\" Fineman",
+            "number": "e03bcc5e-4d54-47cf-8303-74d791e9957e",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Nic Jaber",
+            "number": "ba1220b2-0ef6-4a9c-b28d-b8cb9450f52d",
+            "party": "Independent"
+        },
+        {
+            "name": "Yordanos Dejen",
+            "number": "5ad9ad97-27d2-4feb-8ea7-6684a109007e",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Pranay Kumar Chaurasia",
+            "number": "9c03afd2-8fa1-4380-8269-16daabcbd713",
+            "party": "Independent"
+        },
+        {
+            "name": "Milad Razavi",
+            "number": "45d93ec3-e0ac-4d4d-8fb6-672a3d8cbc2b",
+            "party": "Student Action"
+        },
+        {
+            "name": "Michael Cortez-Mejia",
+            "number": "921cfbfb-63bb-4cdf-9ee9-d1eac80d3cf1",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        }
+    ],
+    "Senator": [
+        {
+            "name": "Eric \"Go Bears\" Zhevel",
+            "number": "9fc834cd-653f-4546-9a1f-f71f6b7dc0b7",
+            "party": "Independent"
+        },
+        {
+            "name": "Sumayyah Din",
+            "number": "f59d3e8c-c2ca-4028-be8c-4c1a9448bff8",
+            "party": "Independent"
+        },
+        {
+            "name": "Cuahuctemoc Salinas",
+            "number": "1c8b46fa-b6d5-40d8-963a-462af3d26de4",
+            "party": "Independent"
+        },
+        {
+            "name": "Matt Holtzer",
+            "number": "1e4cc7d9-0ada-4efe-bb47-fc565b03aab4",
+            "party": "Independent"
+        },
+        {
+            "name": "Benedict Llave",
+            "number": "de4ba638-a1da-428f-941f-9d8bf81303cf",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Kathy Tran",
+            "number": "425d6575-01c8-42bb-9b1a-3be44a9eac57",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Gaby Wantah",
+            "number": "2ca43ddf-19da-4a89-892b-2d79122f4b82",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Arya Aliabadi",
+            "number": "f4f3dc01-ee14-4e44-adfb-9e3826b0e996",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Kyle Evanko",
+            "number": "9c10a4b4-f992-4db8-b12c-111083774b49",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Aanchal Chugh",
+            "number": "895774ed-6ad1-4c96-998e-eca99c3bbf86",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Haruko Ayabe",
+            "number": "55fa0f55-a3f9-4263-bf66-9d174409cae7",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Wes Adrianson",
+            "number": "1ae7539e-bf37-4f8c-ac25-ef33b53fed92",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Ji-hern Baek",
+            "number": "3e150b7f-b675-4adf-a558-771746c05e45",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Boomer Vicente",
+            "number": "4fcde609-97dc-4b2b-b71a-4fa5804bf57d",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Alana Banks",
+            "number": "43a5089a-a01d-4aa4-8250-9bfbd31af378",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "WAYLAND FONG",
+            "number": "274012a3-5194-46b8-9d90-7b4b4851bb75",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Reia \"ENGINEER\" Cho",
+            "number": "62f98a8a-6b34-4dad-8691-29015ea30693",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Diana Nguyen",
+            "number": "4ca5a924-efdd-42a1-b602-d5b3d865c776",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Violeta Alvarez",
+            "number": "d707d275-b217-48c6-892d-86366e62f0c6",
+            "party": "CalSERVE"
+        },
+        {
+            "name": "Sheena Paul",
+            "number": "a457ab82-dd86-4eca-9e2a-cc10c4a67417",
+            "party": "Cooperative Movement Party (CMP)"
+        },
+        {
+            "name": "Ariana \"Venti\" Shakibnia",
+            "number": "380a2ecc-f748-4b73-9443-f470140069f1",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Sina \"Talk Nerdy to Me\" Rashidi",
+            "number": "85a23988-5df3-44a5-a257-0de191ad4ebf",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Zoe \"Big Balloons\" Brouns",
+            "number": "17c50e44-d454-4dad-b46b-6da4becb08ec",
+            "party": "SQUELCH!"
+        },
+        {
+            "name": "Michael Cortez-Mejia",
+            "number": "a8547be3-35f1-42f0-84bb-50f51edb8777",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        },
+        {
+            "name": "Bianca Huntley",
+            "number": "5d28ff85-6e81-4792-8f24-dda0bbc3a14f",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        },
+        {
+            "name": "Natasha Johnson",
+            "number": "9be1158a-1028-4c1b-b848-1a7ad3e03c8e",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        },
+        {
+            "name": "Benny Corona",
+            "number": "1ab9cd52-9e8a-4cac-9cd6-6ad794f65d03",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        },
+        {
+            "name": "Adam Yankelevits",
+            "number": "5813603c-a3b5-4b6c-abf0-3184136c8a97",
+            "party": "Student Action"
+        },
+        {
+            "name": "Alex Wein",
+            "number": "6a34b3d8-b516-4872-9680-167a8a093dfa",
+            "party": "Student Action"
+        },
+        {
+            "name": "Alicia Lau",
+            "number": "b479eeaf-21c4-4f39-a062-5287ed76c266",
+            "party": "Student Action"
+        },
+        {
+            "name": "Aman Upadhyay",
+            "number": "5fa7d1f8-5307-4b71-9f17-3a8c8a54881b",
+            "party": "Student Action"
+        },
+        {
+            "name": "ANDRE LUU",
+            "number": "e639b099-fb71-45b8-acd3-b731ee7234f1",
+            "party": "Student Action"
+        },
+        {
+            "name": "Carson O'Connell",
+            "number": "ef1c76fe-af34-4191-a3b9-f780a5f05ebc",
+            "party": "Student Action"
+        },
+        {
+            "name": "Grace Ho Jung Kim",
+            "number": "34437b11-ebc6-4e97-b362-322c08100264",
+            "party": "Student Action"
+        },
+        {
+            "name": "James Zamora",
+            "number": "e5865529-041e-424e-bdcf-dcb00ef19498",
+            "party": "Student Action"
+        },
+        {
+            "name": "Jason Tang",
+            "number": "75a863ff-5269-4aff-bb7f-b04519812355",
+            "party": "Student Action"
+        },
+        {
+            "name": "Karthik \"Engineer\" Prasad",
+            "number": "0ba82a50-b704-4ca1-aa7d-9a10902b2f45",
+            "party": "Student Action"
+        },
+        {
+            "name": "Leilanie Martinez",
+            "number": "1ce87521-5d30-49b9-8c94-405ae1c1332c",
+            "party": "Student Action"
+        },
+        {
+            "name": "Rachel Schuster",
+            "number": "b28b3ffd-6505-4448-b4e5-9569f432b3b9",
+            "party": "Student Action"
+        },
+        {
+            "name": "Swan Kim",
+            "number": "2faf9356-b375-4d65-b8e3-c2698dc89656",
+            "party": "Student Action"
+        },
+        {
+            "name": "Will Morrow",
+            "number": "99a3dd91-bcac-40b2-8d02-0a35ae854f55",
+            "party": "Student Action"
+        },
+        {
+            "name": "Zamzama Azizi",
+            "number": "5f05232c-3391-4c4b-b3bc-75285e32a0cc",
+            "party": "Student Action"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Leah \"SA CS SQUELCH! endorsed\" Romm",
+            "number": "b735560c-55b1-4490-9956-33defe1e1672",
+            "party": "Independent"
+        },
+        {
+            "name": "Bianca Huntley-Ortega",
+            "number": "888f72c1-31a2-46b0-8123-9f615fa05d40",
+            "party": "Defend Affirmative Action Party (DAAP)"
+        }
+    ]
+}

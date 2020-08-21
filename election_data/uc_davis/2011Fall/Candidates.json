@@ -2,42 +2,42 @@
     "Senate": [
         {
             "name": "Justin Goss",
-            "number": 1,
+            "number": "e1077551-2b25-47e3-9bcf-351f2a28dfec",
             "party": "Unknown"
         },
         {
             "name": "Patrick Sheehan",
-            "number": 2,
+            "number": "4395e04f-4162-4127-9b02-4ae89ec42c19",
             "party": "Unknown"
         },
         {
             "name": "Erica Padgett",
-            "number": 3,
+            "number": "b44f73cf-a12e-445d-8051-8f605c892487",
             "party": "Unknown"
         },
         {
             "name": "Annamaria Kimball",
-            "number": 4,
+            "number": "b54f5fb2-179e-406e-ac8a-0f65ff2616b4",
             "party": "Unknown"
         },
         {
             "name": "Charlie Colato",
-            "number": 5,
+            "number": "f96d979f-4bc3-46f0-b618-1aba33cb74cf",
             "party": "Unknown"
         },
         {
             "name": "Yara Zokaie",
-            "number": 6,
+            "number": "1a4c1a6e-d725-4d63-bb4e-1623f7dc2f7a",
             "party": "Unknown"
         },
         {
             "name": "Jared Crisologo-Smith",
-            "number": 7,
+            "number": "2680a865-1fb0-46b4-ad08-917d11cce564",
             "party": "Unknown"
         },
         {
             "name": "Fall Election 2011",
-            "number": 8,
+            "number": "b74b5426-e6f1-4469-be18-15808f9de41b",
             "party": "Unknown"
         }
     ]

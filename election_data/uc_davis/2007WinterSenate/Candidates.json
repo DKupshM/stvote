@@ -2,92 +2,92 @@
     "Senate": [
         {
             "name": "Charles Bisesto",
-            "number": 1,
+            "number": "0d3c2ab0-3b6a-4897-86c7-9227cfae4f84",
             "party": "Unknown"
         },
         {
             "name": "Joseph 'Wildcat' Bleckman",
-            "number": 2,
+            "number": "8f499f39-ca50-4ad9-94ab-b2b55f48b447",
             "party": "Unknown"
         },
         {
             "name": "Molly Fluet",
-            "number": 3,
+            "number": "1481fe56-be35-4300-8785-f84e4084a2d6",
             "party": "Unknown"
         },
         {
             "name": "Alexandra Frick",
-            "number": 4,
+            "number": "6fb08518-e939-4a3a-8598-54805d740cec",
             "party": "Unknown"
         },
         {
             "name": "Eric Friedman",
-            "number": 5,
+            "number": "e3a4169c-770c-43f6-90c8-0b497a54dfb8",
             "party": "Unknown"
         },
         {
             "name": "Mara Harris",
-            "number": 6,
+            "number": "24697953-2069-492b-bc6d-bd0b1343f0be",
             "party": "Unknown"
         },
         {
             "name": "Dustin Murray",
-            "number": 7,
+            "number": "c937bf08-dcd5-468e-ad08-b2bc0330b2a4",
             "party": "Unknown"
         },
         {
             "name": "Albert Parnell",
-            "number": 8,
+            "number": "c931cc24-a5c7-4771-ac71-87dfa9c17398",
             "party": "Unknown"
         },
         {
             "name": "Andrew Peake",
-            "number": 9,
+            "number": "8abd2034-9cf6-4f43-a780-45785ef4bc86",
             "party": "Unknown"
         },
         {
             "name": "Jesse Rosales",
-            "number": 10,
+            "number": "be1eba8c-088b-493d-86d0-de648cd2652d",
             "party": "Unknown"
         },
         {
             "name": "Sandy Rose",
-            "number": 11,
+            "number": "4ecf63cd-7711-4a84-a4e2-7aa1b909c0cd",
             "party": "Unknown"
         },
         {
             "name": "Jack Shannon",
-            "number": 12,
+            "number": "e686d213-2a09-45ca-a52c-9818d12ad62f",
             "party": "Unknown"
         },
         {
             "name": "Daryl Suyat",
-            "number": 13,
+            "number": "205a22d3-a08a-4633-95f6-3bbe0cfd339f",
             "party": "Unknown"
         },
         {
             "name": "Arie van Gemeren",
-            "number": 14,
+            "number": "5a187e81-f19d-4200-8e37-e827f4bb7b4e",
             "party": "Unknown"
         },
         {
             "name": "Dan Xie",
-            "number": 15,
+            "number": "d440d76b-83d5-4886-a037-761a23f7931e",
             "party": "Unknown"
         },
         {
             "name": "Rob Roy",
-            "number": 16,
+            "number": "c903758d-0784-4b6b-8bc1-50eb8dff92ac",
             "party": "Unknown"
         },
         {
             "name": "Kirk Cowgill",
-            "number": 17,
+            "number": "fe850981-aa65-4a33-968c-15fbad092d67",
             "party": "Unknown"
         },
         {
             "name": "Fall 2006 Election",
-            "number": 18,
+            "number": "302d8f54-3aba-46f0-b69d-f0d80de4eaa4",
             "party": "Unknown"
         }
     ]

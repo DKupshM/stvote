@@ -1,7 +1,7 @@
 {
     "races": [
         {
-            "race_id": 201,
+            "race_id": "8b9e8eed-9e36-4c08-8d0b-7b0ea33d6530",
             "race_max_winners": "1",
             "race_position": "President"
         }
