@@ -1,0 +1,19 @@
+{
+    "races": [
+        {
+            "race_id": "43c05c8b-962f-4da8-ac8d-9753c38381f9",
+            "race_max_winners": "6",
+            "race_position": "Senate Fall"
+        },
+        {
+            "race_id": "f845e10b-0221-4d8a-8da7-852c51f4c97d",
+            "race_max_winners": "6",
+            "race_position": "Senate Winter"
+        },
+        {
+            "race_id": "a2705bd7-8819-41d7-b963-f755d37d8c25",
+            "race_max_winners": "1",
+            "race_position": "President Winter"
+        }
+    ]
+}

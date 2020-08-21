@@ -1,0 +1,148 @@
+{
+    "President Winter": [
+        {
+            "name": "Ryan Wonders & Sumeeta Ghai",
+            "number": "0632c0eb-0e4f-4ebe-b7d1-8017a844c75a",
+            "party": "Unknown"
+        },
+        {
+            "name": "Armando Figueroa & Maxwell Kappes",
+            "number": "36da5a07-3db6-41cb-857f-4ff440287ab8",
+            "party": "Unknown"
+        },
+        {
+            "name": "Christopher Myers & Hadeyeh Hidarinejad",
+            "number": "a845ff5c-4126-4442-a5ea-c9370737c68d",
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2014: Presidential Tickets",
+            "number": "e87a11bb-4121-4c6b-8859-44b4e6114ecd",
+            "party": "Unknown"
+        }
+    ],
+    "Senate Fall": [
+        {
+            "name": "Andrea Velazquez",
+            "number": "17a03ab0-33d9-4887-9ce3-21e3b1cf4503",
+            "party": "Unknown"
+        },
+        {
+            "name": "Casey Nguyen",
+            "number": "f9eee91f-9b20-4d95-9b27-72a0e4a11a4f",
+            "party": "Unknown"
+        },
+        {
+            "name": "Alex Lee",
+            "number": "0d5f2fda-ce6c-4ed1-8573-f500c6cc7981",
+            "party": "Unknown"
+        },
+        {
+            "name": "Brendan Chang",
+            "number": "cabda46d-95b0-40db-9b21-f6923e1b813b",
+            "party": "Unknown"
+        },
+        {
+            "name": "Anabiah Syed",
+            "number": "ae43257d-0d2e-47f3-b982-473f469f417a",
+            "party": "Unknown"
+        },
+        {
+            "name": "Roman Rivilis",
+            "number": "ecebb60c-9267-4b17-9ace-0fabb0ac5ece",
+            "party": "Unknown"
+        },
+        {
+            "name": "Reem Fatayerji",
+            "number": "2447b13f-0522-48d2-9caa-8e57b7d7d720",
+            "party": "Unknown"
+        },
+        {
+            "name": "Fall 2014: Senate",
+            "number": "e868203b-09ac-4dcc-b051-7be635c30457",
+            "party": "Unknown"
+        }
+    ],
+    "senate": [
+        {
+            "name": "Arya Shirani",
+            "number": 1,
+            "party": "Unknown"
+        },
+        {
+            "name": "Gloria Chen",
+            "number": 2,
+            "party": "Unknown"
+        },
+        {
+            "name": "Zeenat Yahya",
+            "number": 3,
+            "party": "Unknown"
+        },
+        {
+            "name": "Anthony Gil",
+            "number": 4,
+            "party": "Unknown"
+        },
+        {
+            "name": "Diana Lopez Solorzano",
+            "number": 5,
+            "party": "Unknown"
+        },
+        {
+            "name": "Andrea Jao",
+            "number": 6,
+            "party": "Unknown"
+        },
+        {
+            "name": "Eugenia Chung",
+            "number": 7,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sergio Gonzalez",
+            "number": 8,
+            "party": "Unknown"
+        },
+        {
+            "name": "Amelia Helland",
+            "number": 9,
+            "party": "Unknown"
+        },
+        {
+            "name": "Gulraj \\\"Gul\\\" Gill",
+            "number": 10,
+            "party": "Unknown"
+        },
+        {
+            "name": "Artem Senchev",
+            "number": 11,
+            "party": "Unknown"
+        },
+        {
+            "name": "Nicholas Sanchez",
+            "number": 12,
+            "party": "Unknown"
+        },
+        {
+            "name": "Robyn Huey",
+            "number": 13,
+            "party": "Unknown"
+        },
+        {
+            "name": "Sierra Henderson",
+            "number": 14,
+            "party": "Unknown"
+        },
+        {
+            "name": "Azka Fayyaz",
+            "number": 15,
+            "party": "Unknown"
+        },
+        {
+            "name": "Winter 2014: Senate",
+            "number": 16,
+            "party": "Unknown"
+        }
+    ]
+}

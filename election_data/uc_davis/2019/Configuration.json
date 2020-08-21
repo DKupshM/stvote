@@ -1,0 +1,14 @@
+{
+    "races": [
+        {
+            "race_id": "9390a33a-0063-482e-9ab6-5e443a61a4d1",
+            "race_max_winners": "6",
+            "race_position": "Senate Fall"
+        },
+        {
+            "race_id": "de7c23fb-4041-40f9-ba22-36ec5a800320",
+            "race_max_winners": "6",
+            "race_position": "senate Winter"
+        }
+    ]
+}
