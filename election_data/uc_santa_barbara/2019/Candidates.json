@@ -1,0 +1,269 @@
+{
+    "Collegiate Senator - Engineering": [
+        {
+            "name": "Alan Lim",
+            "number": "01fa472e-be39-41f1-a6ab-acbd3692e6ad",
+            "party": "Campus United"
+        },
+        {
+            "name": "Diana Reyes Carrillo",
+            "number": "bed794d1-5d5b-4185-9135-2ec1bf87da28",
+            "party": "Independent"
+        },
+        {
+            "name": "Dylan Kupsh",
+            "number": "909427d3-9553-4c1d-8127-612ad941140e",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "Collegiate Senator - Letters & Science": [
+        {
+            "name": "Alya Ruiz",
+            "number": "ed94385f-eb7b-4d29-af0e-12ec1caab5da",
+            "party": "Campus United"
+        },
+        {
+            "name": "Benjamin \"Benjy\" Chocron",
+            "number": "e340d329-9bef-405f-bb35-54dc7b2ff62d",
+            "party": "Campus United"
+        },
+        {
+            "name": "Justice \"For All\" Dumlao",
+            "number": "92aac16d-b4df-4421-a1bb-2d593106bc66",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Kellie McManamon",
+            "number": "d80f2573-f2be-421f-a5ed-efc2bddaf8a8",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Olivia Campos",
+            "number": "b016ac75-d6f4-4841-82ed-63f4e400e069",
+            "party": "Campus United"
+        },
+        {
+            "name": "Samantha \"Sam\" DeGoey",
+            "number": "43729575-8fe4-4a9c-9782-316e4a298018",
+            "party": "Campus United"
+        },
+        {
+            "name": "Sarah Danielzadeh",
+            "number": "918894e2-6808-4e81-ac03-a184fd8ae0e8",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "External VP Local Affairs": [
+        {
+            "name": "Christian Ornelas",
+            "number": "cfcbc7f7-d48e-4dac-ab31-c6771b34b93e",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Matthew Griffin",
+            "number": "459aff5e-efea-4abe-97ce-c6ab119a494a",
+            "party": "Campus United"
+        }
+    ],
+    "External VP Statewide Affairs": [
+        {
+            "name": "Alexandra Leal Silva",
+            "number": "4800e9bb-77e0-40e9-bf26-10dfb0634519",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Daevionne Beasley",
+            "number": "7f8b0ea2-212a-4dae-87ed-318b6074fd92",
+            "party": "Campus United"
+        }
+    ],
+    "Internal VP": [
+        {
+            "name": "Allison \"Alli\" Adam",
+            "number": "d3dc4fd4-4ee5-43b4-8f3d-6667487c0ab2",
+            "party": "Campus United"
+        }
+    ],
+    "Off-Campus Senator": [
+        {
+            "name": "Anthony \"A; Tony \" Agama",
+            "number": "cd51ef80-c856-4890-bc50-5629cc168ea0",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Carlos \"Andy\" Ruiz",
+            "number": "9af2063e-1ca5-4e6d-a12d-bc2a83848b65",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Dagan Addinall",
+            "number": "54b92a52-ba84-44f2-919f-de3cd4379117",
+            "party": "Campus United"
+        },
+        {
+            "name": "Daniel Segura-Esquivel",
+            "number": "4f0407cc-4b99-4abe-b04b-8a26afad9284",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Ektaa Tendolkar",
+            "number": "cf97afcf-4515-4bd2-be9f-89ff6cc72c07",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Eric Moon",
+            "number": "219ee152-39d7-4648-8e17-06caad16304c",
+            "party": "Campus United"
+        },
+        {
+            "name": "Giselle Etessami",
+            "number": "0b8c8ebc-1b87-4579-8f42-0b6f4d277a59",
+            "party": "Campus United"
+        },
+        {
+            "name": "Jennifer Vizzuett",
+            "number": "4f3b86cb-d4fa-48a5-a017-4f14183c3aa3",
+            "party": "Campus United"
+        },
+        {
+            "name": "Kevin Abarca",
+            "number": "bc36a4cf-bf0e-4051-842e-ea0c0e0bd86c",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Kimia Hadidi",
+            "number": "15a27958-ae76-42c0-be77-53bcd3c5bf6a",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Leela Ray",
+            "number": "3e730c6a-c50e-44fd-b5bf-3a8871b11201",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Makenalani \"Roo\" Cash",
+            "number": "2777a883-3305-4bec-a742-74553f622c0e",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Matan Laredo",
+            "number": "75891fcb-77f4-40c4-821b-d4f69dcd7d9b",
+            "party": "Campus United"
+        },
+        {
+            "name": "Mina York",
+            "number": "2348b5c6-3c9a-4923-a229-4f9b375006b2",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Quinn Lyon",
+            "number": "35563c48-b000-4438-890a-b952062923b8",
+            "party": "Campus United"
+        },
+        {
+            "name": "Racquel Almario",
+            "number": "ab9cdbb7-7891-4979-a41f-c666fc731647",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Sam Vega",
+            "number": "108d6442-3589-4baf-af12-8e7ed0b057d5",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Shannon Sweeney",
+            "number": "da74cc57-7481-49c4-af27-229496ada4e5",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Theresa Aromin",
+            "number": "5abdd39c-eabe-4cc6-ba69-362530980ef0",
+            "party": "Campus United"
+        },
+        {
+            "name": "Tianna White",
+            "number": "508c1c60-dba5-4a2c-8ed2-145164fb78d0",
+            "party": "Campus United"
+        },
+        {
+            "name": "Trenten Francis",
+            "number": "9b1d0e84-4e61-4c16-b1e7-1610bdb74da0",
+            "party": "Campus United"
+        },
+        {
+            "name": "Tyler Barth",
+            "number": "64956b51-7911-4936-afab-b6e478618d64",
+            "party": "Campus United"
+        },
+        {
+            "name": "Tyler Ferguson",
+            "number": "6d369b2a-fd84-4929-af1f-0720a7619709",
+            "party": "Campus United"
+        },
+        {
+            "name": "Vanessa West",
+            "number": "a64b5441-54db-4806-b9ca-7f73b710a3f8",
+            "party": "Campus United"
+        }
+    ],
+    "Off-Campus University Owned Senator": [
+        {
+            "name": "Suad Abdullahi",
+            "number": "fad8de00-7476-4635-9aea-bc65c2f02fc8",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "On-Campus Senator": [
+        {
+            "name": "Adalis Rojas",
+            "number": "c7618b1b-3c6a-4f66-8f4e-c3ed6d3568be",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Austin Foreman",
+            "number": "01c5966f-750a-4901-bee2-ad53ad3cf3f9",
+            "party": "Campus United"
+        },
+        {
+            "name": "Emily \"em\" Diaz",
+            "number": "296bc93b-e657-49d7-b565-058373323ef5",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Emma Swanson",
+            "number": "345fd19a-2a3f-4e2e-a232-374c72348aea",
+            "party": "Campus United"
+        }
+    ],
+    "President": [
+        {
+            "name": "Alison Sir",
+            "number": "d8a240f5-f23d-4359-95b5-4cdd917ed391",
+            "party": "Campus United"
+        },
+        {
+            "name": "Zion Solomon",
+            "number": "ce2848b0-dec6-42ea-94b0-226c858a1a49",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Andrew Nguyen",
+            "number": "ecc0f150-5f86-4ab7-b592-5d56921a797b",
+            "party": "Independent"
+        }
+    ],
+    "Transfer Senator": [
+        {
+            "name": "Kevin Sway",
+            "number": "620c40f1-01a3-421c-b6ab-cb93b8059df6",
+            "party": "Campus United"
+        },
+        {
+            "name": "Robert \"Robby \" Aceves",
+            "number": "27d9008e-9022-4f36-a095-369af8482a54",
+            "party": "Isla Vista Party"
+        }
+    ]
+}

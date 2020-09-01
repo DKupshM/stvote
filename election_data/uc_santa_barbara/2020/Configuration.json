@@ -1,0 +1,64 @@
+{
+    "races": [
+        {
+            "race_id": "cc6f84e9-eb1e-4585-b231-28658da860a9",
+            "race_max_winners": 1,
+            "race_position": "President"
+        },
+        {
+            "race_id": "fa445a17-6702-4f3c-a21e-4a8f6dcb85f3",
+            "race_max_winners": 1,
+            "race_position": "Internal VP"
+        },
+        {
+            "race_id": "ce9e18e3-dc1b-4294-978a-4067fa4c679a",
+            "race_max_winners": 1,
+            "race_position": "External VP Local Affairs"
+        },
+        {
+            "race_id": "37feeba0-c8c7-4b11-a5e2-f74ff302746c",
+            "race_max_winners": 1,
+            "race_position": "External VP Statewide Affairs"
+        },
+        {
+            "race_id": "9be74d41-abb4-4c43-a206-2d1449dbcb80",
+            "race_max_winners": 1,
+            "race_position": "Student Advocate"
+        },
+        {
+            "race_id": "94db11e5-9b71-4a7c-a727-460adee3428b",
+            "race_max_winners": 5,
+            "race_position": "On-Campus Senator"
+        },
+        {
+            "race_id": "90b5de61-ed13-446c-8042-5735fac75ca5",
+            "race_max_winners": 12,
+            "race_position": "Off-Campus Senator"
+        },
+        {
+            "race_id": "2ef8197b-2beb-4a03-8f0d-07ac242af285",
+            "race_max_winners": 1,
+            "race_position": "Off-Campus University Owned Senator"
+        },
+        {
+            "race_id": "1b22d8cb-87bb-4eb0-b7c5-821a49dde43d",
+            "race_max_winners": 1,
+            "race_position": "Transfer Senator"
+        },
+        {
+            "race_id": "b19a6bab-8bd7-4cf7-be30-a1d10c6ab171",
+            "race_max_winners": 4,
+            "race_position": "Collegiate Senator - Letters & Science"
+        },
+        {
+            "race_id": "303753e0-8d8b-407a-b5a9-e366c3c14ceb",
+            "race_max_winners": 1,
+            "race_position": "Collegiate Senator - Creative Studies"
+        },
+        {
+            "race_id": "b3797a6a-30dd-463d-859f-9283708b1dc0",
+            "race_max_winners": 1,
+            "race_position": "Collegiate Senator - Engineering"
+        }
+    ]
+}

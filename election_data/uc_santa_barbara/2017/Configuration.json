@@ -1,0 +1,64 @@
+{
+    "races": [
+        {
+            "race_id": "08a8f81f-3624-4245-9d3e-1a0b4e362c3a",
+            "race_max_winners": 1,
+            "race_position": "race_president"
+        },
+        {
+            "race_id": "241d66bf-13a6-45bd-b734-3ed1400d139e",
+            "race_max_winners": 1,
+            "race_position": "race_ivp"
+        },
+        {
+            "race_id": "f55bee6e-011e-429e-9cd8-3b651971dd6b",
+            "race_max_winners": 1,
+            "race_position": "race_evpla"
+        },
+        {
+            "race_id": "c6e513f9-f7c8-40d3-a239-044f8c67e4cb",
+            "race_max_winners": 1,
+            "race_position": "race_evpsa"
+        },
+        {
+            "race_id": "a15b587d-f78e-4365-8108-42e94644dea2",
+            "race_max_winners": 1,
+            "race_position": "race_sa"
+        },
+        {
+            "race_id": "9061afe5-1d1d-45b2-aca9-8763d3232ad9",
+            "race_max_winners": 5,
+            "race_position": "race_oncs"
+        },
+        {
+            "race_id": "5db32582-15d8-4fb2-9299-8b17c101ead0",
+            "race_max_winners": 12,
+            "race_position": "race_offcs"
+        },
+        {
+            "race_id": "7a456221-740d-4705-88e6-acc7f2a060b1",
+            "race_max_winners": 1,
+            "race_position": "race_ocuos"
+        },
+        {
+            "race_id": "4d21afd3-8ff8-4de5-b1d8-07ce48e46898",
+            "race_max_winners": 1,
+            "race_position": "race_trans"
+        },
+        {
+            "race_id": "feaa7180-5abe-47f4-aee3-3456497f259a",
+            "race_max_winners": 4,
+            "race_position": "race_csls"
+        },
+        {
+            "race_id": "2d5c6728-0003-45e1-830b-994d1ff42af5",
+            "race_max_winners": 1,
+            "race_position": "race_cscs"
+        },
+        {
+            "race_id": "ed17883e-bad4-438e-9189-17b41105c7af",
+            "race_max_winners": 1,
+            "race_position": "race_cse"
+        }
+    ]
+}

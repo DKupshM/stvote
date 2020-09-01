@@ -1,0 +1,59 @@
+{
+    "races": [
+        {
+            "race_id": "f5c81e26-fc06-4050-b814-29695bea5e54",
+            "race_max_winners": 1,
+            "race_position": "President"
+        },
+        {
+            "race_id": "70ea7243-d946-4c92-8c7d-d82f21185c01",
+            "race_max_winners": 1,
+            "race_position": "Internal VP"
+        },
+        {
+            "race_id": "41c3c426-83de-4a96-b028-5b7897335edc",
+            "race_max_winners": 1,
+            "race_position": "External VP Local Affairs"
+        },
+        {
+            "race_id": "bb6b0041-2029-4060-9380-23187dda7438",
+            "race_max_winners": 1,
+            "race_position": "External VP Statewide Affairs"
+        },
+        {
+            "race_id": "17f31fb3-62da-4bfe-bae8-1844b76190cb",
+            "race_max_winners": 1,
+            "race_position": "Student Advocate"
+        },
+        {
+            "race_id": "01d56d86-b315-4ec1-8f9c-4bc9aaaa0e55",
+            "race_max_winners": 5,
+            "race_position": "On-Campus Senator"
+        },
+        {
+            "race_id": "cbd507d6-b058-48d0-a254-cb7ad14a86fb",
+            "race_max_winners": 12,
+            "race_position": "Off-Campus Senator"
+        },
+        {
+            "race_id": "6a27acac-1e4c-4719-be69-6a4c98439916",
+            "race_max_winners": 1,
+            "race_position": "Off-Campus University Owned Senator"
+        },
+        {
+            "race_id": "532bd4f7-bbaa-49fb-b529-6c56950e0728",
+            "race_max_winners": 1,
+            "race_position": "Transfer Senator"
+        },
+        {
+            "race_id": "0359d325-9f9c-4132-b18f-9cc1fe7daf53",
+            "race_max_winners": 4,
+            "race_position": "Collegiate Senator - Letters & Science"
+        },
+        {
+            "race_id": "bf1da27c-f0b8-4b4b-ae67-1b82bf0880d1",
+            "race_max_winners": 1,
+            "race_position": "Collegiate Senator - Engineering"
+        }
+    ]
+}

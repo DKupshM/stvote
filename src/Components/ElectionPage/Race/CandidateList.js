@@ -13,10 +13,9 @@ function CandidateList(props) {
         return 0;
     });
 
-
     let candidate_list = sortedCandidates.map((item, index) => (
         <CandidatePosition key={index} candidate={item.candidate} status={item.status}
-            score={item.score} position={item.position} quota={item.quota} />
+            score={item.score} position={item.position} quota={item.quota} seats={props.seats} />
     ));
 
     return (

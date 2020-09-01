@@ -1,0 +1,125 @@
+{
+  "general": {
+    "default_speed": 10,
+    "parser_directory": "./parser/",
+    "candidate_parser": "ElectionCandidateParser",
+    "ballot_parser": "ElectionBallotParser"
+  },
+  "races": [
+    {
+      "race_id": "race_president",
+      "race_position": "race_president",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_president",
+        "parser_writein_fields": 1,
+        "parser_writein_whitelist": [
+          "Navpreet Khabra"
+        ],
+        "display_order": 12
+      }
+    },
+    {
+      "race_id": "race_ivp",
+      "race_position": "race_ivp",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_ivp",
+        "display_order": 11
+      }
+    },
+    {
+      "race_id": "race_evpla",
+      "race_position": "race_evpla",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_evpla",
+        "display_order": 10
+      }
+    },
+    {
+      "race_id": "race_evpsa",
+      "race_position": "race_evpsa",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_evpsa",
+        "display_order": 9
+      }
+    },
+    {
+      "race_id": "race_sa",
+      "race_position": "race_sa",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_sa",
+        "display_order": 8
+      }
+    },
+    {
+      "race_id": "race_oncs",
+      "race_position": "race_oncs",
+      "race_max_winners": 5,
+      "race_extended_data": {
+        "parser_group": "race_oncs",
+        "display_order": 6
+      }
+    },
+    {
+      "race_id": "race_offcs",
+      "race_position": "race_offcs",
+      "race_max_winners": 12,
+      "race_extended_data": {
+        "parser_group": "race_offcs",
+        "display_order": 7
+      }
+    },
+    {
+      "race_id": "race_ocuos",
+      "race_position": "race_ocuos",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_ocuos",
+        "display_order": 5
+      }
+    },
+    {
+      "race_id": "race_trans",
+      "race_position": "race_trans",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_trans",
+        "display_order": 1
+      }
+    },
+    {
+      "race_id": "race_csls",
+      "race_position": "race_csls",
+      "race_max_winners": 4,
+      "race_extended_data": {
+        "parser_group": "race_csls",
+        "parser_candidates_droppedout": [
+          "Sibongile Makatini - Isla Vista Party"
+        ],
+        "display_order": 4
+      }
+    },
+    {
+      "race_id": "race_cscs",
+      "race_position": "race_cscs",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_cscs",
+        "display_order": 2
+      }
+    },
+    {
+      "race_id": "race_cse",
+      "race_position": "race_cse",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "race_cse",
+        "display_order": 3
+      }
+    }
+  ]
+}

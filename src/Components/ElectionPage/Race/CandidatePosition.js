@@ -32,6 +32,14 @@ function CandidatePosition(props) {
         return 0;
     }
 
+    const get_position_color = () => {
+        if (Number.isInteger(props.position) && !Number.isNaN(props.position)) {
+            if (props.position < props.seats)
+                return "#01A039";
+        }
+        return "#FF0000";
+    }
+
     const get_percentage = () => {
         if (props.quota === 0)
             return 0;
@@ -40,8 +48,8 @@ function CandidatePosition(props) {
 
     return (
         <tr>
-            <td className="basic-row" width="1"> {get_position()} </td>
-            <td className="basic-row" width="1"> {props.candidate.candidate_name} </td>
+            <td className="basic-row" width="1" style={{ backgroundColor: get_position_color() }}> {get_position()} </td>
+            <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_color }}> {props.candidate.candidate_name} </td>
             <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_party.party_color }}> {props.candidate.candidate_party.party_name} </td >
             <td className="basic-row" width="150" style={{ backgroundColor: get_status_color() }}> {get_status_text()} </td >
             <td className="basic-row" width="100" style={{ backgroundColor: get_status_color() }}> {Math.floor(props.score)} </td >

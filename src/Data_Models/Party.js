@@ -7,6 +7,7 @@ export class Party {
             party_color = "#" + party_color
             if (!this.isValidColor(party_color)) {
                 console.log("Error Color Isn't Valid", party_color)
+                party_color = "#FFFFFF"
             }
         }
         this.party_color = party_color;

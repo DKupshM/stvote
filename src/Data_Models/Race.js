@@ -7,7 +7,7 @@ export class Race {
     constructor(race_id, race_name, seats) {
         this.race_id = race_id
         this.race_name = race_name
-        this.seats = seats
+        this.seats = Number(seats)
 
         this.rounds = [];
 
@@ -115,13 +115,23 @@ export class Race {
             });
         }
         for (const candidate in this.running) {
-            candidateTable.push({
-                candidate: find_candidate_by_id(candidate),
-                status: CandidateState.RUNNING,
-                position: this.running[candidate][1],
-                score: this.running[candidate][0],
-                quota: quota,
-            });
+            if (this.state === RaceState.ADDING) {
+                candidateTable.push({
+                    candidate: find_candidate_by_id(candidate),
+                    status: CandidateState.RUNNING,
+                    position: candidateTable.length,
+                    score: this.running[candidate][0],
+                    quota: quota,
+                });
+            } else {
+                candidateTable.push({
+                    candidate: find_candidate_by_id(candidate),
+                    status: CandidateState.RUNNING,
+                    position: this.running[candidate][1],
+                    score: this.running[candidate][0],
+                    quota: quota,
+                });
+            }
         }
         for (const candidate in this.transferring) {
             candidateTable.push({
@@ -152,6 +162,7 @@ export class Race {
     run_race_step = () => {
         const begin_race = () => {
             console.log("Beginning Race for", this.race_name);
+            console.log("Total Voters is: " + this.ballots.length + " , for " + this.seats + " seats.")
             console.log("Quota is", this.quota())
             if (this.ballots.length === 0) {
                 this.state = RaceState.COMPLETE;

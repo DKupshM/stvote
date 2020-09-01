@@ -21,9 +21,8 @@ function Home(props) {
     }
 
     let asuc = CreateSelectButton('ASUC Berkeley', "uc_berkeley", [2015, 2016, 2017, 2018, 2019, 2020]);
-    let asucsb = CreateSelectButton('ASUC Santa Barbara', "uc_berkeley", [2018, 2019, 2020]);
-    let asucsd = CreateSelectButton('AS UC San Diego', "uc_berkeley", [2018, 2019, 2020]);
-    let asucd = CreateSelectButton('AS UC Davis', "uc_berkeley", [2018, 2019, 2020]);
+    let asucsb = CreateSelectButton('ASUC Santa Barbara', "uc_santa_barbara", [2016, 2017, 2018, 2019, 2020]);
+    let asucd = CreateSelectButton('AS UC Davis', "uc_davis", [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]);
     let asucsc = CreateSelectButton('AS UC Santa Cruz', "uc_berkeley", [2018, 2019, 2020]);
     let asucla = CreateSelectButton('AS UC Los Angeles', "uc_berkeley", [2018, 2019, 2020]);
 
@@ -33,7 +32,6 @@ function Home(props) {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
                 {asuc}
                 {asucsb}
-                {asucsd}
                 {asucd}
                 {asucsc}
                 {asucla}

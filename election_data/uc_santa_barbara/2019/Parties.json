@@ -1,0 +1,19 @@
+{
+    "parties": [
+        {
+            "party_id": 1,
+            "party_name": "Campus United",
+            "party_color": "0048ff"
+        },
+        {
+            "party_id": 2,
+            "party_name": "Isla Vista Party",
+            "party_color": "FFC0CB"
+        },
+        {
+            "party_id": 3,
+            "party_name": "Independent",
+            "party_color": "818285"
+        }
+    ]
+}

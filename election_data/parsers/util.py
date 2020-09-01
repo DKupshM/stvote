@@ -229,14 +229,16 @@ def rename_race(year):
 def rename_uuid_year(year):
     print("Editing " + year)
     rename_race_id(
-        "election_data/uc_davis/" + year + "/Configuration.json",
-        "election_data/uc_davis/" + year + "/Ballots.json")
-    rename_candidate_id("election_data/uc_davis/" + year + "/Candidates.json",
-                        "election_data/uc_davis/" + year + "/Ballots.json")
+        "election_data/uc_santa_barbara/" + year + "/Configuration.json",
+        "election_data/uc_santa_barbara/" + year + "/Ballots.json")
+    rename_candidate_id("election_data/uc_santa_barbara/" + year + "/Candidates.json",
+                        "election_data/uc_santa_barbara/" + year + "/Ballots.json")
 
 
 if __name__ == "__main__":
+    for i in range(2016, 2021):
+        print("Renaming IDs:", i)
+        rename_uuid_year(str(i))
     # rename_race("2018Winter")
-    rename_uuid_year("2018")
     # combine_race("2008Fall", "2008WinterSenate", "2008")
     # combine_race("2018", "2018winter", "2018")

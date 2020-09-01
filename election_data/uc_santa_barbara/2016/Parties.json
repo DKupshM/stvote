@@ -1,0 +1,29 @@
+{
+    "parties": [
+        {
+            "party_id": 1,
+            "party_name": "Campus United",
+            "party_color": "0048ff"
+        },
+        {
+            "party_id": 2,
+            "party_name": "Peer Action Coalition",
+            "party_color": "9500ff"
+        },
+        {
+            "party_id": 3,
+            "party_name": "The Response",
+            "party_color": "ffc800"
+        },
+        {
+            "party_id": 4,
+            "party_name": "Queer and Trans Student Body",
+            "party_color": "eb4034"
+        },
+        {
+            "party_id": 6,
+            "party_name": "Independent",
+            "party_color": "818285"
+        }
+    ]
+}

@@ -1,0 +1,276 @@
+{
+    "race_cscs": [
+        {
+            "name": "Sophia Uemura",
+            "number": "b77489da-fbb1-4b3f-afdb-5e9ada61c216",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "race_cse": [
+        {
+            "name": "Micah Almas",
+            "number": "ab4ec584-d90d-4cca-be32-d092e8ee38c6",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Blake Diamond",
+            "number": "022761c0-8900-43e1-b305-bbcff86efa3d",
+            "party": "Campus United"
+        }
+    ],
+    "race_csls": [
+        {
+            "name": "Sibongile Makatini",
+            "number": "de8441ff-da27-44e4-83ae-2967768b2aaa",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Stoddy Carey",
+            "number": "213604a3-2c3f-4d4a-b23a-014802304162",
+            "party": "Campus United"
+        },
+        {
+            "name": "Brooke Kopel",
+            "number": "ed31367e-9688-472e-8c8b-4415a1ddc177",
+            "party": "Campus United"
+        },
+        {
+            "name": "Grayson Hernandez",
+            "number": "80a47196-1b2b-4fdc-a675-cebd5b55b065",
+            "party": "Campus United"
+        },
+        {
+            "name": "Andrew Banicki",
+            "number": "7946fe1d-9d11-4129-853a-9d757449cff0",
+            "party": "Campus United"
+        },
+        {
+            "name": "Grecia \"grec\" Martinez",
+            "number": "3e41f405-2f4d-454e-9fdd-5bbe7a26a238",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "race_evpla": [
+        {
+            "name": "Justice Dumlao",
+            "number": "156f736e-d2f1-48dd-b26e-fa16fdc412b7",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Batsheva Stoll",
+            "number": "8035b16e-7a76-4906-a82f-03cc405acf5f",
+            "party": "Campus United"
+        }
+    ],
+    "race_evpsa": [
+        {
+            "name": "Menelik Dagnachew",
+            "number": "d5b8bd2f-7f42-45c7-9e77-adf08f0f665d",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Kristin Hsu",
+            "number": "44bd154d-ab70-4851-88e2-44c4164a8722",
+            "party": "Campus United"
+        }
+    ],
+    "race_ivp": [
+        {
+            "name": "Lesly Silva",
+            "number": "7ac3882a-969a-47d8-963a-8356238969fc",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Jasmine Sandhu",
+            "number": "08cc331c-a63c-42a0-8da4-5a7b81115a20",
+            "party": "Campus United"
+        }
+    ],
+    "race_ocuos": [
+        {
+            "name": "Andrea Reyes",
+            "number": "1bb83a40-7745-40e6-ae8b-de7afeede611",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Juan Manuel Perez Tejada Mir",
+            "number": "1b774bc9-8f07-4212-bc09-00243bab0538",
+            "party": "Campus United"
+        }
+    ],
+    "race_offcs": [
+        {
+            "name": "Veronica Leeman",
+            "number": "3c9d4446-c94c-414d-a06e-b59278147511",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Sami Kaayal",
+            "number": "7712429c-43cf-49dd-bec0-6d4cd1eb1867",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Carla Martinez",
+            "number": "6365b485-5559-4b4a-b61b-0d22ebe7fa64",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Ilene Ochoa",
+            "number": "345ecac3-92ee-43e8-81c6-61440b567f15",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Mara Joy \"Joy\" Abubo",
+            "number": "e98e7be1-9388-45f2-bc41-abce996ee8a5",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Sophia Dycaico",
+            "number": "e4c053c2-1e3d-4bdf-8d9d-5c398fd0c84a",
+            "party": "Campus United"
+        },
+        {
+            "name": "Dominick \"Dom\" Dicesare",
+            "number": "410a23c2-52eb-47c2-8d17-c65f3f2128fe",
+            "party": "Campus United"
+        },
+        {
+            "name": "Deepika Chandrashekar",
+            "number": "3d2318f6-7346-426b-8d91-e8625666a0ac",
+            "party": "Campus United"
+        },
+        {
+            "name": "Anthony Pimentel",
+            "number": "955eb787-2afe-414b-bcdc-c180fb2a4252",
+            "party": "Campus United"
+        },
+        {
+            "name": "Brandon Mora",
+            "number": "8c1f886b-6175-4292-b60d-cdf1b7c31417",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Siboney Arias",
+            "number": "1f922f27-562d-4b73-9f32-9b46052a8bb1",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Dhishal Jayasinghe",
+            "number": "81dcd52c-47fe-4aa2-94c1-d50ea56cad91",
+            "party": "Campus United"
+        },
+        {
+            "name": "Kristen Armellini",
+            "number": "0fcc1d43-3027-47d7-b22c-f372d7064b4c",
+            "party": "Campus United"
+        },
+        {
+            "name": "Evan Quash",
+            "number": "6eff3dc3-b744-4786-a912-1c3a1adc0661",
+            "party": "Campus United"
+        },
+        {
+            "name": "Adnan Mansur",
+            "number": "6a3f6f00-748a-4a10-8003-6a66e858ae3e",
+            "party": "Campus United"
+        },
+        {
+            "name": "Samuel \"Sam\" Cook",
+            "number": "e5b6fe25-1c6e-4787-9a47-2b1900fc4f11",
+            "party": "Campus United"
+        },
+        {
+            "name": "Adham Btaddini",
+            "number": "99f96b18-a1e5-48ab-819b-24046fd5f3b5",
+            "party": "Campus United"
+        },
+        {
+            "name": "Alexandra \"Alex\" Gessesse",
+            "number": "13d7b0a2-47f3-4991-a1d4-f1dc7a815aa6",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Alison Sir",
+            "number": "b0ccedf6-6770-440e-beb6-b328ec9fdc84",
+            "party": "Campus United"
+        }
+    ],
+    "race_oncs": [
+        {
+            "name": "Vanessa \"Nessa\" Maldonado",
+            "number": "7067cc92-dc03-4b7e-8d4d-ae0c5e167850",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Derek Yang",
+            "number": "7dc74c2e-a7b4-4195-b943-0f7f42472a02",
+            "party": "Campus United"
+        },
+        {
+            "name": "Alexa Hernandez",
+            "number": "c4f6e5f3-430a-41c5-affd-6636a86097fa",
+            "party": "Campus United"
+        },
+        {
+            "name": "Charles Neumann",
+            "number": "cf1b5687-a714-42f7-b955-336db784cea5",
+            "party": "Campus United"
+        },
+        {
+            "name": "Dylan Goldman",
+            "number": "e70a8189-632e-4fdf-a106-291829bc0610",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Steven Ho",
+            "number": "6a86bcde-1b19-4076-af0b-2565de41b482",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Kia Sadeghi",
+            "number": "10522d3d-9d10-4a39-966d-d15cdd845f00",
+            "party": "Campus United"
+        },
+        {
+            "name": "Jorge Santos",
+            "number": "e8d19a2f-154d-4450-bfce-2210908200d5",
+            "party": "Isla Vista Party"
+        }
+    ],
+    "race_president": [
+        {
+            "name": "Navpreet Khabra",
+            "number": "75245116-a83e-4101-9510-be756596d8b7",
+            "party": "Independent"
+        },
+        {
+            "name": "Nawar Nemeh",
+            "number": "48418f7e-bae7-47d8-9f9b-610825b4848e",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Hieu Le",
+            "number": "3c04b7a0-5855-4a37-b0e1-c23f684e7ce4",
+            "party": "Campus United"
+        }
+    ],
+    "race_sa": [
+        {
+            "name": "Jack Tannenbaum",
+            "number": "4bbaf2fe-bb31-466f-b4f6-f11cb253661c",
+            "party": "Independent"
+        }
+    ],
+    "race_trans": [
+        {
+            "name": "Naia Al-Anbar",
+            "number": "eb48f965-c4a7-4120-a429-9f702e41bb01",
+            "party": "Isla Vista Party"
+        },
+        {
+            "name": "Kian Maalizadeh",
+            "number": "a3a3a3fe-ffce-491d-be0d-de81b6244cad",
+            "party": "Campus United"
+        }
+    ]
+}

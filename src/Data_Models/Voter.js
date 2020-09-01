@@ -18,6 +18,8 @@ export class Voter {
 
     get_ballot_for_race = (race_id) => {
         if (race_id in this.races) {
+            if (this.races[race_id].length === 1)
+                return this.races[race_id][0]
             return this.races[race_id];
         }
         return null;
@@ -25,7 +27,11 @@ export class Voter {
 
     add_ballot = (race_id, ballot) => {
         if (ballot.candidates.length > 0) {
-            this.races[race_id] = ballot;
+            if (race_id in this.races) {
+                this.races[race_id] = [...this.races[race_id], ballot]
+            } else {
+                this.races[race_id] = [ballot];
+            }
         }
     }
 }

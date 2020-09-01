@@ -105,7 +105,9 @@ export class Round {
     }
 
     candidate_score = (candidate) => {
-        return this.candidate_scores[candidate.candidate_id];
+        if (candidate.candidate_id !== undefined)
+            return this.candidate_scores[candidate.candidate_id];
+        return this.candidate_scores[candidate];
     }
 
     complete = () => {

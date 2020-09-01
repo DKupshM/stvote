@@ -38,6 +38,10 @@ function Sankey(props) {
                 for (const candidate of round.start_active_candidates) {
                     let link = { source: "Total Votes", target: candidate.candidate_name + " " + round.round_number, value: round.candidate_real_scores[candidate.candidate_id] };
                     data['links'].push(link);
+                    if (round.elected_candidates.includes(candidate) && round.round_number !== race.rounds.length - 1) {
+                        let link = { source: candidate.candidate_name + " " + round.round_number, target: "Elected", value: round.quota, color: "#01A039" };
+                        data['links'].push(link);
+                    }
                 }
             } else {
                 // First add links from prior rounds
@@ -45,6 +49,7 @@ function Sankey(props) {
                     let link = { source: candidate.candidate_name + " " + (round.round_number - 1), target: candidate.candidate_name + " " + round.round_number, value: prev_round(round).candidate_real_scores[candidate.candidate_id] };
                     data['links'].push(link);
                     // Check if elected this round and add link if elected
+
                     if (round.elected_candidates.includes(candidate) && round.round_number !== race.rounds.length - 1) {
                         let link = { source: candidate.candidate_name + " " + round.round_number, target: "Elected", value: round.quota, color: "#01A039" };
                         data['links'].push(link);
@@ -126,8 +131,9 @@ function Sankey(props) {
                 margin={{ top: 100, right: 40, bottom: 100, left: 40 }}
                 layout="vertical"
                 align="justify"
-                sort="descending"
+                sort="ascending"
                 colors={{ scheme: 'category10' }}
+                nodeTooltip={node => <span> {node.name}: {Math.round(node.value)}</span>}
                 nodeOpacity={1}
                 nodeThickness={10}
                 nodeInnerPadding={3}

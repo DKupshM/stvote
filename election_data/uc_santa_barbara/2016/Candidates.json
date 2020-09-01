@@ -1,0 +1,319 @@
+{
+    "Collegiate Senator - Creative Studies": [
+        {
+            "name": "Ezra Kosviner",
+            "number": "65388728-2210-4952-8218-3419ddef7fd6",
+            "party": "Campus United"
+        },
+        {
+            "name": "Jordan \"Robeman\" Mitchell",
+            "number": "8792a717-8256-49b5-a5eb-cdc9d34ae639",
+            "party": "The Response"
+        },
+        {
+            "name": "Adam Tabor",
+            "number": "d8f65b87-469b-40ad-849c-c7fa9cb5aa65",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "Collegiate Senator - Engineering": [
+        {
+            "name": "Matthew \"Matt\" Greenberg",
+            "number": "0c5288f3-badb-449e-beae-db564b705726",
+            "party": "Campus United"
+        },
+        {
+            "name": "Kelvin Campos",
+            "number": "7505d55f-9d06-4a68-aff8-a65d96c3c0c0",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "Collegiate Senator - Letters & Science": [
+        {
+            "name": "Cameron Demille",
+            "number": "752b99e6-fd42-49e4-b533-8150d206b517",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Felipe \"Flippy\" Recinos Quant",
+            "number": "322f8b8a-e666-4abe-9264-31d93ba5246e",
+            "party": "The Response"
+        },
+        {
+            "name": "Williams \"Willie\" Roman",
+            "number": "54a66999-5443-48b4-92b9-28ae2b28d473",
+            "party": "The Response"
+        },
+        {
+            "name": "Marjan Abubo",
+            "number": "55d7443e-948b-4e41-83c3-ca899cbc6f23",
+            "party": "The Response"
+        },
+        {
+            "name": "Alexander Giolito",
+            "number": "956e5791-424b-4ea4-8a0e-aefe170ea703",
+            "party": "Campus United"
+        },
+        {
+            "name": "Tamar Barlev",
+            "number": "c56825b1-416a-4625-9155-9bc9fd892553",
+            "party": "Campus United"
+        },
+        {
+            "name": "Jasmine Sandhu",
+            "number": "d41d491b-6713-447c-867f-91f08fba0724",
+            "party": "Campus United"
+        },
+        {
+            "name": "Kimberly Fuentes Carrillo",
+            "number": "e8d8a432-3688-409c-b5b9-b178a5588a9b",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Steven Kwok",
+            "number": "89a6502f-3e00-4d7d-a23d-59694e1cbb51",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Richard \"Rick\" Zierer",
+            "number": "d285875c-1dca-43b0-a917-e6ae11353d2c",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Emanuel \"Manny\" Suarez Jimenez",
+            "number": "75e13bc3-2d03-4483-923a-8ac5ed2ffe94",
+            "party": "Queer and Trans Student Body (QuTSB)"
+        }
+    ],
+    "External VP Local Affairs": [
+        {
+            "name": "Ashcon Minoiefar",
+            "number": "f10eebee-c98f-46ac-bf24-388b4dba760a",
+            "party": "Campus United"
+        }
+    ],
+    "External VP Statewide Affairs": [
+        {
+            "name": "Neha Nayak",
+            "number": "e66580b0-b8b7-418d-a3e3-c14a7f8e14d6",
+            "party": "Campus United"
+        },
+        {
+            "name": "Stevan Abdalmalik",
+            "number": "36430c67-1fe7-47b7-9e3f-ff1acc8e5d29",
+            "party": "The Response"
+        },
+        {
+            "name": "Victor Garcia",
+            "number": "35ebd694-67b1-45ac-ac1b-cd248ec1f591",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "Internal VP": [
+        {
+            "name": "Natalie Jordan",
+            "number": "dfc56f1e-575e-47c3-aae3-37e2636e4338",
+            "party": "Independent"
+        },
+        {
+            "name": "Manushi Yapabandara",
+            "number": "c5e35612-c069-4147-b763-e9d08c96fb1c",
+            "party": "Independent"
+        }
+    ],
+    "Off-Campus Senator": [
+        {
+            "name": "Jonathan \"Jonathan Lopez\" Lopez",
+            "number": "360edbcd-fe2f-4789-997c-adb85e08f38f",
+            "party": "The Response"
+        },
+        {
+            "name": "Jesse Velasquez",
+            "number": "2dcf7262-f39a-4afa-b7bb-9a111f63a4be",
+            "party": "The Response"
+        },
+        {
+            "name": "Leanna Lugo",
+            "number": "5e8f3b78-c90b-420d-aefa-b54cd553b5e2",
+            "party": "The Response"
+        },
+        {
+            "name": "Luvia Solis-Barraza",
+            "number": "8c18966f-204f-4025-b650-53d60975de4a",
+            "party": "The Response"
+        },
+        {
+            "name": "Maria Hoang",
+            "number": "0d22e41a-5a08-4074-8107-894e3239c196",
+            "party": "The Response"
+        },
+        {
+            "name": "Reilly Hobson",
+            "number": "762096fb-e1dd-49f7-9afa-114dc99ac80e",
+            "party": "Campus United"
+        },
+        {
+            "name": "Bianca Fernandez",
+            "number": "115038c1-c752-4545-a162-3f466225ce92",
+            "party": "Campus United"
+        },
+        {
+            "name": "Elias Jordan",
+            "number": "8c94b73e-df11-4350-a10d-9faa0c1e8f6d",
+            "party": "Campus United"
+        },
+        {
+            "name": "Cole Marting",
+            "number": "cdd70270-8b31-4252-bc3b-43afcff9575d",
+            "party": "Campus United"
+        },
+        {
+            "name": "Steven \"Digy\" Stovall",
+            "number": "55f28f35-3390-4520-a753-d582c0a766ad",
+            "party": "Campus United"
+        },
+        {
+            "name": "Patrick Dohoney",
+            "number": "030ab0d5-497c-4fdc-beab-ecd4c2308035",
+            "party": "Campus United"
+        },
+        {
+            "name": "Rebecca Yadegari",
+            "number": "3c902e03-fabf-4854-a9b6-1e8e2d704c47",
+            "party": "Campus United"
+        },
+        {
+            "name": "Batsheva Stoll",
+            "number": "75ef3308-f6c4-4400-9f9f-49c1fb294720",
+            "party": "Campus United"
+        },
+        {
+            "name": "Izabella \"Izzy\" Kipnis",
+            "number": "ecf329c5-d8e1-477e-8ab6-fcfa05d289fb",
+            "party": "Campus United"
+        },
+        {
+            "name": "Hannah Ellenhorn",
+            "number": "0ba22763-f617-4aed-b5fa-64a55e54dcdf",
+            "party": "Campus United"
+        },
+        {
+            "name": "Ashley Selki",
+            "number": "102e8f3b-de8c-4ddb-98b1-f6b4a3cd30d1",
+            "party": "Campus United"
+        },
+        {
+            "name": "Cole Hyatt",
+            "number": "e579d0f9-6845-439c-bd26-f5c9fb268269",
+            "party": "The Response"
+        },
+        {
+            "name": "Joel Ruiz",
+            "number": "b5935e32-2d25-4b8f-b8dc-ceb0f6fc6c87",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Hien Mai",
+            "number": "5ebffc3a-8f9e-4beb-9f60-2a19862272f9",
+            "party": "The Response"
+        },
+        {
+            "name": "Sophia Dycaico",
+            "number": "64eb3bf3-e5c9-44ff-b495-2ead1f1cfe88",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Sebastian Rubio Ruiz",
+            "number": "271c0f89-57e0-4c4e-a910-58d129733a0d",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Aaron Hendizadeh",
+            "number": "be09e117-766f-4cae-96a8-516c1376791c",
+            "party": "Campus United"
+        },
+        {
+            "name": "Marisol Hernandez",
+            "number": "bca47f2c-7099-45f0-92f8-68901ff4b3b9",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Juliano Pula",
+            "number": "2cc89947-e3b4-4940-ac08-9818742589cf",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "Off-Campus University Owned Senator": [
+        {
+            "name": "Yanira \"Jenny\" Flores",
+            "number": "3b2cb439-61fd-450b-8bdd-7f593a57bd6d",
+            "party": "The Response"
+        },
+        {
+            "name": "Deanna Nguyen",
+            "number": "c9292366-4d38-445e-b206-89a5946db1a7",
+            "party": "Campus United"
+        },
+        {
+            "name": "Sabrina \"Sabrina\" Divin",
+            "number": "edd9a57b-7086-4897-b60e-f64e1366a8f9",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "On-Campus Senator": [
+        {
+            "name": "Lesly Silva",
+            "number": "7de3f99f-bfe2-401f-b04c-5cb63fb5b7f4",
+            "party": "The Response"
+        },
+        {
+            "name": "Bryan \"Bryan\" Samayoa-Velasquez",
+            "number": "7b454c2e-435f-4506-b2f7-80fa518978dd",
+            "party": "Campus United"
+        },
+        {
+            "name": "Kuvimbanashe \"Eddy\" Chikukwa",
+            "number": "071d2639-123f-48a9-a48e-5b4e93d80c49",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Kou \"KO\" Collins",
+            "number": "9e4e99a7-e7c4-498d-8cdc-7446e44fb831",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Conor Collins",
+            "number": "3ed4e734-1234-4f43-b8aa-93419ae07292",
+            "party": "Peer Action Coalition (PAC)"
+        },
+        {
+            "name": "Unique Vance",
+            "number": "6cb4b47f-3be1-4922-bc17-b621d7c5a56e",
+            "party": "The Response"
+        }
+    ],
+    "President": [
+        {
+            "name": "Alejandra Melgoza",
+            "number": "cd0d0008-0479-4397-95a3-4f16add22a03",
+            "party": "Independent"
+        },
+        {
+            "name": "Austin Hechler",
+            "number": "514924ea-d64a-4ed8-90ff-58fcc90504d0",
+            "party": "Campus United"
+        },
+        {
+            "name": "Jose Magana",
+            "number": "1e94ae53-dc68-462f-8e89-cd67485fe59c",
+            "party": "Peer Action Coalition (PAC)"
+        }
+    ],
+    "Student Advocate": [
+        {
+            "name": "Josephine \"Josie\" Ampaw",
+            "number": "28fddb9b-fe53-4113-89eb-04700c40712b",
+            "party": "Independent"
+        }
+    ]
+}
