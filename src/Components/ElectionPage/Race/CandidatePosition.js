@@ -34,10 +34,16 @@ function CandidatePosition(props) {
 
     const get_position_color = () => {
         if (Number.isInteger(props.position) && !Number.isNaN(props.position)) {
-            if (props.position < props.seats)
-                return "#01A039";
+            if (props.position < props.seats) {
+                if (props.status === CandidateState.ELECTED)
+                    return "#01A039";
+                return "#C5FFC5"
+            } else if (props.status === CandidateState.RUNNING)
+                return "#FAB8B8";
+            else
+                return "#FF0000";
         }
-        return "#FF0000";
+        return "#FFFFFF";
     }
 
     const get_percentage = () => {
@@ -49,7 +55,7 @@ function CandidatePosition(props) {
     return (
         <tr>
             <td className="basic-row" width="1" style={{ backgroundColor: get_position_color() }}> {get_position()} </td>
-            <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_color }}> {props.candidate.candidate_name} </td>
+            <td className="basic-row" width="1" style={{ backgroundColor: "#FFFFFF" }}> {props.candidate.candidate_name} </td>
             <td className="basic-row" width="1" style={{ backgroundColor: props.candidate.candidate_party.party_color }}> {props.candidate.candidate_party.party_name} </td >
             <td className="basic-row" width="150" style={{ backgroundColor: get_status_color() }}> {get_status_text()} </td >
             <td className="basic-row" width="100" style={{ backgroundColor: get_status_color() }}> {Math.floor(props.score)} </td >
