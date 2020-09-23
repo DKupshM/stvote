@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/stvote/static/css/main.c29a71c2.chunk.css",
+    "main.js": "/stvote/static/js/main.e560929f.chunk.js",
+    "main.js.map": "/stvote/static/js/main.e560929f.chunk.js.map",
+    "runtime-main.js": "/stvote/static/js/runtime-main.3fe2677a.js",
+    "runtime-main.js.map": "/stvote/static/js/runtime-main.3fe2677a.js.map",
+    "static/css/2.cbbbb7c5.chunk.css": "/stvote/static/css/2.cbbbb7c5.chunk.css",
+    "static/js/2.037cb3ca.chunk.js": "/stvote/static/js/2.037cb3ca.chunk.js",
+    "static/js/2.037cb3ca.chunk.js.map": "/stvote/static/js/2.037cb3ca.chunk.js.map",
+    "index.html": "/stvote/index.html",
+    "precache-manifest.8dd650302f67db6529ce6d480fa795a0.js": "/stvote/precache-manifest.8dd650302f67db6529ce6d480fa795a0.js",
+    "service-worker.js": "/stvote/service-worker.js",
+    "static/css/2.cbbbb7c5.chunk.css.map": "/stvote/static/css/2.cbbbb7c5.chunk.css.map",
+    "static/css/main.c29a71c2.chunk.css.map": "/stvote/static/css/main.c29a71c2.chunk.css.map",
+    "static/js/2.037cb3ca.chunk.js.LICENSE.txt": "/stvote/static/js/2.037cb3ca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3fe2677a.js",
+    "static/css/2.cbbbb7c5.chunk.css",
+    "static/js/2.037cb3ca.chunk.js",
+    "static/css/main.c29a71c2.chunk.css",
+    "static/js/main.e560929f.chunk.js"
+  ]
+}

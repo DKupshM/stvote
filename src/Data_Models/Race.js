@@ -4,7 +4,7 @@ import { CandidateState } from './Candidate';
 
 export class Race {
 
-    constructor(race_id, race_name, seats) {
+    constructor(race_id, race_name, seats, dropped_candidates = []) {
         this.race_id = race_id
         this.race_name = race_name
         this.seats = Number(seats)
@@ -14,7 +14,9 @@ export class Race {
         this.state = RaceState.ADDING;
 
         this.candidates = []
+        this.inactive_candidates = dropped_candidates;
         this.ballots = []
+        this.inactive_ballots = []
 
         this.transfer_voters = []
         this.ballots_to_apply = []
@@ -27,9 +29,23 @@ export class Race {
         this.running = {}
         this.transferring = {}
         this.transfered = {}
+        this.excused = {}
     }
 
-    add_candidate = (candidate) => {
+    add_candidate = (candidate, dropped = false) => {
+        if (this.state !== RaceState.ADDING)
+            throw new Error("Can't Add Candidates While Running");
+        for (const current_candidate of this.inactive_candidates)
+            if (current_candidate.candidate_id === candidate.candidate_id) {
+                this.inactive_candidates.push(candidate)
+                return;
+            }
+
+        if (dropped) {
+            this.inactive_candidates.push(candidate)
+            this.excused[candidate.candidate_id] = [0]
+            return
+        }
         for (const current_candidate of this.candidates)
             if (current_candidate.candidate_id === candidate.candidate_id)
                 return;
@@ -38,12 +54,96 @@ export class Race {
     }
 
     add_ballot = (ballot) => {
-        if (ballot.candidates.length === 0)
+        const find_next_active_candidate = (candidates) => {
+            for (const candidate of candidates)
+                if (this.candidates.includes(candidate))
+                    return candidate
+            return null;
+        }
+        if (this.state !== RaceState.ADDING)
+            throw new Error("Can't Add Ballots While Running");
+        if (find_next_active_candidate(ballot.candidates) === null) {
+            this.inactive_ballots.push(ballot)
             return;
+        }
         for (let i = 0; i < this.ballots.length; i++)
             if (this.ballots[i].ballot_id === ballot.ballot_id)
                 return;
         this.ballots.push(ballot);
+    }
+
+    excuse_candidate = (candidate) => {
+        const find_next_active_candidate = (candidates) => {
+            for (const candidate of candidates)
+                if (this.candidates.includes(candidate))
+                    return candidate
+            return null;
+        }
+        if (this.state !== RaceState.ADDING)
+            throw new Error("Can't Excuse Candidate While Running");
+
+        // Check if Excused Already Excused
+        for (const current_candidate of this.inactive_candidates) {
+            if (current_candidate.candidate_id === candidate.candidate_id) {
+                return;
+            }
+        }
+
+        delete this.elected[candidate.candidate_id];
+        delete this.running[candidate.candidate_id];
+        delete this.transferring[candidate.candidate_id];
+        delete this.transfered[candidate.candidate_id];
+
+        this.candidates = this.candidates.filter((value) => {
+            return value !== candidate
+        });
+
+
+        this.inactive_candidates.push(candidate)
+        this.excused[candidate.candidate_id] = [0]
+
+        for (const ballot of this.ballots) {
+            if (find_next_active_candidate(ballot.candidates) === null) {
+                this.inactive_ballots.push(ballot);
+                this.ballots = this.ballots.filter((value) => {
+                    return value !== ballot
+                });
+            }
+        }
+    }
+
+    unexcuse_candidate = (candidate) => {
+        const find_next_active_candidate = (candidates) => {
+            for (const candidate of candidates)
+                if (this.candidates.includes(candidate))
+                    return candidate
+            return null;
+        }
+        if (this.state !== RaceState.ADDING)
+            throw new Error("Can't unexcuse Candidate While Running");
+
+        // Check if Already Not Excused
+        for (const current_candidate of this.candidates) {
+            if (current_candidate.candidate_id === candidate.candidate_id) {
+                return;
+            }
+        }
+
+        delete this.excused[candidate.candidate_id];
+        this.inactive_candidates = this.inactive_candidates.filter((value) => {
+            return value !== candidate
+        });
+
+        this.running[candidate.candidate_id] = [0, this.running.length];
+        this.candidates.push(candidate);
+
+        for (const ballot of this.inactive_ballots)
+            if (find_next_active_candidate(ballot.candidates) !== null) {
+                this.add_ballot(ballot)
+                this.inactive_ballots = this.inactive_ballots.filter((value) => {
+                    return value !== ballot
+                });
+            }
     }
 
     num_candidates = () => {
@@ -59,6 +159,9 @@ export class Race {
     currentScores = () => {
         const find_candidate_by_id = (id) => {
             for (const candidate of this.candidates)
+                if (candidate.candidate_id === id)
+                    return candidate;
+            for (const candidate of this.inactive_candidates)
                 if (candidate.candidate_id === id)
                     return candidate;
             return null;
@@ -88,12 +191,21 @@ export class Race {
                 score: this.transfered[candidate][0],
             });
         }
+        for (const candidate in this.inactive_candidates) {
+            scores.push({
+                candidate: find_candidate_by_id(candidate),
+                score: 0,
+            });
+        }
         return scores;
     }
 
     candidateTable = () => {
         const find_candidate_by_id = (id) => {
             for (const candidate of this.candidates)
+                if (candidate.candidate_id === id)
+                    return candidate;
+            for (const candidate of this.inactive_candidates)
                 if (candidate.candidate_id === id)
                     return candidate;
             return null;
@@ -151,6 +263,16 @@ export class Race {
                 quota: quota,
             });
         }
+
+        for (const candidate in this.excused) {
+            candidateTable.push({
+                candidate: find_candidate_by_id(candidate),
+                status: CandidateState.EXCUSED,
+                position: this.candidates.length,
+                score: 0,
+                quota: quota,
+            });
+        }
         return candidateTable;
     }
 
@@ -188,6 +310,9 @@ export class Race {
                 for (const candidate of this.candidates)
                     if (candidate.candidate_id === id)
                         return candidate;
+                for (const candidate of this.inactive_candidates)
+                    if (candidate.candidate_id === id)
+                        return candidate;
                 return null;
             }
             console.log("Starting Round", this.rounds.length);
@@ -208,6 +333,9 @@ export class Race {
             }
             for (const candidate in this.transfered) {
                 round.add_candidate(find_candidate_by_id(candidate), CandidateState.TRANSFERED);
+            }
+            for (const candidate in this.excused) {
+                round.add_candidate(find_candidate_by_id(candidate), CandidateState.EXCUSED);
             }
 
             for (const ballot of previousRound.candidate_ballot(null)) {
@@ -282,6 +410,13 @@ export class Race {
             currentRound.add_ballot(ballot[0], ballot[1]);
 
             if (this.rounds.length === 1) {
+                const find_next_active_candidate = (candidates) => {
+                    for (const candidate of candidates)
+                        if (this.candidates.includes(candidate))
+                            return candidate
+                    return null;
+                }
+
                 for (let i = 0; i < ballot[0].candidates.length; i++) {
                     const candidate = ballot[0].candidates[i];
                     if (this.candidate_ballot_rankings[candidate] === undefined)
@@ -295,11 +430,14 @@ export class Race {
                 if (this.first_scores.length !== 0) {
                     first_round_score = { ...this.first_scores[this.first_scores.length - 1] };
                 }
-                if (ballot[0].candidates[0].candidate_id in first_round_score)
-                    first_round_score[ballot[0].candidates[0].candidate_id] += 1;
-                else
-                    first_round_score[ballot[0].candidates[0].candidate_id] = 1;
-                this.first_scores.push(first_round_score);
+                let candidate = find_next_active_candidate(ballot[0].candidates)
+                if (candidate !== null) {
+                    if (candidate.candidate_id in first_round_score)
+                        first_round_score[candidate.candidate_id] += 1;
+                    else
+                        first_round_score[candidate.candidate_id] = 1;
+                    this.first_scores.push(first_round_score);
+                }
             }
 
             let activeCandidates = currentRound.active_candidates.sort((x, y) => {

@@ -13,6 +13,9 @@ function CandidatePosition(props) {
             return "#E07A00";
         else if (props.status === CandidateState.TRANSFERED)
             return "#FF0000";
+        else if (props.status === CandidateState.EXCUSED)
+            return "#D5D5D5";
+        return "#FFFFFF"
     }
 
     const get_status_text = () => {
@@ -24,6 +27,9 @@ function CandidatePosition(props) {
             return "TRANSFERRING";
         else if (props.status === CandidateState.TRANSFERED)
             return "TRANSFERED";
+        else if (props.status === CandidateState.EXCUSED)
+            return "EXCUSED";
+        return ""
     }
 
     const get_position = () => {
@@ -40,6 +46,8 @@ function CandidatePosition(props) {
                 return "#C5FFC5"
             } else if (props.status === CandidateState.RUNNING)
                 return "#FAB8B8";
+            else if (props.status === CandidateState.EXCUSED)
+                return "#D5D5D5";
             else
                 return "#FF0000";
         }

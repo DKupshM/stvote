@@ -12,6 +12,8 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import useInterval from '../Hooks/useInterval';
 import CandidateList from './Race/CandidateList';
 
+import ElectionSettings from './Settings';
+
 import FirstChoicePie from './Models/FirstChoicePie';
 import ElectedCandidatesPie from './Models/ElectedCandidatesPie';
 import CandidatesRankedPie from './Models/CandidatesRankedPie';
@@ -22,7 +24,7 @@ import VoteOverTime from './Models/VoteOverTime';
 import VoteOverTimeBump from './Models/VoteOverTimeBump';
 import RoundCandidateBump from './Models/RoundCandidateBump';
 
-import { Race } from '../../Data_Models/Race';
+import { Race, RaceState } from '../../Data_Models/Race';
 import { Voter } from '../../Data_Models/Voter';
 import { Ballot } from '../../Data_Models/Ballot';
 import { Party } from '../../Data_Models/Party';
@@ -108,6 +110,7 @@ function ElectionPage(props) {
             for (let i = 0; i < racesToAdd.length; i++)
                 if (racesToAdd.race_id === race.race_id)
                     continue;
+
             racesToAdd.push(new Race(race.race_id, race.race_position, race.race_max_winners));
         }
         return racesToAdd;
@@ -135,7 +138,6 @@ function ElectionPage(props) {
                 }
                 else
                     candidate_colors[party.party_name] = [color]
-
                 race.add_candidate(new Candidate(candidate.number, candidate.name, party, color));
             }
         }
@@ -167,11 +169,22 @@ function ElectionPage(props) {
         return voters;
     }
 
+    const excused_changed = (candidate) => {
+        if (candidates_dropped.includes(candidate)) {
+            setCandidatesDropped(candidates_dropped.filter((value) => {
+                return value !== candidate
+            }));
+        } else {
+            setCandidatesDropped([candidate, ...candidates_dropped])
+        }
+    }
 
     const [election_configuration, setElectionConfiguration] = useState([]);
     const [candidate_data, setCandidateData] = useState([]);
     const [party_data, setPartyData] = useState([]);
     const [ballot_data, setBallotData] = useState([]);
+
+    const [candidates_dropped, setCandidatesDropped] = useState([]);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -210,6 +223,20 @@ function ElectionPage(props) {
             setVotersLoaded(true);
     }, [voters]);  // eslint-disable-line react-hooks/exhaustive-deps
 
+    useEffect(() => {
+        for (const race of races) {
+            if (race.state !== RaceState.ADDING)
+                continue;
+            for (const candidate of race.inactive_candidates) {
+                race.unexcuse_candidate(candidate);
+            }
+            for (const candidate of candidates_dropped) {
+                if (find_candidate_by_id(race.race_id, candidate.candidate_id) !== null)
+                    race.excuse_candidate(candidate);
+            }
+        }
+        setRefresh(!refresh)
+    }, [candidates_dropped, races]);
 
     useEffect(() => {
         const loadData = async () => {
@@ -325,6 +352,9 @@ function ElectionPage(props) {
             <Button onClick={() => setPage(2)} disabled={page === 2} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Models'}
             </Button>
+            <Button onClick={() => setPage(3)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
+                {'Settings'}
+            </Button>
         </ButtonGroup>
     );
 
@@ -394,7 +424,7 @@ function ElectionPage(props) {
                 <RoundCandidateBump race={activeRace} style={chartStyle} />
             </div >
         );
-    } else {
+    } else if (page === 2) {
         let modelButtons = (
             <ButtonGroup size="lg" style={{ width: "100%", height: "50", padding: 0, margin: 0 }}>
                 <Button onClick={() => setModel(0)} disabled={model === 0} variant="secondary" size="lg" style={pageButtonStyle}>
@@ -461,6 +491,20 @@ function ElectionPage(props) {
                 </div >
             );
         }
+    } else {
+        return (
+            <div className="text-center" style={{
+                height: '100%',
+                minHeight: '100%',
+                display: "flex",
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+            }}>
+                { pageButtons}
+                { raceTitle}
+                <ElectionSettings race={activeRace} excused={excused_changed} refresh={refresh} />
+            </div>
+        );
     }
     // <SankeyGraph race={activeRace} width={"1000"} height={activeRace.candidates.length * 100} />
 }
