@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Form } from 'react-bootstrap';
-import { RaceState } from '../../Data_Models/Race';
+import { Button, Form } from 'react-bootstrap';
 
 function ElectionSettings(props) {
     let candidates = [...props.race.candidates, ...props.race.inactive_candidates]
@@ -11,16 +10,14 @@ function ElectionSettings(props) {
         return <Form.Check label={candidate.candidate_name} key={index} checked={check} onChange={() => (props.excused(candidate))} />
     });
 
-    if (props.race.state === RaceState.ADDING)
-        return (
-            <div>
-                {excused_boxes}
-            </div>
-        );
-    else {
-        return (<h1> Race is Active </h1>)
-    }
-
+    return (
+        <div>
+            {excused_boxes}
+            <Button onClick={() => props.race.reset_race()} variant="primary" style={{ boxShadow: '0 0 0 1px black', borderRadius: '5px 5px 5px 5px' }}>
+                {'Reset Race'}
+            </Button>
+        </div>
+    )
 }
 
 export default ElectionSettings;

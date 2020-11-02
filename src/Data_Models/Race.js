@@ -13,8 +13,10 @@ export class Race {
 
         this.state = RaceState.ADDING;
 
+        // Candidates
         this.candidates = []
         this.inactive_candidates = dropped_candidates;
+
         this.ballots = []
         this.inactive_ballots = []
 
@@ -23,6 +25,10 @@ export class Race {
         this.candidate_ballot_rankings = {}
 
         this.first_scores = []
+
+        // Planning Candidates
+        this.planned_inactive_candidates = []
+        this.planned_active_candidates = []
 
         // Set Candidate States
         this.elected = {}
@@ -35,17 +41,18 @@ export class Race {
     add_candidate = (candidate, dropped = false) => {
         if (this.state !== RaceState.ADDING)
             throw new Error("Can't Add Candidates While Running");
+
         for (const current_candidate of this.inactive_candidates)
-            if (current_candidate.candidate_id === candidate.candidate_id) {
-                this.inactive_candidates.push(candidate)
+            if (current_candidate.candidate_id === candidate.candidate_id)
                 return;
-            }
+
 
         if (dropped) {
             this.inactive_candidates.push(candidate)
             this.excused[candidate.candidate_id] = [0]
             return
         }
+
         for (const current_candidate of this.candidates)
             if (current_candidate.candidate_id === candidate.candidate_id)
                 return;
@@ -62,6 +69,7 @@ export class Race {
         }
         if (this.state !== RaceState.ADDING)
             throw new Error("Can't Add Ballots While Running");
+
         if (find_next_active_candidate(ballot.candidates) === null) {
             this.inactive_ballots.push(ballot)
             return;
@@ -72,6 +80,76 @@ export class Race {
         this.ballots.push(ballot);
     }
 
+    reset_race = () => {
+        const find_next_active_candidate = (candidates) => {
+            for (const candidate of candidates)
+                if (this.candidates.includes(candidate))
+                    return candidate
+            return null;
+        }
+        if (this.state == RaceState.ADDING)
+            return;
+
+        this.state = RaceState.ADDING;
+        this.rounds = []
+        this.transfer_voters = []
+        this.ballots_to_apply = []
+        this.candidate_ballot_rankings = {}
+
+        // Set Candidates Correctely
+        for (const candidate of this.planned_inactive_candidates) {
+            this.inactive_candidates.push(candidate)
+            this.candidates = this.candidates.filter((value) => {
+                return value !== candidate
+            });
+        }
+
+        for (const candidate of this.planned_active_candidates) {
+            this.candidates.push(candidate)
+            this.inactive_candidates = this.inactive_candidates.filter((value) => {
+                return value !== candidate
+            });
+        }
+
+        // Reset Candidate States
+        this.elected = {}
+        this.running = {}
+        this.transferring = {}
+        this.transfered = {}
+        this.excused = {}
+        this.first_scores = []
+
+        // Set Candidate States according to candidates
+        for (const candidate of this.candidates) {
+            this.running[candidate.candidate_id] = [0, this.running.length];
+        }
+
+        for (const candidate of this.inactive_candidates) {
+            this.excused[candidate.candidate_id] = [0]
+        }
+
+        // Lastly, Reset the Ballots
+        for (const ballot of this.ballots) {
+            if (find_next_active_candidate(ballot.candidates) === null) {
+                this.inactive_ballots.push(ballot);
+                this.ballots = this.ballots.filter((value) => {
+                    return value !== ballot
+                });
+            }
+        }
+
+        for (const ballot of this.inactive_ballots) {
+            if (find_next_active_candidate(ballot.candidates) !== null) {
+                this.add_ballot(ballot)
+                this.inactive_ballots = this.inactive_ballots.filter((value) => {
+                    return value !== ballot
+                });
+            }
+        }
+        console.log("Race Reset: ", this.race_name)
+
+    }
+
     excuse_candidate = (candidate) => {
         const find_next_active_candidate = (candidates) => {
             for (const candidate of candidates)
@@ -79,14 +157,17 @@ export class Race {
                     return candidate
             return null;
         }
-        if (this.state !== RaceState.ADDING)
-            throw new Error("Can't Excuse Candidate While Running");
 
         // Check if Excused Already Excused
         for (const current_candidate of this.inactive_candidates) {
             if (current_candidate.candidate_id === candidate.candidate_id) {
                 return;
             }
+        }
+
+        if (this.state !== RaceState.ADDING) {
+            this.planned_inactive_candidates.push(candidate)
+            return;
         }
 
         delete this.elected[candidate.candidate_id];
@@ -119,14 +200,28 @@ export class Race {
                     return candidate
             return null;
         }
-        if (this.state !== RaceState.ADDING)
-            throw new Error("Can't unexcuse Candidate While Running");
 
         // Check if Already Not Excused
         for (const current_candidate of this.candidates) {
             if (current_candidate.candidate_id === candidate.candidate_id) {
                 return;
             }
+        }
+
+        if (this.state !== RaceState.ADDING) {
+
+            // Check if excused in planned inactive
+            for (const current_candidate of this.planned_inactive_candidates) {
+                if (current_candidate.candidate_id === candidate.candidate_id) {
+                    this.inactive_candidates = this.inactive_candidates.filter((value) => {
+                        return value !== candidate
+                    });
+                    return;
+                }
+            }
+
+            this.planned_active_candidates.push(candidate)
+            return;
         }
 
         delete this.excused[candidate.candidate_id];
