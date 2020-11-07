@@ -48,6 +48,7 @@ function FirstChoicePie(props) {
 
     return (
         <div style={props.style}>
+            <h1> First Vote Pie by Party </h1>
             <ResponsivePieCanvas
                 data={data}
                 margin={{ top: 40, right: 40, bottom: 40, left: 40 }}

@@ -50,6 +50,7 @@ function CandidatesRanked(props) {
 
     return (
         <div style={props.style}>
+            <h1> Number of Candidates Ranked </h1>
             <ResponsiveBarCanvas
                 data={data}
                 keys={keys}
@@ -73,7 +74,7 @@ function CandidatesRanked(props) {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'Candidates Ranked',
+                    legend: '# of Candidates Ranked',
                     legendPosition: 'middle',
                     legendOffset: 30
                 }}
@@ -81,7 +82,7 @@ function CandidatesRanked(props) {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'Number of Voters',
+                    legend: '# of Voters',
                     legendPosition: 'middle',
                     legendOffset: -40
                 }}

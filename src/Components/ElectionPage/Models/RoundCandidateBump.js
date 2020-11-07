@@ -1,11 +1,12 @@
 import React from 'react';
 
 import { ResponsiveBump } from '@nivo/bump'
+import { RaceState } from '../../../Data_Models/Race';
 
 
 function RoundCandidateBump(props) {
 
-    if (props.race.rounds.length === 0)
+    if (props.race.rounds.length <= 1)
         return (<div></div>);
 
     let data = []
@@ -35,6 +36,8 @@ function RoundCandidateBump(props) {
         data.push({ id: candidate.candidate_name, data: datapoint });
     }
 
+    if (props.race.state === RaceState.ADDING)
+        return (<div></div>)
 
     return (
         <div style={props.style}>

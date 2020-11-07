@@ -39,6 +39,7 @@ import Chord from './Models/Chord';
 
 function ElectionPage(props) {
 
+    // Helper Functions
     const shadeColor = (color, percent) => {
 
         var R = parseInt(color.substring(1, 3), 16);
@@ -60,7 +61,6 @@ function ElectionPage(props) {
         return "#" + RR + GG + BB;
     }
 
-    // Helper Functions
     const find_race_by_id = (id) => {
         for (let i = 0; i < races.length; i++) {
             if (String(races[i].race_id) === id)
@@ -335,6 +335,10 @@ function ElectionPage(props) {
         setRefresh(!refresh);
     }
 
+    const stopRunning = (race) => {
+        setIsRunning(false);
+    }
+
 
     // Render Everything
     if (isLoading || activeRace == null)
@@ -407,7 +411,7 @@ function ElectionPage(props) {
         );
     } else if (page === 1) {
         let chartStyle = {
-            alignSelf: 'center', width: '50%', height: '30vw',
+            alignSelf: 'center', width: '50%', height: '30vw', margin: '0 0% 5% 0'
         }
         return (
             <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
@@ -502,11 +506,10 @@ function ElectionPage(props) {
             }}>
                 { pageButtons}
                 { raceTitle}
-                <ElectionSettings race={activeRace} excused={excused_changed} refresh={refresh} />
+                <ElectionSettings race={activeRace} excused={excused_changed} running={stopRunning} refresh={refresh} />
             </div>
         );
     }
-    // <SankeyGraph race={activeRace} width={"1000"} height={activeRace.candidates.length * 100} />
 }
 
 export default ElectionPage;

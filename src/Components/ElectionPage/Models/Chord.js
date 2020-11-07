@@ -57,12 +57,15 @@ function Chord(props) {
 
     return (
         <div style={{ width: '100%', height: "100%" }}>
+            <div>
             <DropdownButton id="dropdown-basic-button" title={"Round " + yChoice}>
                 {yButtons}
             </DropdownButton>
+
             <DropdownButton id="dropdown-basic-button" title={"Round " + xChoice}>
                 {xButtons}
             </DropdownButton>
+            </div>
 
             <div style={{ width: '100%', height: '100vw' }}>
                 <ResponsiveChordCanvas

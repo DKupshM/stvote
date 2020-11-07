@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ResponsiveLine } from '@nivo/line'
+import { RaceState } from '../../../Data_Models/Race';
 
 
 function PartyPercentage(props) {
@@ -47,6 +48,9 @@ function PartyPercentage(props) {
     }
 
     const getColor = bar => find_party_by_name(bar.id).party_color;
+
+    if (props.race.state === RaceState.ADDING)
+        return (<div></div>)
 
     return (
         <div style={props.style}>

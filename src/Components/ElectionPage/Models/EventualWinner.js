@@ -1,98 +1,88 @@
 import React from 'react';
 
-import { ResponsiveLine } from '@nivo/line'
+import { ResponsivePieCanvas } from '@nivo/pie';
+import { RaceState } from '../../../Data_Models/Race';
 
 function CandidatesRanked(props) {
+
+    const get_first_elected = (ballot, elected) => {
+        for (let i = 0; i < ballot.candidates.length; i++) {
+            for (const candidate in elected) {
+                if (candidate === ballot.candidates[i].candidate_id) {
+                    return i + 1
+                }
+            }
+        }
+        return "Exhausted"
+    }
+
     const get_ranked_choices = (race) => {
         let ranked_choices = {};
         for (const ballot of race.ballots) {
             maxChoices = Math.max(ballot.candidates.length, maxChoices);
         }
-        for (let i = 0; i < maxChoices; i++) {
-            ranked_choices[i] = 0;
+
+        for (let i = 1; i < maxChoices + 1; i++) {
+            ranked_choices[i] = 0
         }
+        ranked_choices["Exhausted"] = 0
 
         for (const ballot of race.ballots) {
-            let eventualElected = false;
-            for (let i = 0; i < maxChoices; i++) {
-                if (i < ballot.candidates.length && !eventualElected) {
-                    for (const candidate in race.elected) {
-                        if (candidate === ballot.candidates[i].candidate_id)
-                            eventualElected = true;
-                    }
-                }
-
-                if (eventualElected)
-                    ranked_choices[i] += 1;
-            }
+            ranked_choices[get_first_elected(ballot, race.elected)] += 1;
         }
-        return ranked_choices;
+
+        return ranked_choices
     }
 
     let maxChoices = 0;
     let choices = get_ranked_choices(props.race);
 
-    let electeddatapoints = [];
-    for (let i = 1; i < maxChoices + 1; i++) {
-        if (i in choices)
-            electeddatapoints.push({ x: i, y: choices[i] })
+    let data = [];
+    let totalAmount = 0;
+
+    for (const item in choices) {
+        if (choices[item] > 0) {
+            data.push({
+                "id": item,
+                "label": item,
+                "value": choices[item]
+            });
+            totalAmount += choices[item];
+        }
     }
 
-    let notelecteddatapoints = [];
-    for (let i = 1; i < maxChoices + 1; i++) {
-        if (i in choices)
-            notelecteddatapoints.push({ x: i, y: (props.race.ballots.length - choices[i]) })
+    const getPercentage = bar => {
+        return Math.round((bar.value / totalAmount) * 100) + "%";
     }
 
-    let data =
-        [{
-            id: "elected",
-            color: "red",
-            data: electeddatapoints
-        },
-        {
-            id: "notelected",
-            color: "blue",
-            data: notelecteddatapoints,
-        }]
-
-    const getColor = bar => {
-        console.log(bar.id);
-        if (bar.id === "elected")
-            return "#0d00ff";
-        return '#ff0000';
-    }
+    if (Object.entries(props.race.elected).length === 0 && props.race.elected.constructor === Object)
+        return (<div></div>)
 
     return (
         <div style={props.style}>
-            <ResponsiveLine
+            <h1> Voter Satisfaction </h1>
+            <ResponsivePieCanvas
                 data={data}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-                xScale={{ type: 'linear', min: 1 }}
-                yScale={{ type: 'linear', min: 0, max: 'auto', stacked: true, reverse: false }}
-                axisBottom={{
-                    orient: 'bottom',
-                    tickSize: 5,
-                    tickPadding: 5,
-                    tickRotation: 0,
-                    legend: 'Round',
-                    legendOffset: 36,
-                    legendPosition: 'middle'
-                }}
-                axisLeft={{
-                    orient: 'left',
-                    tickSize: 5,
-                    tickPadding: 5,
-                    tickRotation: 0,
-                    legend: 'Votes',
-                    legendOffset: -40,
-                    legendPosition: 'middle'
-                }}
-                colors={getColor}
-                enablePoints={false}
-                enableArea={true}
-                areaOpacity={1}
-                useMesh={true}
+                margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                pixelRatio={2}
+                padAngle={0.3}
+                cornerRadius={1}
+                colors={{ scheme: 'nivo' }}
+                borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
+                radialLabelsSkipAngle={10}
+                radialLabelsTextXOffset={6}
+                radialLabelsTextColor={{ from: 'color', modifiers: [] }}
+                radialLabelsLinkOffset={0}
+                radialLabelsLinkDiagonalLength={16}
+                radialLabelsLinkHorizontalLength={24}
+                radialLabelsLinkStrokeWidth={1}
+                radialLabelsLinkColor={{ from: 'color' }}
+                sliceLabel={getPercentage}
+                slicesLabelsSkipAngle={20}
+                slicesLabelsTextColor="#333333"
+                animate={true}
+                motionStiffness={90}
+                motionDamping={15}
             />
         </div>
     );

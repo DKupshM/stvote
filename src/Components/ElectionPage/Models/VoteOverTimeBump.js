@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ResponsiveBump } from '@nivo/bump'
+import { RaceState } from '../../../Data_Models/Race';
 
 
 function VoteOverTimeBump(props) {
@@ -68,9 +69,12 @@ function VoteOverTimeBump(props) {
     }
     console.log(data);
 
+    if (props.race.state === RaceState.ADDING)
+        return (<div></div>)
 
     return (
         <div style={props.style}>
+            <h1> Candidate Rank Over Time </h1>
             <ResponsiveBump
                 data={data}
                 margin={{ top: 40, right: 100, bottom: 40, left: 60 }}

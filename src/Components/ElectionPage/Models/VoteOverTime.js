@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ResponsiveLineCanvas } from '@nivo/line'
+import { RaceState } from '../../../Data_Models/Race';
 
 function VoteOverTime(props) {
     const find_party_by_name = (name) => {
@@ -61,9 +62,12 @@ function VoteOverTime(props) {
 
     const getColor = bar => find_party_by_name(bar.id).party_color;
 
+    if (props.race.state === RaceState.ADDING)
+        return (<div></div>)
 
     return (
         <div style={props.style}>
+            <h1> Party Vote Over Time </h1>
             <ResponsiveLineCanvas
                 data={data}
                 margin={{ top: 50, right: 160, bottom: 50, left: 60 }}

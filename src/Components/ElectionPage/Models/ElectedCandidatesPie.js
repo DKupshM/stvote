@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ResponsivePieCanvas } from '@nivo/pie';
+import { RaceState } from '../../../Data_Models/Race';
 
 function PartyPercentage(props) {
     const find_candidate_by_id = (race, id) => {
@@ -52,8 +53,13 @@ function PartyPercentage(props) {
 
     const getColor = bar => find_party_by_name(bar.id).party_color;
 
+    // Wait until a candidate is actually elected to display
+    if (Object.entries(props.race.elected).length === 0 && props.race.elected.constructor === Object)
+        return (<div></div>)
+
     return (
         <div style={props.style}>
+            <h1> Candidates Elected By Party </h1>
             <ResponsivePieCanvas
                 data={data}
                 margin={{ top: 40, right: 40, bottom: 40, left: 40 }}

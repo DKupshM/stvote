@@ -87,7 +87,7 @@ export class Race {
                     return candidate
             return null;
         }
-        if (this.state == RaceState.ADDING)
+        if (this.state === RaceState.ADDING)
             return;
 
         this.state = RaceState.ADDING;
