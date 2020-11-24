@@ -16,3 +16,7 @@ There are several planned features for this project. Here are what I'm currently
 * Change party color and candidate color
 * Graphs to showcase vote data over multiple races (For instance, if you vote for one candidate in the race, what about the other)
 * Customize tabulation based on different quota types and other STV formulas
+
+## Questions and Contributions
+
+Feel free to add anything you want or message me at dkupshm@gmail.com with any cool feature ideas.
