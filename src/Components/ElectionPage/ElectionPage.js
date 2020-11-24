@@ -14,6 +14,8 @@ import CandidateList from './Race/CandidateList';
 
 import ElectionSettings from './Settings';
 
+import CustomFirstPie from './CustomFirstPie'
+
 import FirstChoicePie from './Models/FirstChoicePie';
 import ElectedCandidatesPie from './Models/ElectedCandidatesPie';
 import CandidatesRankedPie from './Models/CandidatesRankedPie';
@@ -356,6 +358,9 @@ function ElectionPage(props) {
             <Button onClick={() => setPage(2)} disabled={page === 2} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Models'}
             </Button>
+            <Button onClick={() => setPage(4)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
+                {'Custom Graph'}
+            </Button>
             <Button onClick={() => setPage(3)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Settings'}
             </Button>
@@ -495,7 +500,7 @@ function ElectionPage(props) {
                 </div >
             );
         }
-    } else {
+    } else if (page == 3) {
         return (
             <div className="text-center" style={{
                 height: '100%',
@@ -509,6 +514,20 @@ function ElectionPage(props) {
                 <ElectionSettings race={activeRace} excused={excused_changed} running={stopRunning} refresh={refresh} />
             </div>
         );
+    } else {
+        return (
+            <div className="text-center" style={{
+                height: '100%',
+                minHeight: '100%',
+                display: "flex",
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+            }}>
+                { pageButtons}
+                { raceTitle}
+                <CustomFirstPie race={activeRace} />
+            </div>
+        )
     }
 }
 
