@@ -2,14 +2,9 @@ import React from 'react';
 
 import { ResponsivePieCanvas } from '@nivo/pie';
 
-function FirstChoicePie(props) {
+import { find_party_by_name } from '../../../Data_Models/Util';
 
-    const find_party_by_name = (name) => {
-        for (let i = 0; i < props.parties.length; i++)
-            if (props.parties[i].party_name === name)
-                return props.parties[i];
-        return null
-    };
+function FirstChoicePie(props) {
 
     const get_ranked_choices = (race, party) => {
         let ranked_choices = 0;
@@ -35,7 +30,7 @@ function FirstChoicePie(props) {
             "id": item,
             "label": item,
             "value": choices[item],
-            "color": find_party_by_name(item).party_color,
+            "color": find_party_by_name(props.parties,item).party_color,
         });
         totalAmount += choices[item];
     }
@@ -44,7 +39,7 @@ function FirstChoicePie(props) {
         return Math.round((bar.value / totalAmount) * 100) + "%";
     }
 
-    const getColor = bar => find_party_by_name(bar.id).party_color;
+    const getColor = bar => find_party_by_name(props.parties, bar.id).party_color;
 
     return (
         <div style={props.style}>
