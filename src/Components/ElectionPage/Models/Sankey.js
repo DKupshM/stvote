@@ -124,6 +124,10 @@ function Sankey(props) {
 
     const data = GenerateData(props.race);
 
+    const getColor = (bar) => {
+        return bar.color
+    }
+
     return (
         <div style={props.style}>
             <ResponsiveSankey
@@ -132,7 +136,7 @@ function Sankey(props) {
                 layout="vertical"
                 align="justify"
                 sort="ascending"
-                colors={{ scheme: 'category10' }}
+                colors={getColor}
                 nodeTooltip={node => <span> {node.name}: {Math.round(node.value)}</span>}
                 nodeOpacity={1}
                 nodeThickness={10}

@@ -36,15 +36,28 @@ function RoundCandidateBump(props) {
         data.push({ id: candidate.candidate_name, data: datapoint });
     }
 
+    const getCandidateByName = (name) => {
+        for (const candidate of props.race.candidates) {
+            if (candidate.candidate_name === name)
+                return candidate;
+        }
+        return null;
+    }
+
+    const getColor = (bar) => {
+        return getCandidateByName(bar.id).candidate_color
+    }
+
     if (props.race.state === RaceState.ADDING)
         return (<div></div>)
 
     return (
         <div style={props.style}>
+            <h1> Candidate Rank By Round </h1>
             <ResponsiveBump
                 data={data}
                 margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
-                colors={{ scheme: 'spectral' }}
+                colors={getColor}
                 lineWidth={3}
                 activeLineWidth={6}
                 inactiveLineWidth={3}

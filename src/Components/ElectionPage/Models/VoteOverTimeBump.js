@@ -9,10 +9,8 @@ function VoteOverTimeBump(props) {
         if (arr.length === 0) {
             return -1;
         }
-
         var max = arr[0];
         var maxIndex = 0;
-
         for (var i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
                 maxIndex = i;
@@ -67,7 +65,18 @@ function VoteOverTimeBump(props) {
         }
         data.push({ id: candidate.candidate_name, data: datapoint });
     }
-    console.log(data);
+
+    const getCandidateByName = (name) => {
+        for (const candidate of props.race.candidates) {
+            if (candidate.candidate_name === name)
+                return candidate;
+        }
+        return null;
+    }
+
+    const getColor = (bar) => {
+        return getCandidateByName(bar.id).candidate_color
+    }
 
     if (props.race.state === RaceState.ADDING)
         return (<div></div>)
@@ -78,7 +87,7 @@ function VoteOverTimeBump(props) {
             <ResponsiveBump
                 data={data}
                 margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
-                colors={{ scheme: 'spectral' }}
+                colors={getColor}
                 lineWidth={3}
                 activeLineWidth={6}
                 inactiveLineWidth={3}
