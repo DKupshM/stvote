@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 
 import { ResponsivePieCanvas } from '@nivo/pie';
 import { SketchPicker } from 'react-color';
+import { exportComponentAsPNG } from 'react-component-export-image';
+
 import { Form, Row, Col, ButtonGroup, Button, Modal } from 'react-bootstrap';
 import { find_candidate_by_id } from '../../Data_Models/Util';
 import useWindowSize from '../Hooks/useWindowSize';
@@ -82,6 +84,7 @@ function CustomFirstPie(props) {
     const [show, setShow] = useState(false);
     const [displayColorPicker, setDisplayColorPicker] = useState(false);
 
+    const imageRef = React.createRef();
     const [groups, setGroups] = useState([]);
     const [activeGroupNumber, setActiveGroupNumber] = useState(-1)
 
@@ -147,6 +150,11 @@ function CustomFirstPie(props) {
 
     const handleColorPickerClosed = () => setDisplayColorPicker(false);
 
+    const handleExportClicked = () => {
+        if (totalAmount > 0)
+            exportComponentAsPNG(imageRef)
+    }
+
     const candidates = props.race.candidates
 
     const addGroup = () => {
@@ -199,7 +207,7 @@ function CustomFirstPie(props) {
     return (
         <div style={props.style}>
             <Row>
-                <Col>
+                <Col md="3">
                     <Button style={{}} onClick={addGroup}>Add Group</Button>
                 </Col>
                 <Col style={{ flexDirection: "row" }}>
@@ -207,7 +215,14 @@ function CustomFirstPie(props) {
                 </Col>
             </Row>
             <Row style={{ width: size.width, height: "50vw" }}>
-                <CustomGraph style={{ margin: '5%' }} totalAmount={totalAmount} data={data} groups={groups} />
+                <div style={{ width: size.width, height: "50vw" }} ref={imageRef}>
+                    <CustomGraph style={{ margin: '5%' }} totalAmount={totalAmount} data={data} groups={groups} />
+                </div>
+            </Row>
+            <Row style={{ display: "flex", justifyContent: "flex-end", alignItems: "flex-end" }}>
+                <Button style={{ margin: "1%" }} onClick={handleExportClicked}>
+                    Export As PNG
+                </Button>
             </Row>
 
             <Modal size="lg"

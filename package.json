@@ -29,6 +29,7 @@
         "react-bootstrap": "^1.4.0",
         "react-bootstrap-range-slider": "^1.2.2",
         "react-color": "^2.19.3",
+        "react-component-export-image": "^1.0.4",
         "react-dom": "^16.14.0",
         "react-router-dom": "^5.2.0",
         "react-scripts": "^3.4.4",
