@@ -1,3 +1,7 @@
+/*
+    Input: List of Races, A Race Name to find
+    Output: A Race, based upon the Race Name
+*/
 export const find_race_by_name = (races, name) => {
     for (let i = 0; i < races.length; i++) {
         if (races[i].race_name === name)
@@ -6,18 +10,26 @@ export const find_race_by_name = (races, name) => {
     return null;
 };
 
-export const find_race_by_id = (races, id) => {
+/*
+    Input: List of Races, A Race ID to find
+    Output: A Race, based upon the Race Id
+*/
+export const find_race_by_id = (races, race_id) => {
     for (let i = 0; i < races.length; i++) {
-        if (String(races[i].race_id) === id)
+        if (String(races[i].race_id) === race_id)
             return races[i];
     }
     return null;
 };
 
+/*
+    Input: List of Candidates, A candidate ID to find
+    Output: A Candidate, based upon the candidate_id
+*/
 export const find_candidate_by_id = (candidates, candidate_id) => {
-    for (let i = 0; i < candidates.length; i++)
-        if (String(candidates[i].candidate_id) === candidate_id)
-            return candidates[i];
+    for (const candidate of candidates)
+        if (String(candidate.candidate_id) === candidate_id)
+            return candidate;
     return null;
 };
 

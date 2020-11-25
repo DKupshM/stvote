@@ -31,6 +31,7 @@ import { Voter } from '../../Data_Models/Voter';
 import { Ballot } from '../../Data_Models/Ballot';
 import { Party } from '../../Data_Models/Party';
 import { Candidate } from '../../Data_Models/Candidate';
+import { find_race_by_name, find_race_by_id, find_party_by_name, find_candidate_by_id } from '../../Data_Models/Util';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
@@ -63,38 +64,6 @@ function ElectionPage(props) {
         return "#" + RR + GG + BB;
     }
 
-    const find_race_by_id = (id) => {
-        for (let i = 0; i < races.length; i++) {
-            if (String(races[i].race_id) === id)
-                return races[i];
-        }
-        return null;
-    };
-
-    const find_race_by_name = (name) => {
-        for (let i = 0; i < races.length; i++) {
-            if (races[i].race_name === name)
-                return races[i];
-        }
-        return null;
-    };
-
-    const find_candidate_by_id = (race_id, candidate_id) => {
-        let race = find_race_by_id(race_id);
-        if (race !== null)
-            for (let i = 0; i < race.candidates.length; i++)
-                if (String(race.candidates[i].candidate_id) === candidate_id)
-                    return race.candidates[i];
-        return null;
-    };
-
-    const find_party_by_name = (name) => {
-        for (let i = 0; i < parties.length; i++)
-            if (parties[i].party_name === name)
-                return parties[i];
-        return null
-    };
-
     const loadParties = (party_data) => {
         let partiesToAdd = []
         for (const party of party_data.parties) {
@@ -120,12 +89,12 @@ function ElectionPage(props) {
 
     const loadCandidates = (candidate_data) => {
         for (let key in candidate_data) {
-            const race = find_race_by_name(key);
+            const race = find_race_by_name(races, key);
             let candidate_colors = {};
             if (race === null)
                 continue;
             for (const candidate of candidate_data[key]) {
-                let party = find_party_by_name(candidate.party);
+                let party = find_party_by_name(parties, candidate.party);
                 if (party === null) {
                     party = new Party(candidate.party, "FFFFFF");
                     console.log("Adding Party: ", party.party_name);
@@ -155,12 +124,15 @@ function ElectionPage(props) {
             for (let key in item) {
                 let candidateOrder = []
                 for (let candidate_id of item[key]) {
-                    let candidate = find_candidate_by_id(key, candidate_id);
-                    candidateOrder.push(candidate);
+                    const race = find_race_by_id(races, key)
+                    if (race !== null) {
+                        const candidate = find_candidate_by_id(race.candidates, candidate_id);
+                        candidateOrder.push(candidate);
+                    }
                 };
 
                 const ballot = new Ballot(uuid(), candidateOrder);
-                const race = find_race_by_id(key);
+                const race = find_race_by_id(races, key);
                 if (race !== null) {
                     race.add_ballot(ballot);
                 }
@@ -233,7 +205,7 @@ function ElectionPage(props) {
                 race.unexcuse_candidate(candidate);
             }
             for (const candidate of candidates_dropped) {
-                if (find_candidate_by_id(race.race_id, candidate.candidate_id) !== null)
+                if (find_candidate_by_id(race.candidates, candidate.candidate_id) !== null)
                     race.excuse_candidate(candidate);
             }
         }

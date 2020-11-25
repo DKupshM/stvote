@@ -17,12 +17,12 @@ function ElectionSettings(props) {
     });
 
     return (
-        <div>
+        <Form>
             {excused_boxes}
             <Button onClick={resetRace} variant="primary" style={{ boxShadow: '0 0 0 1px black', borderRadius: '5px 5px 5px 5px' }}>
                 {'Reset Race'}
             </Button>
-        </div>
+        </Form>
     )
 }
 
