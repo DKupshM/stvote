@@ -3,15 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 import { ResponsivePieCanvas } from '@nivo/pie';
 import { SketchPicker } from 'react-color';
-import { Form, ButtonGroup, Button, Modal } from 'react-bootstrap';
+import { Form, Row, Col, ButtonGroup, Button, Modal } from 'react-bootstrap';
 import { find_candidate_by_id } from '../../Data_Models/Util';
+import useWindowSize from '../Hooks/useWindowSize';
 
 class GroupSettings {
     constructor(groupNumber) {
         this.number = groupNumber
         this.title = "Group " + groupNumber
         this.candidates = []
-        this.color = "#fff"
+        this.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
     }
 }
 
@@ -22,7 +23,6 @@ function CustomGraph(props) {
 
     const getColor = (bar) => {
         for (const group of props.groups) {
-            console.log(group, bar.id)
             if (group.title === bar.id) {
                 return group.color
             }
@@ -34,46 +34,59 @@ function CustomGraph(props) {
         return <div />
 
     return (
-        <div style={{ alignSelf: 'center', width: '100%', height: '100vw', margin: '0 0% 5% 0' }}>
-            <ResponsivePieCanvas
-                data={props.data}
-                margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
-                pixelRatio={2}
-                padAngle={0.7}
-                cornerRadius={1}
-                colors={getColor}
-                borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
-                radialLabelsSkipAngle={10}
-                radialLabelsTextXOffset={6}
-                radialLabelsTextColor={{ from: 'color', modifiers: [] }}
-                radialLabelsLinkOffset={0}
-                radialLabelsLinkDiagonalLength={16}
-                radialLabelsLinkHorizontalLength={24}
-                radialLabelsLinkStrokeWidth={1}
-                radialLabelsLinkColor={{ from: 'color' }}
-                sliceLabel={getPercentage}
-                slicesLabelsSkipAngle={20}
-                slicesLabelsTextColor="#333333"
-                animate={true}
-                motionStiffness={90}
-                motionDamping={15}
-            />
-        </div >
+        <ResponsivePieCanvas
+            data={props.data}
+            margin={{ top: 40, right: 100, bottom: 40, left: 80 }}
+            innerRadius={0}
+            padAngle={0.7}
+            cornerRadius={3}
+            colors={getColor}
+            borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
+            enableRadialLabels={false}
+            sliceLabel={getPercentage}
+            slicesLabelsSkipAngle={20}
+            slicesLabelsTextColor="#000000"
+            legends={[
+                {
+                    text: {
+                        fontSize: 20,
+                        fontWeight: 900,
+                        color: "#000000"
+                    },
+                    anchor: 'top-right',
+                    direction: 'column',
+                    justify: false,
+                    translateX: 0,
+                    translateY: 0,
+                    itemsSpacing: 10,
+                    itemWidth: 60,
+                    itemHeight: 14,
+                    itemTextColor: '#999',
+                    itemDirection: 'left-to-right',
+                    itemOpacity: 1,
+                    symbolSize: 20,
+                    symbolShape: 'square',
+                    itemTextColor: '#000000'
+                }
+            ]}
+        />
     );
 }
 
 function CustomFirstPie(props) {
+    const size = useWindowSize();
     const [color, setColor] = useState("#fff");
     const [title, setTitle] = useState("Title")
     const [selectedCandidates, setSelectedCandidates] = useState([])
     const [editTitle, setEditTitle] = useState("Title")
     const [show, setShow] = useState(false);
+    const [displayColorPicker, setDisplayColorPicker] = useState(false);
 
     const [groups, setGroups] = useState([]);
     const [activeGroupNumber, setActiveGroupNumber] = useState(-1)
 
     useEffect(() => {
-        if (groups.length === 0)
+        if (groups.length === 0 || activeGroupNumber === -1)
             return
         setTitle(groups[activeGroupNumber].title)
         setEditTitle(groups[activeGroupNumber].title)
@@ -83,7 +96,7 @@ function CustomFirstPie(props) {
             candidates.push(candidate.candidate_id)
         }
         setSelectedCandidates(candidates)
-    }, [activeGroupNumber])
+    }, [activeGroupNumber, groups])
 
     const changeColor = (color) => {
         setColor(color.hex)
@@ -101,7 +114,6 @@ function CustomFirstPie(props) {
                 candidates.push(find_candidate_by_id(props.race.candidates, candidate))
             }
             groups[activeGroupNumber].candidates = candidates
-            console.log(color, groups[activeGroupNumber].color)
         }
     }
 
@@ -114,9 +126,26 @@ function CustomFirstPie(props) {
         setEditTitle(event.target.value)
     }
 
+    const handleDelete = () => {
+        const index = groups.indexOf(groups[activeGroupNumber])
+        if (index > -1) {
+            let copy = [].concat(groups);
+            copy.splice(index, 1)
+            setGroups(copy)
+        }
+        setShow(false)
+        setActiveGroupNumber(-1)
+    }
+
     const handleSelectedChange = (event) => {
         setSelectedCandidates(Array.from(event.target.selectedOptions, option => option.value))
     }
+
+    const handleColorPickerClicked = () => {
+        setDisplayColorPicker(!displayColorPicker);
+    }
+
+    const handleColorPickerClosed = () => setDisplayColorPicker(false);
 
     const candidates = props.race.candidates
 
@@ -124,10 +153,17 @@ function CustomFirstPie(props) {
         setGroups(groups.concat(new GroupSettings(groups.length)))
     }
 
+    const onKeyPress = (e) => {
+        if (e.which === 13) {
+            e.preventDefault();
+            handleClose(true)
+        }
+    }
+
     let group_buttons = groups.map((item, index) => (
-        <ButtonGroup key={index} className="mb-2">
+        <ButtonGroup key={index} style={{ paddingLeft: "1%", paddingRight: "1%" }} className="mb-2">
             <Button disabled>{item.title}</Button>
-            <Button onClick={() => (handleShow(item.number))}> Edit </Button>
+            <Button onClick={() => (handleShow(groups.indexOf(item)))}> Edit </Button>
         </ButtonGroup>
     ));
 
@@ -145,7 +181,8 @@ function CustomFirstPie(props) {
     for (const group of groups) {
         let groupScore = 0;
         for (const candidate of group.candidates) {
-            groupScore += scores[candidate.candidate_id]
+            if (scores !== undefined)
+                groupScore += scores[candidate.candidate_id]
         }
         if (groupScore > 0) {
             data.push({
@@ -161,8 +198,17 @@ function CustomFirstPie(props) {
 
     return (
         <div style={props.style}>
-            <Button onClick={addGroup}>Add Group</Button>
-            {group_buttons}
+            <Row>
+                <Col>
+                    <Button style={{}} onClick={addGroup}>Add Group</Button>
+                </Col>
+                <Col style={{ flexDirection: "row" }}>
+                    {group_buttons}
+                </Col>
+            </Row>
+            <Row style={{ width: size.width, height: "50vw" }}>
+                <CustomGraph style={{ margin: '5%' }} totalAmount={totalAmount} data={data} groups={groups} />
+            </Row>
 
             <Modal size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
@@ -172,29 +218,83 @@ function CustomFirstPie(props) {
                     <Modal.Title>Editing {title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
-                        <Form.Label>Group Name</Form.Label>
-                        <Form.Control type="text" value={editTitle} onChange={handleEditChange} />
-                        <Form.Label>Candidates in Group</Form.Label>
-                        <Form.Control as="select" value={selectedCandidates}
-                            onChange={handleSelectedChange} multiple>
-                            {candidate_options}
-                        </Form.Control>
-                        <Form.Label>Group Color</Form.Label>
-                        <SketchPicker color={color} onChangeComplete={changeColor} />
+                    <Form onKeyPress={onKeyPress}>
+                        <Row style={{ margin: '5%' }}>
+                            <Col>
+                                <Form.Label>Group Name</Form.Label>
+                            </Col>
+                            <Col>
+                                <Form.Control style={{
+                                    width: '32vw'
+                                }}
+                                    type="text"
+                                    value={editTitle}
+                                    onChange={handleEditChange} />
+                            </Col>
+                        </Row>
+                        <Row style={{ margin: '5%' }}>
+                            <Col>
+                                <Form.Label>Candidates</Form.Label>
+                            </Col>
+                            <Col>
+                                <Form.Control as="select" value={selectedCandidates}
+                                    onChange={handleSelectedChange} style={{
+                                        width: '32vw'
+                                    }} multiple>
+                                    {candidate_options}
+                                </Form.Control>
+                            </Col>
+                        </Row>
+                        <Row style={{ margin: '5%' }}>
+                            <Col>
+                                <Form.Label>Group Color</Form.Label>
+                            </Col>
+                            <Col>
+                                <div style={{
+                                    padding: '1vw',
+                                    background: '#fff',
+                                    borderRadius: '5px',
+                                    boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+                                    display: 'inline-block',
+                                    cursor: 'pointer',
+                                }}
+                                    onClick={handleColorPickerClicked}>
+                                    <div style={{
+                                        width: '30vw',
+                                        height: '2vw',
+                                        borderRadius: '2px',
+                                        backgroundColor: color,
+                                    }} />
+                                </div>
+                                {displayColorPicker ? <div style={{
+                                    position: 'absolute',
+                                    zIndex: '2',
+                                }}>
+                                    <div style={{
+                                        position: 'fixed',
+                                        top: '0px',
+                                        right: '0px',
+                                        bottom: '0px',
+                                        left: '0px',
+                                    }} onClick={handleColorPickerClosed} />
+                                    <SketchPicker color={color} onChangeComplete={changeColor} />
+                                </div> : null}
+                            </Col>
+                        </Row>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button variant="secondary" style={{}} onClick={handleDelete}>
+                        Delete
+                    </Button>
                     <Button variant="secondary" onClick={() => handleClose(false)}>
                         Close
-            </Button>
+                    </Button>
                     <Button variant="primary" onClick={() => handleClose(true)}>
                         Save Changes
-            </Button>
+                    </Button>
                 </Modal.Footer>
             </Modal>
-
-            <CustomGraph totalAmount={totalAmount} data={data} groups={groups} />
         </div >
     );
 }
