@@ -67,8 +67,7 @@ function CustomGraph(props) {
                     itemDirection: 'left-to-right',
                     itemOpacity: 1,
                     symbolSize: 20,
-                    symbolShape: 'square',
-                    itemTextColor: '#000000'
+                    symbolShape: 'square'
                 }
             ]}
         />

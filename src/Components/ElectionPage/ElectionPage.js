@@ -12,57 +12,28 @@ import RangeSlider from 'react-bootstrap-range-slider';
 import useInterval from '../Hooks/useInterval';
 import CandidateList from './Race/CandidateList';
 
-import ElectionSettings from './Settings';
+import ElectionSettings from './Settings/Settings';
 
 import CustomFirstPie from './CustomFirstPie'
 
-import FirstChoicePie from './Models/FirstChoicePie';
-import ElectedCandidatesPie from './Models/ElectedCandidatesPie';
-import CandidatesRankedPie from './Models/CandidatesRankedPie';
-import CandidatesRanked from './Models/CandidatesRanked';
-import PartyPercentage from './Models/PartyPercentage';
-import EventualWinner from './Models/EventualWinner';
-import VoteOverTime from './Models/VoteOverTime';
-import VoteOverTimeBump from './Models/VoteOverTimeBump';
-import RoundCandidateBump from './Models/RoundCandidateBump';
+import ChartPage from './Charts/ChartPage'
+import useWindowSize from '../Hooks/useWindowSize';
 
 import { Race, RaceState } from '../../Data_Models/Race';
 import { Voter } from '../../Data_Models/Voter';
 import { Ballot } from '../../Data_Models/Ballot';
 import { Party } from '../../Data_Models/Party';
 import { Candidate } from '../../Data_Models/Candidate';
-import { find_race_by_name, find_race_by_id, find_party_by_name, find_candidate_by_id } from '../../Data_Models/Util';
+import { find_race_by_name, find_race_by_id, find_party_by_name, find_candidate_by_id, find_races_by_candidate_id, find_party_by_id, shadeColor } from '../../Data_Models/Util';
 
 import './ElectionPage.css'
 import { RoundState } from '../../Data_Models/Round';
-import NivoSankey from './Models/Sankey';
-import HeatMap from './Models/HeatMap';
-import ElectionBar from './Models/ElectionBar';
-import Chord from './Models/Chord';
+
+import ModelPage from './Models/ModelPage';
+
+
 
 function ElectionPage(props) {
-
-    // Helper Functions
-    const shadeColor = (color, percent) => {
-
-        var R = parseInt(color.substring(1, 3), 16);
-        var G = parseInt(color.substring(3, 5), 16);
-        var B = parseInt(color.substring(5, 7), 16);
-
-        R = parseInt(R * (100 + percent) / 100);
-        G = parseInt(G * (100 + percent) / 100);
-        B = parseInt(B * (100 + percent) / 100);
-
-        R = (R < 255) ? R : 255;
-        G = (G < 255) ? G : 255;
-        B = (B < 255) ? B : 255;
-
-        var RR = ((R.toString(16).length === 1) ? "0" + R.toString(16) : R.toString(16));
-        var GG = ((G.toString(16).length === 1) ? "0" + G.toString(16) : G.toString(16));
-        var BB = ((B.toString(16).length === 1) ? "0" + B.toString(16) : B.toString(16));
-
-        return "#" + RR + GG + BB;
-    }
 
     const loadParties = (party_data) => {
         let partiesToAdd = []
@@ -70,7 +41,7 @@ function ElectionPage(props) {
             for (let i = 0; i < partiesToAdd.length; i++)
                 if (partiesToAdd.party_name === party.party_name)
                     continue;
-            partiesToAdd.push(new Party(party.party_name, party.party_color));
+            partiesToAdd.push(new Party(uuid(), party.party_name, party.party_color));
         }
         return partiesToAdd;
     }
@@ -88,6 +59,7 @@ function ElectionPage(props) {
     }
 
     const loadCandidates = (candidate_data) => {
+        let newParties = []
         for (let key in candidate_data) {
             const race = find_race_by_name(races, key);
             let candidate_colors = {};
@@ -96,9 +68,12 @@ function ElectionPage(props) {
             for (const candidate of candidate_data[key]) {
                 let party = find_party_by_name(parties, candidate.party);
                 if (party === null) {
-                    party = new Party(candidate.party, "FFFFFF");
+                    party = find_party_by_name(newParties, candidate.party)
+                }
+                if (party === null) {
+                    party = new Party(uuid(), candidate.party, "FFFFFF");
                     console.log("Adding Party: ", party.party_name);
-                    setParties([...parties, party]);
+                    newParties.push(party)
                 }
                 let color = shadeColor(party.party_color, Math.floor(Math.random() * 100) - 50);
 
@@ -112,6 +87,10 @@ function ElectionPage(props) {
                 race.add_candidate(new Candidate(candidate.number, candidate.name, party, color));
             }
         }
+
+        setParties([...parties, ...newParties])
+
+
         setCandidatesLoaded(true);
 
         return;
@@ -179,6 +158,8 @@ function ElectionPage(props) {
 
     const [model, setModel] = useState(0);
 
+    const size = useWindowSize();
+
     useEffect(() => {
         if (!isLoading)
             setPartiesLoaded(true);
@@ -210,7 +191,7 @@ function ElectionPage(props) {
             }
         }
         setRefresh(!refresh)
-    }, [candidates_dropped, races]);
+    }, [candidates_dropped, races]); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
         const loadData = async () => {
@@ -313,6 +294,22 @@ function ElectionPage(props) {
         setIsRunning(false);
     }
 
+    const saveCandidateChanges = (id, name, party, color, active) => {
+        let new_races = find_races_by_candidate_id(races, id)
+        for (const race_to_change of new_races) {
+            let candidate = find_candidate_by_id(race_to_change.candidates, id)
+            candidate.candidate_name = name
+            candidate.candidate_party = party
+            candidate.candidate_color = color
+        }
+    }
+
+    const savePartyChanges = (id, name, color) => {
+        let party = find_party_by_id(parties, id);
+        party.party_name = name
+        party.party_color = color
+    }
+
 
     // Render Everything
     if (isLoading || activeRace == null)
@@ -330,10 +327,10 @@ function ElectionPage(props) {
             <Button onClick={() => setPage(2)} disabled={page === 2} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Models'}
             </Button>
-            <Button onClick={() => setPage(4)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
+            <Button onClick={() => setPage(3)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Custom Graph'}
             </Button>
-            <Button onClick={() => setPage(3)} disabled={page === 3} variant="secondary" size="lg" style={pageButtonStyle}>
+            <Button onClick={() => setPage(4)} disabled={page === 4} variant="secondary" size="lg" style={pageButtonStyle}>
                 {'Settings'}
             </Button>
         </ButtonGroup>
@@ -387,22 +384,14 @@ function ElectionPage(props) {
             </div >
         );
     } else if (page === 1) {
-        let chartStyle = {
-            alignSelf: 'center', width: '50%', height: '30vw', margin: '0 0% 5% 0'
-        }
         return (
-            <div className="text-center" style={{ display: "flex", justifyContent: 'center', flexWrap: 'wrap', width: '100%' }}>
+            <div className="text-center" style={{
+                display: "flex", justifyContent: 'center', flexWrap: 'wrap',
+                width: size.width,
+            }}>
                 {pageButtons}
                 {raceTitle}
-                <FirstChoicePie race={activeRace} parties={parties} style={chartStyle} />
-                <ElectedCandidatesPie race={activeRace} parties={parties} style={chartStyle} />
-                <CandidatesRanked race={activeRace} parties={parties} style={chartStyle} />
-                <CandidatesRankedPie race={activeRace} style={chartStyle} />
-                <PartyPercentage race={activeRace} parties={parties} style={chartStyle} />
-                <VoteOverTime race={activeRace} parties={parties} style={chartStyle} />
-                <VoteOverTimeBump race={activeRace} style={chartStyle} />
-                <EventualWinner race={activeRace} style={chartStyle} />
-                <RoundCandidateBump race={activeRace} style={chartStyle} />
+                <ChartPage race={activeRace} parties={parties} />
             </div >
         );
     } else if (page === 2) {
@@ -419,71 +408,33 @@ function ElectionPage(props) {
                 </Button>
             </ButtonGroup>
         );
-        if (model === 0) {
-            return (
-                <div className="text-center" style={{
-                    display: "flex",
-                    justifyContent: 'center',
-                    flexWrap: 'wrap'
-                }}>
-                    {pageButtons}
-                    {modelButtons}
-                    {raceTitle}
-                    <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                        <ElectionBar race={activeRace} style={{ alignSelf: 'center', width: '40vw' }} />
-                    </div>
-                </div>
-            );
-        }
-        else if (model === 1) {
-            return (
-                <div className="text-center" style={{
-                    height: '100%',
-                    minHeight: '100%',
-                    display: "flex",
-                    justifyContent: 'center',
-                    flexWrap: 'wrap'
-                }}>
-                    {pageButtons}
-                    {modelButtons}
-                    {raceTitle}
-                    <HeatMap race={activeRace} />
-                    <Chord race={activeRace} />
-                </div >
-            );
-        }
-        else {
-            return (
-                <div className="text-center" style={{
-                    height: '100%',
-                    minHeight: '100%',
-                    display: "flex",
-                    justifyContent: 'center',
-                    flexWrap: 'wrap'
-                }}>
-                    {pageButtons}
-                    {modelButtons}
-                    {raceTitle}
-                    <NivoSankey race={activeRace} style={{
-                        width: '90%',
-                        height: '60vw'
-                    }}
-                    />
-                </div >
-            );
-        }
-    } else if (page == 3) {
+
+        return (
+            <div className="text-center" style={{
+                display: "flex",
+                width: size.width,
+                justifyContent: 'center',
+                flexWrap: 'wrap'
+            }}>
+                {pageButtons}
+                {modelButtons}
+                {raceTitle}
+                <ModelPage race={activeRace} model={model} />
+            </div>
+        );
+    } else if (page === 4) {
         return (
             <div className="text-center" style={{
                 height: '100%',
-                minHeight: '100%',
-                display: "flex",
+                width: size.width,
+                display: 'flex',
                 justifyContent: 'center',
                 flexWrap: 'wrap'
             }}>
                 { pageButtons}
                 { raceTitle}
-                <ElectionSettings race={activeRace} excused={excused_changed} running={stopRunning} refresh={refresh} />
+                <ElectionSettings race={activeRace} parties={parties} savePartyChanges={savePartyChanges}
+                    saveCandidateChanges={saveCandidateChanges} excused={excused_changed} running={stopRunning} refresh={refresh} />
             </div>
         );
     } else {

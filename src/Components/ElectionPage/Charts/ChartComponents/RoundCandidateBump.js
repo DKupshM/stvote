@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsiveBump } from '@nivo/bump'
-import { RaceState } from '../../../Data_Models/Race';
+import { RaceState } from '../../../../Data_Models/Race';
 
 
 function RoundCandidateBump(props) {

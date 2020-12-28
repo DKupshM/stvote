@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsiveLine } from '@nivo/line'
-import { RaceState } from '../../../Data_Models/Race';
+import { RaceState } from '../../../../Data_Models/Race';
 
 
 function PartyPercentage(props) {

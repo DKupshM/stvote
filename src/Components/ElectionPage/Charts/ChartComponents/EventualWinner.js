@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsivePieCanvas } from '@nivo/pie';
-import { RaceState } from '../../../Data_Models/Race';
+import { RaceState } from '../../../../Data_Models/Race';
 
 function CandidatesRanked(props) {
 

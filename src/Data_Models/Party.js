@@ -1,6 +1,7 @@
 
 export class Party {
-    constructor(party_name, party_color) {
+    constructor(party_id, party_name, party_color) {
+        this.party_id = party_id;
         this.party_name = party_name;
 
         if (!this.isValidColor(party_color)) {

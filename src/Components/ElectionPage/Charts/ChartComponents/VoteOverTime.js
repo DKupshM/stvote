@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ResponsiveLineCanvas } from '@nivo/line'
-import { RaceState } from '../../../Data_Models/Race';
+import { RaceState } from '../../../../Data_Models/Race';
 
 function VoteOverTime(props) {
     const find_party_by_name = (name) => {

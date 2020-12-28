@@ -1,15 +1,27 @@
 import React from 'react';
 
 import { ResponsivePieCanvas } from '@nivo/pie';
+import { RaceState } from '../../../../Data_Models/Race';
 
-import { find_party_by_name } from '../../../Data_Models/Util';
+function PartyPercentage(props) {
+    const find_candidate_by_id = (race, id) => {
+        for (const candidate of race.candidates)
+            if (candidate.candidate_id === id)
+                return candidate;
+        return null;
+    }
 
-function FirstChoicePie(props) {
+    const find_party_by_name = (name) => {
+        for (let i = 0; i < props.parties.length; i++)
+            if (props.parties[i].party_name === name)
+                return props.parties[i];
+        return null
+    };
 
     const get_ranked_choices = (race, party) => {
         let ranked_choices = 0;
-        for (const ballot of race.ballots) {
-            if (ballot.candidates[0].candidate_party.party_name === party.party_name)
+        for (const candidate in race.elected) {
+            if (find_candidate_by_id(race, candidate).candidate_party === party)
                 ranked_choices += 1;
         }
         return ranked_choices;
@@ -30,7 +42,7 @@ function FirstChoicePie(props) {
             "id": item,
             "label": item,
             "value": choices[item],
-            "color": find_party_by_name(props.parties,item).party_color,
+            "color": find_party_by_name(item).party_color,
         });
         totalAmount += choices[item];
     }
@@ -39,11 +51,15 @@ function FirstChoicePie(props) {
         return Math.round((bar.value / totalAmount) * 100) + "%";
     }
 
-    const getColor = bar => find_party_by_name(props.parties, bar.id).party_color;
+    const getColor = bar => find_party_by_name(bar.id).party_color;
+
+    // Wait until a candidate is actually elected to display
+    if (Object.entries(props.race.elected).length === 0 && props.race.elected.constructor === Object)
+        return (<div></div>)
 
     return (
         <div style={props.style}>
-            <h1> First Vote Pie by Party </h1>
+            <h1> Candidates Elected By Party </h1>
             <ResponsivePieCanvas
                 data={data}
                 margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
@@ -71,4 +87,4 @@ function FirstChoicePie(props) {
     );
 }
 
-export default FirstChoicePie;
+export default PartyPercentage;

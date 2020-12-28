@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { ResponsiveBarCanvas } from '@nivo/bar';
 
-import { RaceState } from '../../../Data_Models/Race';
+import { RaceState } from '../../../../Data_Models/Race';
 import RangeSlider from 'react-bootstrap-range-slider';
 
 
