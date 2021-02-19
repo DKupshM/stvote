@@ -8,6 +8,7 @@ export class Race {
         this.race_id = race_id
         this.race_name = race_name
         this.seats = Number(seats)
+        this.quota_algorithm = QuotaTypes.DROOP
 
         this.rounds = [];
 
@@ -248,7 +249,12 @@ export class Race {
     quota = () => {
         if (this.state === RaceState.ADDING)
             throw new Error("Can't Get Quota While Adding Ballots");
-        return Math.floor(this.ballots.length / (this.seats + 1)) + 1;
+        if (this.quota_algorithm === QuotaTypes.DROOP)
+            return Math.floor(this.ballots.length / (this.seats + 1)) + 1;
+        else if (this.quota_algorithm === QuotaTypes.HagenbachBischoff)
+            return this.ballots.length / (this.seats + 1);
+        else if (this.quota_algorithm === QuotaTypes.HARE)
+            return this.ballots.length / this.seats;
     }
 
     currentScores = () => {
@@ -604,6 +610,12 @@ export class Race {
         complete_round(currentRound);
     }
 };
+
+export const QuotaTypes = {
+    DROOP: "DROOP",
+    HARE: "HARE",
+    HagenbachBischoff: "Hagenbach-Bischoff"
+}
 
 export const RaceState = {
     ADDING: "ADDING",

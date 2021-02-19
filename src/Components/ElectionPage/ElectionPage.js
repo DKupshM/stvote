@@ -89,10 +89,7 @@ function ElectionPage(props) {
         }
 
         setParties([...parties, ...newParties])
-
-
         setCandidatesLoaded(true);
-
         return;
     }
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Form, Col, Row, ButtonGroup } from 'react-bootstrap';
 import EditCandidate from './EditCandidate';
 import EditParty from './EditParty';
+import EditRace from './EditRace';
 
 function ElectionSettings(props) {
     const resetRace = () => {
@@ -11,6 +12,7 @@ function ElectionSettings(props) {
     }
 
     const [showCandidate, setShowCandidate] = useState(false);
+    const [showRace, setShowRace] = useState(false);
     const [showParty, setShowParty] = useState(false);
     const [party, setParty] = useState(undefined);
     const [candidate, setCandidate] = useState(undefined);
@@ -25,6 +27,10 @@ function ElectionSettings(props) {
     let showForParty = (party) => {
         setParty(party)
         setShowParty(true);
+    }
+
+    let showForRace = () => {
+        setShowRace(true);
     }
 
     let candidateBoxes = candidates.map((candidate, index) => {
@@ -45,9 +51,31 @@ function ElectionSettings(props) {
         )
     })
 
+    let raceBox =
+        <ButtonGroup style={{ paddingLeft: "1%", paddingRight: "1%" }} className="mb-2">
+            <Button disabled>{props.race.race_name}</Button>
+            <Button onClick={() => (showForRace())}> Edit </Button>
+        </ButtonGroup>
+
     return (
         <div>
             <Form>
+                <Form.Group>
+                    <Row>
+                        <Col>
+                            <Form.Label>Race</Form.Label>
+                        </Col>
+                        <Col style={{
+                            display: 'flex',
+                            flexDirection: "row",
+                            flexWrap: 'wrap',
+                            justifyContent: "flex-start",
+                            alignItems: "flex-start"
+                        }}>
+                            {raceBox}
+                        </Col>
+                    </Row>
+                </Form.Group>
                 <Form.Group>
                     <Row>
                         <Col>
@@ -100,6 +128,8 @@ function ElectionSettings(props) {
                     </Row>
                 </Form.Group>
             </Form>
+
+            <EditRace race={props.race} show={showRace} setShow={setShowRace} />
 
             <EditParty party={party} show={showParty} savePartyChanges={props.savePartyChanges} setShow={setShowParty} />
 
