@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/stvote/static/css/main.c29a71c2.chunk.css",
-    "main.js": "/stvote/static/js/main.36b3f810.chunk.js",
-    "main.js.map": "/stvote/static/js/main.36b3f810.chunk.js.map",
+    "main.css": "/stvote/static/css/main.38d9b252.chunk.css",
+    "main.js": "/stvote/static/js/main.2d744bcd.chunk.js",
+    "main.js.map": "/stvote/static/js/main.2d744bcd.chunk.js.map",
     "runtime-main.js": "/stvote/static/js/runtime-main.3fe2677a.js",
     "runtime-main.js.map": "/stvote/static/js/runtime-main.3fe2677a.js.map",
-    "static/css/2.b7d58d71.chunk.css": "/stvote/static/css/2.b7d58d71.chunk.css",
-    "static/js/2.3b1167b4.chunk.js": "/stvote/static/js/2.3b1167b4.chunk.js",
-    "static/js/2.3b1167b4.chunk.js.map": "/stvote/static/js/2.3b1167b4.chunk.js.map",
+    "static/css/2.382ff29c.chunk.css": "/stvote/static/css/2.382ff29c.chunk.css",
+    "static/js/2.05337b66.chunk.js": "/stvote/static/js/2.05337b66.chunk.js",
+    "static/js/2.05337b66.chunk.js.map": "/stvote/static/js/2.05337b66.chunk.js.map",
     "index.html": "/stvote/index.html",
-    "precache-manifest.75aaf492f544213d915b2385ae209812.js": "/stvote/precache-manifest.75aaf492f544213d915b2385ae209812.js",
+    "precache-manifest.dcb0a9482306fc29cedf0950f44002d3.js": "/stvote/precache-manifest.dcb0a9482306fc29cedf0950f44002d3.js",
     "service-worker.js": "/stvote/service-worker.js",
-    "static/css/2.b7d58d71.chunk.css.map": "/stvote/static/css/2.b7d58d71.chunk.css.map",
-    "static/css/main.c29a71c2.chunk.css.map": "/stvote/static/css/main.c29a71c2.chunk.css.map",
-    "static/js/2.3b1167b4.chunk.js.LICENSE.txt": "/stvote/static/js/2.3b1167b4.chunk.js.LICENSE.txt"
+    "static/css/2.382ff29c.chunk.css.map": "/stvote/static/css/2.382ff29c.chunk.css.map",
+    "static/css/main.38d9b252.chunk.css.map": "/stvote/static/css/main.38d9b252.chunk.css.map",
+    "static/js/2.05337b66.chunk.js.LICENSE.txt": "/stvote/static/js/2.05337b66.chunk.js.LICENSE.txt",
+    "static/media/bezier.cjs": "/stvote/static/media/bezier.9cfe50b6.cjs"
   },
   "entrypoints": [
     "static/js/runtime-main.3fe2677a.js",
-    "static/css/2.b7d58d71.chunk.css",
-    "static/js/2.3b1167b4.chunk.js",
-    "static/css/main.c29a71c2.chunk.css",
-    "static/js/main.36b3f810.chunk.js"
+    "static/css/2.382ff29c.chunk.css",
+    "static/js/2.05337b66.chunk.js",
+    "static/css/main.38d9b252.chunk.css",
+    "static/js/main.2d744bcd.chunk.js"
   ]
 }

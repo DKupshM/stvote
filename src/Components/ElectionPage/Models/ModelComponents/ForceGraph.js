@@ -274,6 +274,33 @@ function ForceGraph(props) {
 		}
 	};
 
+	const drawNode = (node, ctx) => {
+		let node_radius = Math.sqrt(Math.max(0, node.value || 1)) * 0.4 + 1;
+
+		if (highlightNodes.has(node)) {
+			ctx.beginPath();
+			ctx.fillStyle = "black";
+			ctx.arc(node.x, node.y, node_radius * 1.2, 0, 2 * Math.PI, false);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.fillStyle = node.color;
+			ctx.arc(node.x, node.y, node_radius * 1.2, 0, 2 * Math.PI, false);
+			ctx.fill();
+		} else {
+			ctx.beginPath();
+			ctx.fillStyle = node.color;
+			ctx.arc(node.x, node.y, node_radius, 0, 2 * Math.PI, false);
+			ctx.fill();
+		}
+
+		ctx.fillStyle = "black";
+		ctx.font = Math.round(node_radius / 4) + "px Sans-Serif";
+		ctx.textAlign = "center";
+		ctx.textBaseline = "middle";
+		ctx.fillText(node.name, node.x, node.y, 2 * node_radius);
+	};
+
 	const fgRef = useRef();
 
 	if (props.is2D) {
@@ -287,14 +314,11 @@ function ForceGraph(props) {
 				nodeLabel={getNodeLabel}
 				nodeColor={getColor}
 				nodeVisibility={isVisible}
+				nodeCanvasObject={drawNode}
 				linkWidth={linkSize}
 				linkLabel={getLinkLabel}
 				linkAutoColorBy={getLinkValue}
 				linkCurvature={0.25}
-				nodeCanvasObjectMode={(node) =>
-					highlightNodes.has(node) ? "before" : undefined
-				}
-				nodeCanvasObject={paintRing}
 				onNodeHover={handleNodeHover}
 				onLinkHover={handleLinkHover}
 			/>
