@@ -13,7 +13,6 @@
         "@nivo/line": "^0.65.1",
         "@nivo/pie": "^0.65.1",
         "@nivo/sankey": "^0.65.1",
-        "@nivo/tooltip": "^0.65.1",
         "@popperjs/core": "^2.5.4",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",

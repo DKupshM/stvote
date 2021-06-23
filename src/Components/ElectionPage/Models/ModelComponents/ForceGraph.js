@@ -1,5 +1,7 @@
 import React from "react";
 import { useRef, useMemo, useState, useCallback } from "react";
+import { Button, ButtonGroup } from "react-bootstrap";
+import RangeSlider from "react-bootstrap-range-slider";
 
 import { ForceGraph2D, ForceGraph3D } from "react-force-graph";
 import { find_candidate_by_id } from "../../../../Data_Models/Util";
@@ -41,14 +43,14 @@ function ForceGraph(props) {
 		return round_number;
 	};
 
-	const Generate_Data = (race) => {
+	const Generate_Data = (race, exhausted) => {
 		if (race.rounds.length === 0) return;
 		let data = {
 			nodes: [],
 			links: [],
 		};
 
-		if (props.exhausted) {
+		if (exhausted) {
 			data.nodes.push({
 				id: "exhausted",
 				name: "exhausted",
@@ -164,7 +166,7 @@ function ForceGraph(props) {
 							target_name: transfer_candidate.candidate_name,
 							value: value,
 						});
-					} else if (props.exhausted) {
+					} else if (exhausted) {
 						let value = 0;
 						for (const ballot in transfer_candidates_ballot[
 							transfer_candidate_id
@@ -208,10 +210,16 @@ function ForceGraph(props) {
 		return data;
 	};
 
-	const data = useMemo(() => Generate_Data(props.race), [props.race]);
-
 	const [highlightNodes, setHighlightNodes] = useState(new Set());
 	const [highlightLinks, setHighlightLinks] = useState(new Set());
+	const [is2D, set2D] = useState(true);
+	const [exhausted, setExhausted] = useState(false);
+	const [rValue, setRValue] = useState(is2D ? 0.25 : 1);
+
+	const data = useMemo(
+		() => Generate_Data(props.race, exhausted),
+		[props.race, exhausted]
+	);
 
 	const updateHighlight = () => {
 		setHighlightNodes(highlightNodes);
@@ -244,14 +252,6 @@ function ForceGraph(props) {
 		updateHighlight();
 	};
 
-	const paintRing = useCallback((node, ctx) => {
-		// add ring just for highlighted nodes
-		ctx.beginPath();
-		ctx.arc(node.x, node.y, 1, 0, 2 * Math.PI, false);
-		ctx.fillStyle = node === "red";
-		ctx.fill();
-	}, []);
-
 	const getColor = (node) => node.color;
 	const getNodeLabel = (node) => node.name + ": " + Math.round(node.value);
 	const getLinkLabel = (link) =>
@@ -268,26 +268,47 @@ function ForceGraph(props) {
 
 	const linkSize = (link) => {
 		if (highlightLinks.has(link)) {
-			return link.value * 0.2;
+			return link.value * rValue * 0.2;
 		} else {
-			return link.value * 0.1;
+			return link.value * rValue * 0.1;
 		}
 	};
 
 	const drawNode = (node, ctx) => {
-		let node_radius = Math.sqrt(Math.max(0, node.value || 1)) * 0.4 + 1;
+		const adaptLabelFontSize = (diameter, text) => {
+			var xPadding, diameter, labelAvailableWidth, labelWidth;
+
+			xPadding = 5;
+			labelAvailableWidth = diameter - xPadding;
+
+			labelWidth = ctx.measureText(text);
+
+			// There is enough space for the label so leave it as is.
+			if (labelWidth < labelAvailableWidth) {
+				return null;
+			}
+
+			return labelAvailableWidth / labelWidth + "em";
+		};
+
+		let node_radius = Math.sqrt(Math.max(0, node.value || 1)) * rValue + 1;
 
 		if (highlightNodes.has(node)) {
 			ctx.beginPath();
-			ctx.fillStyle = "black";
-			ctx.arc(node.x, node.y, node_radius * 1.2, 0, 2 * Math.PI, false);
+			ctx.fillStyle = "red";
+			ctx.arc(node.x, node.y, node_radius, 0, 2 * Math.PI, false);
 			ctx.stroke();
 
 			ctx.beginPath();
 			ctx.fillStyle = node.color;
-			ctx.arc(node.x, node.y, node_radius * 1.2, 0, 2 * Math.PI, false);
+			ctx.arc(node.x, node.y, node_radius, 0, 2 * Math.PI, false);
 			ctx.fill();
 		} else {
+			ctx.beginPath();
+			ctx.fillStyle = "black";
+			ctx.arc(node.x, node.y, node_radius, 0, 2 * Math.PI, false);
+			ctx.stroke();
+
 			ctx.beginPath();
 			ctx.fillStyle = node.color;
 			ctx.arc(node.x, node.y, node_radius, 0, 2 * Math.PI, false);
@@ -298,18 +319,19 @@ function ForceGraph(props) {
 		ctx.font = Math.round(node_radius / 4) + "px Sans-Serif";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "middle";
-		ctx.fillText(node.name, node.x, node.y, 2 * node_radius);
+		ctx.fillText(node.name, node.x, node.y, node_radius * 2);
 	};
 
 	const fgRef = useRef();
 
-	if (props.is2D) {
-		return (
+	let forceGraph;
+	if (is2D) {
+		forceGraph = (
 			<ForceGraph2D
 				ref={fgRef}
 				graphData={data}
 				autoPauseRedraw={false}
-				nodeRelSize={0.25}
+				nodeRelSize={rValue}
 				nodeVal={getValue}
 				nodeLabel={getNodeLabel}
 				nodeColor={getColor}
@@ -324,22 +346,87 @@ function ForceGraph(props) {
 			/>
 		);
 	} else {
-		return (
+		forceGraph = (
 			<ForceGraph3D
 				ref={fgRef}
 				graphData={data}
 				autoPauseRedraw={false}
-				nodeRelSize={1}
+				nodeRelSize={rValue}
 				nodeVal={getValue}
 				nodeLabel={getNodeLabel}
 				nodeColor={getColor}
 				nodeVisibility={isVisible}
 				linkWidth={linkSize}
-				linkAutoColorBy={linkSize}
+				linkLabel={getLinkLabel}
+				linkAutoColorBy={getLinkValue}
 				linkCurvature={0.25}
+				onNodeHover={handleNodeHover}
+				onLinkHover={handleLinkHover}
 			/>
 		);
 	}
+	return (
+		<div>
+			{forceGraph}
+			<ButtonGroup
+				size="lg"
+				style={{
+					width: "100%",
+					height: "50",
+					padding: 0,
+					margin: 0,
+				}}
+			>
+				<Button
+					onClick={() => set2D(!is2D)}
+					disabled={false}
+					variant="primary"
+					style={{ boxShadow: "0 0 0 1px black", width: "5%" }}
+				>
+					{"Change Dimensions"}
+				</Button>
+				<Button
+					onClick={() => setExhausted(!exhausted)}
+					disabled={false}
+					variant="primary"
+					style={{ boxShadow: "0 0 0 1px black", width: "5%" }}
+				>
+					{"Add Exhausted"}
+				</Button>
+				<div
+					style={{
+						boxShadow: "0 0 0 1px black",
+						backgroundColor: "#007bff",
+						width: "30%",
+						borderRadius: "0px 5px 5px 0px",
+					}}
+				>
+					<label
+						style={{
+							font: "1.3rem/1 arial, sans-serif",
+							color: "white",
+							textAlign: "center",
+							padding: "5% 0 0 0",
+						}}
+					>
+						Node Size
+					</label>
+					<div style={{ margin: "0% 5% 0% 5%" }}>
+						<RangeSlider
+							min={0}
+							max={1}
+							step={0.01}
+							value={rValue}
+							variant="secondary"
+							onChange={(changeEvent) =>
+								setRValue(changeEvent.target.value)
+							}
+						/>
+					</div>
+				</div>
+			</ButtonGroup>
+		</div>
+	);
 }
 
 export default ForceGraph;
